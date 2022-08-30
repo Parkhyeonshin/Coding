@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 : 필터선택자</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <!-- 시멘트태그(heaer, main, footer 등)-->
+        <h1><a href="../index.html">jQuery</a></h1>
+        <nav class="header_nav">
+            <ul class="study">
+                <li><a href="jquery.html">기본</a></li>
+                <li><a href="choice_basic.html">기본 선택자</a></li>
+                <li><a href="choice_el.html">속성 선택자</a></li>
+                <li><a href="choice_filter.html">필터 선택자</a></li>
+                <li><a href="choice_search.html">탐색 선택자</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <!--main start-->
+        <div class="document">
+            <h2 class="t_tit">필터 선택자 </h2>
+            
+            <h3 class="t_tit2">■ 선택자</h3>
+            <p class="t_desc">
+                $() 팩토리 함수
+                <br> $()함수는 괄호안에 CSS선택자를 정의해서 DOM노드(element)를 반환합니다. 하나의 함수로 여러가지의 종류의 객체를 생성할 수 있습니다.
+                말이 어려운데요. js에서는 선택자를 사용하려면 querySelector를 사용했서 귀찮기도 했는데 제이쿼리에선 $로 편~하게 사용가능합니다.
+            </p>
+            <h3 class="t_tit3"> 선택자 사용법?</h3>
+            <p class="t_desc">
+                $("p") : element셀렉터
+                <br>$("#id") : id셀렉터
+                <br>$(".class") : class셀렉터
+                <br><br>[]를 사용하게된다면 요소의 속성을 선택할 수 있고 속성에는 간단한 정규표현식을 사용할 수도 있습니다.
+                <br>- ^ : 앞의 글자 패턴과 같으면 선택
+                <br>- $ : 뒤의 글자 패턴과 같으면 선택
+                <br>- * : 속성 안에 글자가 포함되어 있다면 선택
+                <br>- ~ : 속성 안에 글자가 정확히 포함되어 있으면 선택, 중복 불가
+                <br>- = : 완전히 일치해야 선택
+                <br><br>사용자 정의 선택자 : 선택자 뒤에 콜론(:)을 붙여 사용합니다.
+                <br> - :eq(index) _ 선택된 요소 중 index에 해당하는 요소
+                <br> - :odd _ 홀수 행 선택
+                <br> - :even _ 짝수 행 선택
+                <br> - :contains("문자열") _ 해당 문자열이 포함된 요소를 선택
+                <br> - :gt _ &gt;
+                <br> - :lt _ &lt;
+
+                <br><br><i>선택자에 대한 내용은 추후에 개별적으로 자세히</i> 다뤄보도록 하겠습니다.
+            </p>
+
+            <br>
+            
+        </div>
+    </main> <!-- //main end -->
+    <footer id="footer">
+        <a href="mailto:sshin4882@naver.com">sshin4882@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

@@ -342,3 +342,8 @@ body{
     background: #d6d6d6;
 }
 
+/* 220830 티스토리 a링크 오버효과 */
+.document a:hover{
+    transition: all 0.6s;
+    text-shadow: 1px 1px 10px #ffe056;
+}
