@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+     body {
+        font-size: 14px;
+    }
+    div {
+        font-size: 1.2em; 
+    }
+    span {
+        font-size: 1.2rem;
+    }
+    .sr-only {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    border: 0;
+    clip: rect(0,0,0,0);
+}
+    </style>
+<body>
+    <script>
+        {
+           function func1(a,b){
+            document.write(arguments[0])
+            document.write(arguments[1])
+           }
+           func1("ㅁㅁㅁ","bbbb");
+        }
+    </script>
+    <div>
+        Test (14 * 1.2 = 16.8px)
+        <div>
+            Test (16.8 * 1.2 = 20.16px)
+            <div>
+                Test (20.16 * 1.2 = 24.192px)
+            </div>
+        </div>
+    </div>
+
+    <div class="sr-only"><p>ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</p></div>
+    <span>
+        rem (14 * 1.2 = 16.8px)
+        <span>
+            <br>rem (14 * 1.2 = 16.8px)
+            <span>
+                <br>rem (14 * 1.2 = 16.8px)
+            </span>
+        </span>
+    </span>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/search.css">
+    <link href="https://webfontworld.github.io/tmon/Tmon.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <ul>
+                <li class="active"><a href="#.html">1</a></li>
+                <li><a href="searchEffect02.html">2</a></li>
+                <li><a href="searchEffect03.html">3</a></li>
+                <li><a href="searchEffect04.html">4</a></li>
+                <li><a href="searchEffect05.html">5</a></li>
+                <li><a href="searchEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- /header -->
+
+    <main id="main">
+        <div class="search__wrap">
+            <span>indexOf()/search()를 이용하여 검색하기</span>
+            <h1>CSS 속성 검색하기</h1>
+            <div class="search__box">
+                <label for="search">검색하기</label>
+                <input type="text" id="search" placeholder="CSS 속성을 입력해주세요!">
+            </div>
+            <div class="search__info">
+                전체 속성 갯수 : <span class="num">0</span>
+            </div>
+            <div class="search__list">
+                <div class="html">
+                    <ul>
+                        <li data-name="align-content"><strong>align-content</strong> : 콘텐츠 사이와 콘텐츠 주위 빈 공간을 교차축(flex박스) 또는 블록축(grid)을 따라 배치할지 속성할 수 있습니다.</li>
+                        <li data-name="animation"><strong>animation</strong>: 애니메이션과 관련된 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="animation-delay"><strong>animation-delay</strong>: 애니메이션 지연 시간을 설정합니다.</li>
+                        <li data-name="animation-direction"><strong>animation-direction</strong>: 애니메이션 움직임 방향을 설정합니다.</li>
+                        <li data-name="animation-duration"><strong>animation-duration</strong>: 애니메이션 움직임 시간을 설정합니다.</li>
+                        <li data-name="animation-fill-mode"><strong>animation-fill-mode</strong>: 애니메이션이 끝난 후의 상태를 설정합니다..</li>
+                        <li data-name="animation-iteration-count"><strong>animation-iteration-count</strong>: 애니메이션을 몇 번 반복할지 반복 횟수를 설정합니다.</li>
+                        <li data-name="animation-name"><strong>animation-name</strong>: 애니메이션 key frame 이름을 설정합니다.</li>
+                        <li data-name="animation-play-state"><strong>animation-play-state</strong>: 애니메이션 진행상태를 설정합니다.</li>
+                        <li data-name="animation-timing-function"><strong>animation-timing-function</strong>: 애니메이션 움직임 속도를 설정합니다.</li>
+                        
+                        <li data-name="background"><strong>background</strong>: 백그라운드 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="background-attachment"><strong>background-attachment</strong>: 배경 이미지의 고정 여부를 설정합니다.</li>
+                        <li data-name="background-blend-mode"><strong>background-blend-mode</strong>: 배경을 혼합했을 때 상태(그래픽 효과)를 설정합니다..</li>
+                        <li data-name="background-clip"><strong>background-clip</strong>: 백그라운드 이미지의 위치 기준점을 설정합니다..</li>
+                        <li data-name="background-color"><strong>background-color</strong>: 백그라운드 색을 설정합니다.</li>
+                        <li data-name="background-image"><strong>background-image</strong>: 백그라운드 이미지 속성을 설정합니다.</li>
+                        <li data-name="background-origin"><strong>background-origin</strong>: 백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다.</li>
+                        <li data-name="background-position"><strong>background-position</strong>: 백그라운드 이미지의 위치 영역을 설정합니다.</li>
+                        <li data-name="background-position-x"><strong>background-position-x</strong>: 백그라운드 이미지의 위치 영역(x축)을 설정합니다.</li>
+                        <li data-name="background-position-y"><strong>background-position-y</strong>: 백그라운드 이미지의 위치 영역(y축)을 설정합니다.</li>
+                        <li data-name="background-repeat"><strong>background-repeat</strong>: 백그라운드 이미지 반복 여부를 설정합니다.</li>
+                        <li data-name="background-size"><strong>background-size</strong>: 백그라운드 이미지 사이즈를 설정합니다.</li>
+                        <li data-name="border"><strong>border</strong>: 테두리 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="border-bottom"><strong>border-bottom</strong>: 아래쪽 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="border-bottom-color"><strong>border-bottom-color</strong>: 테두리 아래쪽 색 속성을 설정합니다.</li>
+                        <li data-name="border-bottom-left-radius"><strong>border-bottom-left-radius</strong>: 아래 왼쪽 모서리 굴곡을 설정합니다.</li>
+                        <li data-name="border-bottom-right-radius"><strong>border-bottom-right-radius</strong>: 오른쪽 아래 모서리 굴곡을 설정합니다.</li>
+                        <li data-name="border-bottom-style"><strong>border-bottom-style</strong>: 테두리 아래쪽 스타일 속성을 설정합니다.</li>
+                        <li data-name="border-bottom-width"><strong>border-bottom-width</strong>: 테두리 아래쪽 두께 속성을 설정합니다.</li>
+                        <li data-name="border-color"><strong>border-color</strong>: 모든 면의 테두리 색상을 설정합니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- main -->
+
+    <footer id="footer">
+        <a href="mailto:sshin4882@naver.com">sshin4882@naver.com</a>
+    </footer>
+    <!-- footer -->
+
+    <script>
+        // 선택자
+        {
+            const searchBox = document.querySelector(".search__box input");   //input 박스(검색영역)
+            const searchList = document.querySelectorAll(".search__list ul li");    //목록 리스트
+            const searchInfo = document.querySelector(".search__info .num")     //전체 갯수
+
+            // 전체 갯수 구하기
+            searchInfo.textContent = searchList.length;
+
+            // 검색 영역
+            searchBox.addEventListener("keyup", () => {
+                const searchWord = searchBox.value;         //사용자 입력 키워드
+
+                searchList.forEach(el => {
+                   const cssName = el.dataset.name;
+
+                    // clip.indexOf(clip) -> 0나옴
+                   if(cssName.indexOf(searchWord)){
+                        el.classList.add("hide");
+                    } else{
+                        el.classList.remove("hide");       //indexOf()값이 0이되는 값만 hide를 지워줌. (="abbr".indexOf("abbr");)
+                    }
+
+                });
+
+            });
+        }
+    </script>
+</body>
+</html>
