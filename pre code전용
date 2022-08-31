@@ -1,32 +1,82 @@
-&lt;section id="TextType02" class="text__wrap nexon section"&gt;
-    &lt;div class="text_out"&gt;
-        &lt;div class="upper"&gt;
-            &lt;p&gt;JAPAN TRIP&lt;/p&gt;
+&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /&gt;
+    &lt;!-- 아이콘링크, head 내부 style보다 위에 작성할것! --&gt;
+
+&lt;section id="textType03" class="text__wrap cookie section"&gt;
+        &lt;h2&gt;잠의 중요성💤&lt;/h2&gt;
+        &lt;p&gt;잠은 정말 소중합니다. 사람이 잠을 안자는게 아니라 못자면...잠시 잠든거 같기도...&lt;/p&gt;
+        &lt;div class="text__inner container"&gt;
+            &lt;article&gt;
+                &lt;p&gt;
+                    올빼미는 밤에 안졸려서 부럽네요. 잠은 언제쯤 자야 좋은걸까요. 잠 들수는 있을까요? 저도 모르겠네요
+                    내가 그린 기린 그림은 목이 긴 기린 그린 그림이고, 네가 그린 기린 그림은 목이 안 긴 기린 그린 그림이다. 야호 곧 7줄이 되....고싶은데 갈길이 먼거같기도하고 아닌거같긴한데 일곱줄효과를 위해 대충적자
+                &lt;/p&gt;
+                &lt;div class="article__box"&gt;
+                    &lt;div class="box_icon"&gt;
+                        &lt;div class="icon"&gt;&lt;span class="ir"&gt;icon&lt;/span&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="box_desc"&gt;
+                        &lt;h3&gt;올빼미&lt;/h3&gt;
+                        &lt;p&gt;는 잠을 안 자나&lt;/p&gt;
+                        &lt;div&gt;
+                            &lt;span class="material-symbols-rounded" style="color:#F1CB64;"&gt;star&lt;/span&gt;
+                            &lt;span class="material-symbols-rounded" style="color:#F1CB64;"&gt;star&lt;/span&gt;
+                            &lt;span class="material-symbols-rounded" style="color:#F1CB64;"&gt;star&lt;/span&gt;
+                            &lt;span class="material-symbols-rounded" style="color:#F1CB64;"&gt;star&lt;/span&gt;
+                            &lt;span class="material-symbols-rounded" style="color:#F1CB64;"&gt;star&lt;/span&gt;
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;a href="#"&gt;자세히보기&lt;/a&gt;
+            &lt;/article&gt;
+            &lt;article&gt;
+                &lt;p&gt;
+                    올빼미는 밤에 안졸려서 부럽네요. 잠은 언제쯤 자야 좋은걸까요. 잠 들수는 있을까요? 저도 모르겠네요
+                    내가 그린 기린 그림은 목이 긴 기린 그린 그림이고, 네가 그린 기린 그림은 목이 안 긴 기린 그린 그림이다. 야호 곧 7줄이 되....고싶은데 갈길이 먼거같기도하고 아닌거같긴한데 일곱줄효과를 위해 대충적자
+                &lt;/p&gt;
+                &lt;div class="article__box"&gt;
+                    &lt;div class="box_icon"&gt;
+                        &lt;div class="icon"&gt;&lt;span class="ir"&gt;icon&lt;/span&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="box_desc"&gt;
+                        &lt;h3&gt;올빼미&lt;/h3&gt;
+                        &lt;p&gt;는 잠을 안 자나&lt;/p&gt;
+                        &lt;div&gt;
+                            &lt;span class="material-symbols-rounded" style="color:#F1CB64;"&gt;star&lt;/span&gt;
+                            &lt;span class="material-symbols-rounded" style="color:#F1CB64;"&gt;star&lt;/span&gt;
+                            &lt;span class="material-symbols-rounded" style="color:#F1CB64;"&gt;star&lt;/span&gt;
+                            &lt;span class="material-symbols-rounded" style="color:#F1CB64;"&gt;star&lt;/span&gt;
+                            &lt;span class="material-symbols-rounded" style="color:#F1CB64; font-variation-settings:
+                            'FILL' 0"&gt;star&lt;/span&gt;
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;a href="#"&gt;자세히보기&lt;/a&gt;
+            &lt;/article&gt;
+            &lt;article&gt;
+                &lt;p&gt;
+                    올빼미는 밤에 안졸려서 부럽네요. 잠은 언제쯤 자야 좋은걸까요. 잠 들수는 있을까요? 저도 모르겠네요
+                    내가 그린 기린 그림은 목이 긴 기린 그린 그림이고, 네가 그린 기린 그림은 목이 안 긴 기린 그린 그림이다. 야호 곧 7줄이 되....고싶은데 갈길이 먼거같기도하고 아닌거같긴한데 일곱줄효과를 위해 대충적자
+                &lt;/p&gt;
+                &lt;div class="article__box"&gt;
+                    &lt;div class="box_icon"&gt;
+                        &lt;div class="icon"&gt;&lt;span class="ir"&gt;icon&lt;/span&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="box_desc"&gt;
+                        &lt;h3&gt;올빼미&lt;/h3&gt;
+                        &lt;p&gt;는 잠을 안 자나&lt;/p&gt;
+                        &lt;div&gt;
+                            &lt;span class="material-symbols-rounded" style="color:#F1CB64;"&gt;star&lt;/span&gt;
+                            &lt;span class="material-symbols-rounded" style="color:#F1CB64;"&gt;star&lt;/span&gt;
+                            &lt;span class="material-symbols-rounded" style="color:#F1CB64;"&gt;star&lt;/span&gt;
+                            &lt;span class="material-symbols-rounded" style="color:#F1CB64;"&gt;star&lt;/span&gt;
+                            &lt;span class="material-symbols-rounded" style="color:#F1CB64;"&gt;star&lt;/span&gt;
+                        &lt;/div&gt;
+
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;a href="#"&gt;자세히보기&lt;/a&gt;
+            &lt;/article&gt;
         &lt;/div&gt;
-        &lt;h2&gt;하나무라로&lt;br&gt; 떠납니다&lt;/h2&gt;
-        &lt;p&gt; 하나무라는 일본에 진짜 있는 지역명
-            인가요? 저도 잘 모르겠어요. 일본이 생각
-            났는데 게임에서 맨날 말하길래 생각이났는데 세줄효과를 위해 좀더 채워볼까까까ㅏㅏㅏ
-        &lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="text__inner"&gt;
-        &lt;a href="#" class="icon"&gt;&lt;span class="ir"&gt;icon&lt;/span&gt;&lt;/a&gt;
-        &lt;h3&gt;하나무라&lt;/h3&gt;
-        &lt;p&gt;네~ 없네요. 궁금해서 검색해보니깐 하나무라는 일본에서 쓰이는 성씨중의 하나라고 하는군요. 그렇다고합니다. &lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="text__inner"&gt;
-        &lt;a href="#" class="icon"&gt;&lt;span class="ir"&gt;icon&lt;/span&gt;&lt;/a&gt;
-        &lt;h3&gt;도쿄&lt;/h3&gt;
-        &lt;p&gt;도쿄도 또는 도쿄, 동경은 일본의 수도이며 간토지방에 위치하는 도로, 일본의 도 행정구역 가운데서 인구 수가 제일 많다고...&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="text__inner"&gt;
-        &lt;a href="#" class="icon"&gt;&lt;span class="ir"&gt;icon&lt;/span&gt;&lt;/a&gt;
-        &lt;h3&gt;홋카이도&lt;/h3&gt;
-        &lt;p&gt;훗!! 아닙니다. 홋입니다.홋카이도는 일본의 홋카이도 지방에 위치한 섬입니다. 일본열도를 이루는 4개 주요 섬중 하나로 ...&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="text__inner"&gt;
-        &lt;a href="#" class="icon"&gt;&lt;span class="ir"&gt;icon&lt;/span&gt;&lt;/a&gt;
-        &lt;h3&gt;오사카&lt;/h3&gt;
-        &lt;p&gt;오사카시는 일본 오사카부에 있는 도시로 부청 소재지다. 혼슈 긴키 지방의 요도가와 강 하구 오사카 만에 위치해 있으며 ...&lt;/p&gt;
-    &lt;/div&gt;
-&lt;/section&gt;
+    &lt;/section&gt;
