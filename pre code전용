@@ -1,20 +1,32 @@
-&lt;!DOCTYPE html&gt;
-&lt;html lang="ko"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;제이쿼리 기본형식&lt;/title&gt;
-    &lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt;
-    &lt;script&gt;
-        $(document).ready(function() {
-            실행문;
-        });
-
-        위 구문은 짧게 표현 가능합니다.
-        $(function() {
-            실행문;
-        });
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+&lt;section id="TextType02" class="text__wrap nexon section"&gt;
+    &lt;div class="text_out"&gt;
+        &lt;div class="upper"&gt;
+            &lt;p&gt;JAPAN TRIP&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;h2&gt;하나무라로&lt;br&gt; 떠납니다&lt;/h2&gt;
+        &lt;p&gt; 하나무라는 일본에 진짜 있는 지역명
+            인가요? 저도 잘 모르겠어요. 일본이 생각
+            났는데 게임에서 맨날 말하길래 생각이났는데 세줄효과를 위해 좀더 채워볼까까까ㅏㅏㅏ
+        &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="text__inner"&gt;
+        &lt;a href="#" class="icon"&gt;&lt;span class="ir"&gt;icon&lt;/span&gt;&lt;/a&gt;
+        &lt;h3&gt;하나무라&lt;/h3&gt;
+        &lt;p&gt;네~ 없네요. 궁금해서 검색해보니깐 하나무라는 일본에서 쓰이는 성씨중의 하나라고 하는군요. 그렇다고합니다. &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="text__inner"&gt;
+        &lt;a href="#" class="icon"&gt;&lt;span class="ir"&gt;icon&lt;/span&gt;&lt;/a&gt;
+        &lt;h3&gt;도쿄&lt;/h3&gt;
+        &lt;p&gt;도쿄도 또는 도쿄, 동경은 일본의 수도이며 간토지방에 위치하는 도로, 일본의 도 행정구역 가운데서 인구 수가 제일 많다고...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="text__inner"&gt;
+        &lt;a href="#" class="icon"&gt;&lt;span class="ir"&gt;icon&lt;/span&gt;&lt;/a&gt;
+        &lt;h3&gt;홋카이도&lt;/h3&gt;
+        &lt;p&gt;훗!! 아닙니다. 홋입니다.홋카이도는 일본의 홋카이도 지방에 위치한 섬입니다. 일본열도를 이루는 4개 주요 섬중 하나로 ...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="text__inner"&gt;
+        &lt;a href="#" class="icon"&gt;&lt;span class="ir"&gt;icon&lt;/span&gt;&lt;/a&gt;
+        &lt;h3&gt;오사카&lt;/h3&gt;
+        &lt;p&gt;오사카시는 일본 오사카부에 있는 도시로 부청 소재지다. 혼슈 긴키 지방의 요도가와 강 하구 오사카 만에 위치해 있으며 ...&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
