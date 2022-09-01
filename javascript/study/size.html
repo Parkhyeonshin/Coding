@@ -150,6 +150,17 @@
                 이 메서드는 요소의 크기, 높이 등을 구하는 메서드입니다. 
             </p>
             <hr>
+            <p class="t_desc">
+                <br>element.clientWidth : 요소 가로값(margin/border 미포함)
+                <br>element.clientHeight : 요소 높이값(margin/border 미포함)
+                <br>element.clientTop : 요소 Y축값(부모기준)
+                <br>element.clientLeft : 요소 X축값(부모기준)
+                <br>element.offsetWidth : 요소 가로값(border/padding 포함한 값)
+                <br>element.offsetHeight : 요소 높이값(border/padding 포함한 값)
+                <br>element.offsetTop : 요소 Y축값(문서 기준)
+                <br>element.offsetLeft : 요소 X축값(문서 기준)
+                <br>element.getBoundingClientRect() : 요소 top, left, right, bottom, x, y, width, height(객체로 반환)
+            </p>
             <div id="sample01" class="sample">
                 <h3 class="blue">위치 및 크기를 나타내는 속성 및 메서드</h3>
                 <div class="view">
@@ -237,6 +248,7 @@ document.querySelector("#sample01 .btn9").addEventListener("click", (e) => {
 </code></pre>
                 </div>
             </div>
+        </div>
     </main> <!-- //main end -->
     <footer id="footer">
         <a href="mailto:sshin4882@naver.com">sshin4882@naver.com</a>
@@ -249,12 +261,11 @@ document.querySelector("#sample01 .btn9").addEventListener("click", (e) => {
     <script>
 
         const box1 = document.querySelector("#sample01 .sbox");
-        const codedesc = document.querySelector("#sample01 .t_code.hide");
+        const codedesc = document.querySelectorAll(".t_code");
 
         document.querySelector("#sample01 .btn1").addEventListener("click", (e) => {
             e.preventDefault();
             document.querySelector("#sample01 .sResult").innerHTML = "이 박스의 가로값은 " + box1.clientWidth + "px 입니다.<br>(margin/border불포함) ";
-            codedesc.classList.remove(".hide");
             
         })
         document.querySelector("#sample01 .btn2").addEventListener("click", (e) => {
