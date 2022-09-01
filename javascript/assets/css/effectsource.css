@@ -8,7 +8,7 @@
     font-style: 14px;
     color: #000;
 } */
-#footer a{
+#footer {
     position: relative;
 }
 /* modal__wrap */
@@ -20,6 +20,7 @@
     display: inline-block;
     padding: 10px 20px;
     position: absolute;
+    right: 20px;
     cursor: pointer;
     transition: background-color 0.3s color 0.3s;
 }
