@@ -474,6 +474,9 @@
                     //     el.classList.add("hide");
                     // };
                 });
+                const searchLsit2 = document.querySelectorAll(".search__list ul .hide");
+                const current = searchList.length - searchLsit2.length;
+                searchInfo.textContent = current;
             });
 
         }

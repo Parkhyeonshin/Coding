@@ -10,12 +10,13 @@
     font-family: 'NexonLv1Gothic';
     font-size: 16px;
     line-height: 1.6;
+    /* color: white; */
 }
 
 /* 링크 초기화 */
 a {
     text-decoration: none ;    
-    color: #222;
+    color:#222 ;
     }
 /* 목록(list) 초기화 */
 li {
@@ -29,6 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 /* 모든 페이지 레이아웃 */
 body{
     padding: 40px;
+    background: linear-gradient(to right, #fdfbfb 0%, #ebedee 50%);
 }
 #header {
     border-bottom: 1px dashed #dcdcdc;
@@ -60,35 +62,49 @@ body{
     text-align: center;
 }
 #header h1 a {
-    font-size: 60px;
+    font-size: 80px;
     font-weight: 700;
-    color:tan;
+    color:#fdfbfb;
+    text-shadow: -2px 2px 10px #961414;
     font-family: 'CrownMychew';
-
 }
-.header_nav {
 
-}
 .header_nav ul li {
     display: inline;
 }
 .header_nav ul li.active a{
-    background-color: #000;
-    color: #fff;
+    background-color: rgba(253, 238, 238, 1);
+    color:#fdfbfb;
+    /* color: #871717; */
+    text-shadow: 0px 0px 10px #961414;
+    /* text-shadow: 0px 2px 3px #961414; */
     font-family: 'CrownMychew';
+    box-shadow: -2px 2px 8px #bb4a4a;
+    /* border: 2px solid #961414; */
+    font-size: 1.15rem;
+    animation: ascale 0.6s forwards;
+    border: 3px solid #96141400;
 
 }
+@keyframes ascale{
+    0%{transform: scale(1);}
+    100%{transform: scale(1.1);}
+}
 .header_nav ul li a {
-    border: 1px solid #222;
+    border: 3px solid #96141428;
     padding: 8px 25px;
     display: inline-block;
     margin-bottom: 7px;
     font-family: 'CrownMychew';
-
+    border-radius: 10px;
+    color: rgb(191, 127, 127);
 }
 .header_nav ul li a:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: rgba(253, 238, 238, 0.45);
+    text-shadow: 0px 0px 10px #961414;
+    /* animation: ascale 0.6s forwards; */
+    transition: all 0.3s;
+    color:#fdfbfb;
 }
 .header_nav .study {
     margin-top: 10px;
