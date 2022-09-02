@@ -79,12 +79,12 @@
             scene.add(particle);
 
             // 지오메트리
-            let geometry = new THREE.TetrahedronGeometry(2, 0);
-            let geom = new THREE.IcosahedronGeometry(7, 1);
+            let geometry = new THREE.TorusKnotGeometry(1, 0.4, 64, 8, 2, 3);
+            let geom = new THREE.TorusKnotGeometry(1, 0.4, 64, 8, 2, 3);
             let geom2 = new THREE.IcosahedronGeometry(15, 1);
 
                 // 지오메트리의 표면값
-            let material = new THREE.MeshPhongMaterial({
+            let material = new THREE.MeshStandardMaterial({
                 color: 0xffffff,
                 shading: THREE.FlatShading
             });
@@ -100,7 +100,7 @@
             });
 
             let planet = new THREE.Mesh(geom, mat);
-            planet.scale.x = planet.scale.y = planet.scale.z = 16;
+            planet.scale.x = planet.scale.y = planet.scale.z = 63;
             circle.add(planet);
             let planet2 = new THREE.Mesh(geom2, mat2);
             planet2.scale.x = planet2.scale.y = planet2.scale.z = 10;

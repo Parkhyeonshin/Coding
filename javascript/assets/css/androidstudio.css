@@ -2,7 +2,10 @@ pre{
     height: 100%;
 }
 pre code.hljs{
-    display:block;overflow-x:auto;padding:1em; height:100%;
+    display:block;
+    overflow-x:auto;
+    padding:1em; 
+    height:100%;
 }
 code.hljs{
     padding:3px 5px

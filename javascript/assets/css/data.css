@@ -69,4 +69,5 @@ a{
     padding: 10px;
     background: #000;
     color: white;
+    WORD-BREAK: break-word;
 }

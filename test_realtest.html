@@ -30,14 +30,15 @@
 <body>
     <script>
         {
-           function func1(a,b){
-            document.write(arguments[0])
-            document.write(arguments[1])
-           }
-           func1("ㅁㅁㅁ","bbbb");
+            for(let i = 2; i<=100; i+=2){
+                document.write(i);
+            }
+            for(let j = 1; j<=100; j+=2){
+                document.write("<br>"+j)
+            }
         }
     </script>
-    <div>
+    <!-- <div>
         Test (14 * 1.2 = 16.8px)
         <div>
             Test (16.8 * 1.2 = 20.16px)
@@ -56,6 +57,6 @@
                 <br>rem (14 * 1.2 = 16.8px)
             </span>
         </span>
-    </span>
+    </span> -->
 </body>
 </html>
