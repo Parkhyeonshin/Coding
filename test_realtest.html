@@ -5,58 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-    <style>
-     body {
-        font-size: 14px;
-    }
-    div {
-        font-size: 1.2em; 
-    }
-    span {
-        font-size: 1.2rem;
-    }
-    .sr-only {
-    position: absolute;
-    overflow: hidden;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    border: 0;
-    clip: rect(0,0,0,0);
-}
-    </style>
-<body>
-    <script>
-        {
-            for(let i = 2; i<=100; i+=2){
-                document.write(i);
-            }
-            for(let j = 1; j<=100; j+=2){
-                document.write("<br>"+j)
-            }
-        }
-    </script>
-    <!-- <div>
-        Test (14 * 1.2 = 16.8px)
-        <div>
-            Test (16.8 * 1.2 = 20.16px)
-            <div>
-                Test (20.16 * 1.2 = 24.192px)
-            </div>
-        </div>
-    </div>
 
-    <div class="sr-only"><p>ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</p></div>
-    <span>
-        rem (14 * 1.2 = 16.8px)
-        <span>
-            <br>rem (14 * 1.2 = 16.8px)
-            <span>
-                <br>rem (14 * 1.2 = 16.8px)
-            </span>
-        </span>
-    </span> -->
+    
+</head>
+<body>
+
+    <div id="m1">
+        <div class="con">콘텐츠</div>
+      </div>
+      <div id="m2">
+        <div class="c1 bg">내용1</div>
+        <div class="c2 bg">내용2</div>
+        <div class="c3 bg">내용3</div>
+        
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script>
+          $(document).ready(function(){
+              $("#m1 > div").removeClass("con");
+              $("#m2 > div").removeClass(function(){
+                  return "bg";
+              })
+          })
+      </script>
 </body>
 </html>
