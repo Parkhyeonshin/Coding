@@ -1,9 +1,6 @@
-hljs.highlightAll();
-
-
-    // 모달
+        // 모달
     const modalBtn = document.querySelector(".modal__btn");
-    const modalClose = document.querySelector(".modal__close");
+    const modalClose = document.querySelector(".modal__close .close");
     const modalCont = document.querySelector(".modal__cont");
 
     modalBtn.addEventListener("click", () => {
@@ -14,8 +11,8 @@ hljs.highlightAll();
         modalBtn.classList.add("active");
     })
     modalClose.addEventListener("click", () => {
-        modalCont.classList.add("hide");
         modalClose.classList.add("hide");
+        modalCont.classList.add("hide");
         modalBtn.classList.remove("active");
 
     })
@@ -41,5 +38,3 @@ hljs.highlightAll();
             tabCont[index].style.display = "block";     
         });
     });
-
-    

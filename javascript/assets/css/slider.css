@@ -321,6 +321,7 @@ a{
     color: white;
 }
 
+
 /* 모달 애니메이션 */
 .modal__cont.show{
     animation: foldOut 1.3s ease forwards;
