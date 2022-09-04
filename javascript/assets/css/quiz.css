@@ -180,7 +180,7 @@ body {
 .modal__cont {
     width: 100%;
     height: 100vh;
-    background-color: rgba(82, 82, 82, 0.5);
+    background-color: rgba(44, 44, 44, 0.7);
     position: fixed;
     left: 0;
     top: 0;
@@ -269,6 +269,7 @@ body {
 } */
 .modal__box .title .tabs {
     display: flex;
+    overflow-x: auto;
 }
 .modal__box .title .tabs > div {
     padding: 8px;
@@ -300,6 +301,7 @@ body {
     border-bottom: 2px solid #FCFCFC;
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
+    padding: 0.5rem;
 }
 .modal__box .cont > div{
     display: none;
@@ -316,7 +318,7 @@ body {
     animation: foldOut 1.3s ease forwards;
 }
 .modal__cont.show.hide{
-    animation: foldIn 2.5s  ease forwards;
+    animation: foldIn 3s  ease forwards;
 }
 .modal__cont.show .modal__box{
     transform: scale(0);
@@ -339,13 +341,18 @@ body {
 }
 
 @keyframes foldOut {
-    0%{transform: scaleY(1) scaleX(0.003);}
-    100%{transform: scaleY(1) scaleX(1);}
+    /* 0%{transform: scaleY(1) scaleX(0.003);}
+    100%{transform: scaleY(1) scaleX(1);} */
+    0%{transform: translateY(100vh);}
+    100%{transform: translateY(0vh);}
 }
 @keyframes foldIn {
-    0%{transform: scaleX(1);}
+    /* 0%{transform: scaleX(1);}
     50%{transform: scaleX(1);}
-    100%{transform: scaleX(0);}
+    100%{transform: scaleX(0);} */
+    0%{transform: translateY(0vh);}
+    80%{transform: translateY(0vh);}
+    100%{transform: translateY(100vh);}
 }
 @keyframes zoomOut{
     0%{transform: scale(0.1) rotate(0deg);}
