@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vscode_prettier 설정법</title>
+
+    <link rel="stylesheet" href="../../../javascript/assets/css/style.css" />
+    <link rel="stylesheet" href="../../../javascript/assets/css/dracula.css" />
+  </head>
+
+  <body>
+    <header id="header"></header>
+    <!-- //header -->
+    <main id="main">
+      <!--main start-->
+      <div class="document">
+        <h2 class="t_tit">[VSCode] Prettier 설정 / 적용 오류 해결법</h2>
+        <p class="t_desc2">
+          VSCode Extension 중에 코드를 <i>자동으로 정렬</i>해 주는
+          <i>Prettier</i>를 아시나요? Prettier는 코드를 자동으로 정렬해 줄 뿐만
+          아니라 사용자의 옵션에 따라 커스텀을 해서 사용할 수 있습니다.
+          설치방법과 간단한 오류 해결법에 대해 알아보겠습니다.
+        </p>
+        <hr />
+        <h2 class="t_tit2">■ 설치하기</h2>
+        <p class="t_desc">VSCode</p>
+      </div>
+    </main>
+    <!-- //main end -->
+    <footer id="footer">
+      <a href="mailto:sshin4882@naver.com">sshin4882@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../../javascript/assets/js/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>
