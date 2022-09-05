@@ -25,6 +25,9 @@
     transform:scale(0.8);
     transition:all 0.3s;
     font-family: 'NeoDunggeunmo';
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
 }
 .modal__wrap .modal__btn:hover{
     background: #223547;
@@ -42,7 +45,7 @@
 }
 @keyframes btnmove{
     10% {transform: translateX(-10%);}
-    50% {transform: translateX(-150%);}
+    50% {transform: translateX(-150%) skewX(45deg);}
     98% {opacity: 0.5;}
     100% {transform: translateX(100vh); opacity: 0;}
 }
