@@ -1,7 +1,10 @@
 # Coding
 
-### 메인 페이지
+### 메인 페이지1
 https://parkhyeonshin.github.io/Coding/index.html   
+
+### 메인 페이지2
+https://sshin4882.netlify.app/
 
 ### 자기 소개 페이지
 https://parkhyeonshin.github.io/Coding/class/index.html   
