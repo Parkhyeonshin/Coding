@@ -63,7 +63,7 @@
                 .step .stepbox {
                     width: 800px;
                     height: 600px;
-                    background: url(img/ani1.jpg);
+                    background: url(https://github.com/Parkhyeonshin/Coding/blob/main/animation/img/ani1.jpg?raw=true);
                     border-radius: 0;
                     position: absolute;
                     background-size: cover;
@@ -97,6 +97,9 @@
                     padding: 10px;
                     margin: 3px;
                     border-radius: 3px;
+                }
+                .imggif {
+                    width: 100%;
                 }
             </style>
             <h2 class="t_tit2">CSS로 움직이는 이미지 만들기</h2>
@@ -175,15 +178,29 @@
                 </details>
             </div>
 
-            <h2 class="t_tit2">■ 무작정 따라해보기</h2>
+            <h2 class="t_tit2">■ 무작정 따라해보기 </h2>
+            <p class="t_desc" style="color: #888; font-size: 14px;">작업하는 컴퓨터의 포토샵이 맛탱이가 갔습니다... 글만 열심히 적어보겠습니다</p>
             <p class="t_desc">
                 1. 우선 gif파일을 하나 구해옵니다. 저의 경우는 '드리블'이라는 사이트를 이용했습니다. 
                 <br>2. 다운받은 gif파일을 포토샵을 이용해서 열어줍니다.
                 <br>3. 레이어갯수와 이미지의 w,h값을 확인해줍니다.
-                <br>4. 위 이미지는 w: 800, h: 600이며 레이어갯수 20개라고 가정하겠습니다. 구한 (w 값 X 레이어 갯수) = (16,000)이 나오는데요 
+                <br>4. 위 이미지는 w: 800, h: 600이며 레이어갯수 16. 구한 (w 값 X 레이어 갯수) = (12,800)이 나오는데요 
                 새로운 레이어를 만들어주는데, 이 곱한 값을 새 레이어의 w값으로 지정해줍니다. h값은 그대로 적용해줍니다.
                 <br>5. 새로운레이어에 기존 이미지 레이어를 한개씩 이쁘게 정렬시켜서 옮겨줍니다. (고생하십쇼...)
-                <br>6. 일렬로 저장된 이미지를
+                <br>6. 일렬로 저장된 이미지를 jpg나 png등으로 저장해줍니다.
+            </p>
+            <img class="imggif" src="https://github.com/Parkhyeonshin/Coding/blob/main/animation/img/ani1.jpg?raw=true" alt="">
+            <p class="t_desc">
+                7. 이 이미지를 CSS의 <i>background</i>를 이용하여 넣어줄 위치에 위치시킵니다.
+                <br>8. 'transform: translate'를 이용해서 적절히 위치를 조정해준뒤 애니메이션효과를 부여합니다. 
+            </p>
+            <h2 class="t_tit2">■ 원장도 아직도 헷갈리는 steps()애니메이션 </h2>
+            <p class="t_desc">
+                애니메이션이 계단식(<i>단계별</i>)로 진행되도록 하는 함수입니다.
+                <br>2개의 파라미터를 가지고 있는데 첫번째 파라미터는 양수값을 가지며 몇개의 단계로 나눌지를 정합니다.
+                <br>두번째 파라미터는 "start"나 "end"가 오도록 되어있고 "end"가 디폴트입니다.
+                <br>start는 첫번째 단계에서 애니메이션을 시작하며, "end"는 마지막 스텝에서 애니메이션이 끝납니다.
+
             </p>
         </div>
         <!-- 도큐먼트끝 -->
@@ -194,66 +211,66 @@
     <script>
         hljs.highlightAll();
     </script>
-        <script>
-            $(".start1").click(function(){
-                $(".timing.bg1 > div").addClass("show");
-                setTimeout(function(){
-                    $(".timing.bg1 > div").removeClass("show");
-                },2000);
-            });
-    
-            $(".start2").click(function(){
-                $(".timing.bg2 > div").addClass("show");
-                setTimeout(function(){
-                    $(".timing.bg2 > div").removeClass("show");
-                },4000);
-            });
-    
-            $(".stepBtnStart").click(function(e){
-                e.preventDefault();
-                $(".stepbox").removeClass("stop").addClass("start");
-            });
-            $(".stepBtnStop").click(function(e){
-                e.preventDefault();
-                $(".stepbox").removeClass("start").addClass("stop");
-            });
-    
-            $(".start3").click(function(){
-                $(".timing.bg3 > div").addClass("show");
-                setTimeout(function(){
-                    $(".timing.bg3 > div").removeClass("show");
-                },3000);
-            });
-    
-            $(".start4").click(function(){
-                $(".timing.bg4 > div").addClass("show");
-                setTimeout(function(){
-                    $(".timing.bg4 > div").removeClass("show");
-                },3000);
-            });
-    
-            $(".start5").click(function(){
-                $(".timing.bg5 > div").addClass("show");
-            });
-    
-            $("#intro6 > button").click(function(){
-                let txt = $(this).text();
-                $(".timing25").removeClass("normal reverse alternate alternate-reverse").addClass(txt);
-            });
-    
-            $(".start7").click(function(){
-                $(".timing.bg7 > div").addClass("show");
-            });
-    
-            $("#intro8 > button").click(function(){
-                let txt = $(this).text();
-                $(".timing30").removeClass("running paused").addClass(txt);
-            });
-    
-            $("#intro9 > button").click(function(){
-                let txt = $(this).text();
-                $(".timing.bg9 > div").removeClass("ani1 ani2 ani3 ani4 ani5 ani6 ani7").addClass(txt);
-            });
-        </script>
+            <script>
+                $(".start1").click(function(){
+                    $(".timing.bg1 > div").addClass("show");
+                    setTimeout(function(){
+                        $(".timing.bg1 > div").removeClass("show");
+                    },2000);
+                });
+        
+                $(".start2").click(function(){
+                    $(".timing.bg2 > div").addClass("show");
+                    setTimeout(function(){
+                        $(".timing.bg2 > div").removeClass("show");
+                    },4000);
+                });
+        
+                $(".stepBtnStart").click(function(e){
+                    e.preventDefault();
+                    $(".stepbox").removeClass("stop").addClass("start");
+                });
+                $(".stepBtnStop").click(function(e){
+                    e.preventDefault();
+                    $(".stepbox").removeClass("start").addClass("stop");
+                });
+        
+                $(".start3").click(function(){
+                    $(".timing.bg3 > div").addClass("show");
+                    setTimeout(function(){
+                        $(".timing.bg3 > div").removeClass("show");
+                    },3000);
+                });
+        
+                $(".start4").click(function(){
+                    $(".timing.bg4 > div").addClass("show");
+                    setTimeout(function(){
+                        $(".timing.bg4 > div").removeClass("show");
+                    },3000);
+                });
+        
+                $(".start5").click(function(){
+                    $(".timing.bg5 > div").addClass("show");
+                });
+        
+                $("#intro6 > button").click(function(){
+                    let txt = $(this).text();
+                    $(".timing25").removeClass("normal reverse alternate alternate-reverse").addClass(txt);
+                });
+        
+                $(".start7").click(function(){
+                    $(".timing.bg7 > div").addClass("show");
+                });
+        
+                $("#intro8 > button").click(function(){
+                    let txt = $(this).text();
+                    $(".timing30").removeClass("running paused").addClass(txt);
+                });
+        
+                $("#intro9 > button").click(function(){
+                    let txt = $(this).text();
+                    $(".timing.bg9 > div").removeClass("ani1 ani2 ani3 ani4 ani5 ani6 ani7").addClass(txt);
+                });
+            </script>
     </body>
 </html>
