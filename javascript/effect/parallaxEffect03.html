@@ -510,7 +510,65 @@
                         </div>
                         <div class="cont">
                             <div class="active">
-                                <pre><code class="language-js" style="margin-bottom : 0;">const scroll = document.querySelector('#parallax__info .scroll span')
+                                <pre><code class="language-js" style="margin-bottom : 0;">window.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+    // if (scrollTop > 0) {
+    //     document.querySelector("#parallax__nav").classList.add("show");
+    // } else {
+    //     document.querySelector("#parallax__nav").classList.remove("show");
+    // }
+
+    document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+});
+
+console.log(document.querySelector("body").offsetHeight);
+console.log(document.querySelector("html").offsetHeight);
+console.log(window.innerHeight);
+window.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+    // scrollTop > ( 문서 전체높이 - 브라우저 높이 )
+    if (scrollTop >= document.body.scrollHeight - (window.innerHeight - 10)) {
+        document.querySelector("#parallax__top").classList.add("show");
+    } else {
+        document.querySelector("#parallax__top").classList.remove("show");
+    }
+});
+
+// top버튼누르면 맨위로
+document.querySelector("#parallax__top").addEventListener("click", () => {
+    window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+});
+
+let nowScroll = true; //--> 실행되게 (false일경우 작동안되게, 이런걸 트리거변수라고함)
+let lastScroll = 0;
+
+function scrollProgress() {
+    nowScroll = true;
+
+    setInterval(() => {
+        if (nowScroll) {
+            nowScroll = false;
+            hasScroll();
+        }
+    }, 300);
+}
+
+function hasScroll() {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+    if (scrollTop &lt; lastScroll) {
+        document.querySelector("#parallax__nav").classList.add("show");
+    } else {
+        document.querySelector("#parallax__nav").classList.remove("show");
+    }
+    lastScroll = scrollTop;
+}
+
+window.addEventListener("scroll", scrollProgress);
+
+const scroll = document.querySelector("#parallax__info .scroll span");
 window.addEventListener("scroll", () => {
     // let scrollTop = window.pageYOffset;
     // let scrollTop = window.scrollY;
@@ -518,7 +576,7 @@ window.addEventListener("scroll", () => {
     let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
 
     // for문
-    // for (let i = 1; i <= 9; i++) {
+    // for (let i = 1; i &lt;= 9; i++) {
     //     if (scrollTop + 1 >= document.getElementById(`section${i}`).offsetTop) {
     //         document.querySelectorAll('#parallax__nav li').forEach((li) => {
     //             li.classList.remove('active');
@@ -538,50 +596,31 @@ window.addEventListener("scroll", () => {
     // });
 
     // forEach문 02
-    document.querySelectorAll('.content__item').forEach((element, index) => {
-        if (scrollTop >= element.offsetTop - 1) {
-            document.querySelectorAll('#parallax__nav li').forEach((li) => {
-                li.classList.remove('active');
+    document.querySelectorAll(".content__item").forEach((element, index) => {
+        if (scrollTop >= element.offsetTop - window.innerHeight / 2) {
+            document.querySelectorAll("#parallax__nav li").forEach((li) => {
+                li.classList.remove("active");
             });
-            document.querySelector(`#parallax__nav li:nth-child(${index + 1})`).classList.add('active');
+            document.querySelector(`#parallax__nav li:nth-child(${index + 1})`).classList.add("active");
         }
     });
 
     document.querySelector(".scroll span").innerText = Math.round(scrollTop);
 });
 
-// info
-for (let i = 1; i <= 9; i++) {
-    document.querySelector(".offset" + i).innerText = document.getElementById("section" + i).offsetTop;
-}
-
 // 스크롤 이동
-document.querySelectorAll('#parallax__nav li a').forEach((li) => {
-    li.addEventListener('click', (e) => {
+document.querySelectorAll("#parallax__nav li a").forEach((li) => {
+    li.addEventListener("click", (e) => {
         e.preventDefault();
-        document.querySelector(li.getAttribute('href')).scrollIntoView({
-            behavior : "smooth",
+        document.querySelector(li.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
         });
     });
 });
 </code></pre>
                             </div>
                             <div>
-                                <pre><code class="language-html" style="margin-bottom : 0;">&lt;nav id="parallax__nav"&gt;
-    &lt;ul&gt;
-        &lt;li class="active"&gt;&lt;a href="#section1"&gt;메뉴1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section2"&gt;메뉴2&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section3"&gt;메뉴3&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section4"&gt;메뉴4&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section5"&gt;메뉴5&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section6"&gt;메뉴6&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section7"&gt;메뉴7&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section8"&gt;메뉴8&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section9"&gt;메뉴9&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/nav&gt;
-
-&lt;main id="parallax__cont"&gt;
+                                <pre><code class="language-html" style="margin-bottom : 0;">&lt;main id="parallax__cont"&gt;
     &lt;div id="contents"&gt;
         &lt;section id="section1" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;01&lt;/span&gt;
@@ -612,7 +651,7 @@ document.querySelectorAll('#parallax__nav li a').forEach((li) => {
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
 
-            &lt;p class="content__item__desc"&gt;하루에 3시간을 걸으면 7년 후에 지구를 한바퀴 돌 수 있다. &lt;/p&gt;
+            &lt;p class="content__item__desc"&gt;하루에 3시간을 걸으면 7년 후에 지구를 한바퀴 돌 수 있다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- // section3 --&gt;
 
@@ -623,7 +662,7 @@ document.querySelectorAll('#parallax__nav li a').forEach((li) => {
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
 
-            &lt;p class="content__item__desc"&gt;행복은 습관이다,그것을 몸에 지니라 &lt;/p&gt;
+            &lt;p class="content__item__desc"&gt;행복은 습관이다,그것을 몸에 지니라&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- // section4 --&gt;
 
@@ -645,7 +684,7 @@ document.querySelectorAll('#parallax__nav li a').forEach((li) => {
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
 
-            &lt;p class="content__item__desc"&gt;자신을 내보여라. 그러면 재능이 드러날 것이다. &lt;/p&gt;
+            &lt;p class="content__item__desc"&gt;자신을 내보여라. 그러면 재능이 드러날 것이다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- // section6 --&gt;
 
@@ -678,28 +717,17 @@ document.querySelectorAll('#parallax__nav li a').forEach((li) => {
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
 
-            &lt;p class="content__item__desc"&gt;길을 잃는 다는 것은 곧 길을 알게 된다는 것이다. &lt;/p&gt;
+            &lt;p class="content__item__desc"&gt;길을 잃는 다는 것은 곧 길을 알게 된다는 것이다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- // section9 --&gt;
     &lt;/div&gt;
 &lt;/main&gt;
+&lt;!-- // main --&gt;
 
 &lt;aside id="parallax__info"&gt;
     &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
-    &lt;div class="info"&gt;
-        &lt;ul&gt;
-            &lt;li&gt;#section1 offset() : &lt;span class="offset1"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section2 offset() : &lt;span class="offset2"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section3 offset() : &lt;span class="offset3"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section4 offset() : &lt;span class="offset4"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section5 offset() : &lt;span class="offset5"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section6 offset() : &lt;span class="offset6"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section7 offset() : &lt;span class="offset7"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section8 offset() : &lt;span class="offset8"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section9 offset() : &lt;span class="offset9"&gt;0&lt;/span&gt;px&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
 &lt;/aside&gt;
+&lt;!-- // parallax__info --&gt;
 </code></pre>
                             </div>
                             <div>
@@ -942,7 +970,7 @@ document.querySelectorAll('#parallax__nav li a').forEach((li) => {
                 let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
 
                 // scrollTop > ( 문서 전체높이 - 브라우저 높이 )
-                if (scrollTop >= document.querySelector("html").offsetHeight - window.innerHeight) {
+                if (scrollTop >= document.body.scrollHeight - (window.innerHeight - 10)) {
                     document.querySelector("#parallax__top").classList.add("show");
                 } else {
                     document.querySelector("#parallax__top").classList.remove("show");
