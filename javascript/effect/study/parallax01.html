@@ -49,6 +49,7 @@
                     페럴랙스 효과에 대해서 알아보겠습니다. 패럴랙스 스크롤링은 사용자가 마우스를 스크롤할 때, 원거리에 있는 배경 이미지는 느리게
                     움직이게 하고, 근거리에 있는 사물 이미지는 빠르게 움직이도록 함으로써 입체감을 느낄 수 있게 만든 디자인 기법입니다. 그렇기때문에
                     자바스크립트의 스크롤 관련 메서드에 대해서 잘 알아야 사용할 수 있는 효과입니다.
+                    <br>요약하자면 <i>스크롤변경에 따른 행동(?)을 조정하는 효과입니다.</i>
                 </div>
                 <hr />
 
@@ -68,30 +69,7 @@
                 <div class="t_code">
                     <pre><code class="language-js">const scroll = document.querySelector("#parallax__info .scroll span");
 window.addEventListener("scroll", () => {
-    // let scrollTop = window.pageYOffset;
-    // let scrollTop = window.scrollY;
-    // let scrollTop = document.documentElement.scrollTop;
     let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-
-    // for문
-    // for (let i = 1; i &lt;= 9; i++) {
-    //     if (scrollTop + 1 >= document.getElementById(`section${i}`).offsetTop) {
-    //         document.querySelectorAll('#parallax__nav li').forEach((li) => {
-    //             li.classList.remove('active');
-    //         });
-    //         document.querySelector(`#parallax__nav li:nth-child(${i})`).classList.add('active');
-    //     }
-    // }
-
-    // forEach문
-    // Array.from(Array(9).keys(), x => x+1).forEach((el,index) => {
-    //     if (scrollTop + 1 >= document.getElementById(`section${index + 1}`).offsetTop) {
-    //         document.querySelectorAll('#parallax__nav li').forEach((li) => {
-    //             li.classList.remove('active');
-    //         });
-    //         document.querySelector(`#parallax__nav li:nth-child(${index + 1})`).classList.add('active');
-    //     }
-    // });
 
     // forEach문 02
     document.querySelectorAll(".content__item").forEach((element, index) => {
