@@ -62,20 +62,10 @@
         background-color: rgba(255, 255, 255, 0.1);
         border-color: rgba(187, 127, 255, 0.6);
         box-shadow: -1px 1px 20px aquamarine;
-        animation: rotatecir 5s linear infinite;
         user-select: none;
         pointer-events: none;
         transition: background-color 0.3s, border-color 0.3s, transform 0.6s;
       }
-      /* @keyframes rotatecir {
-        0% {
-          transform: rotate(0deg);
-          box-shadow: -1px 1px 5px aquamarine;
-        }
-        100% {
-          transform: rotate(359deg);
-        }
-      } */
       .mouse__cursor.style1 {
         background-color: rgba(255, 165, 0, 0.4);
         border-color: orange;
@@ -245,15 +235,220 @@
             </div>
             <div class="cont">
               <div class="active">
-                <pre><code class="language-js">
+                <pre><code class="language-js">window.addEventListener("mousemove", (event) => {
+  document.querySelector(".clientX").innerText = event.clientX;
+  document.querySelector(".clientY").innerText = event.clientY;
+  document.querySelector(".offsetX").innerText = event.offsetX;
+  document.querySelector(".offsetY").innerText = event.offsetY;
+  document.querySelector(".pageX").innerText = event.pageX;
+  document.querySelector(".pageY").innerText = event.pageY;
+  document.querySelector(".screenX").innerText = event.screenX;
+  document.querySelector(".screenY").innerText = event.screenY;
+});
+
+const cursor = document.querySelector(".mouse__cursor");
+
+window.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX - 25 + "px";
+  cursor.style.top = e.clientY - 25 + "px";
+});
+
+//   document.querySelector(".style1").addEventListener("mouseover", () => {
+//     cursor.classList.add("style1");
+//   });
+//   document.querySelector(".style1").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style1");
+//   });
+//   document.querySelector(".style2").addEventListener("mouseover", () => {
+//     cursor.classList.add("style2");
+//   });
+//   document.querySelector(".style2").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style2");
+//   });
+//   document.querySelector(".style3").addEventListener("mouseover", () => {
+//     cursor.classList.add("style3");
+//   });
+//   document.querySelector(".style3").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style3");
+//   });
+//   document.querySelector(".style4").addEventListener("mouseover", () => {
+//     cursor.classList.add("style4");
+//   });
+//   document.querySelector(".style4").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style4");
+//   });
+//   document.querySelector(".style5").addEventListener("mouseover", () => {
+//     cursor.classList.add("style5");
+//   });
+//   document.querySelector(".style5").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style5");
+//   });
+//   document.querySelector(".style6").addEventListener("mouseover", () => {
+//     cursor.classList.add("style6");
+//   });
+//   document.querySelector(".style6").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style6");
+//   });
+
+// for문
+const count = document.querySelectorAll(".mouse__wrap span");
+//   console.log(count);
+//   for (let i = 1; i &lt;= count.length; i++) {
+//     // console.log(".style" + i);
+//     document.querySelector(".style" + i).addEventListener("mouseover", () => {
+//       cursor.classList.add("style" + i);
+//     });
+//     document.querySelector(".style" + i).addEventListener("mouseout", () => {
+//       cursor.classList.remove("style" + i);
+//     });
+//   }
+// foreach문
+//   document.querySelectorAll(".mouse__wrap span").forEach((span, num) => {
+//     span.addEventListener("mouseover", () => {
+//       cursor.classList.add("style" + (num + 1));
+//     });
+//     span.addEventListener("mouseout", () => {
+//       cursor.classList.remove("style" + (num + 1));
+//     });
+//   });
+
+//   getAttribute : =  속성을 가져오겠다  / 사용 이유 : 스타일 번호가 바뀌어도 바뀐 클래스명을 속성값으로 가져오므로 바뀐 스타일로 적용이 가능함.
+document.querySelectorAll(".mouse__wrap span").forEach((span) => {
+  let attr = span.getAttribute("class");
+
+  span.addEventListener("mouseover", () => {
+    cursor.classList.add(attr);
+  });
+  span.addEventListener("mouseout", () => {
+    cursor.classList.remove(attr);
+  });
+});
 </code></pre>
               </div>
               <div>
-                <pre><code class="language-html">
+                <pre><code class="language-html">&lt;main id="main"&gt;
+    &lt;section id="mouseType"&gt;
+      &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+      &lt;div class="mouse__wrap"&gt;
+        &lt;p&gt;
+          The &lt;span class="style1"&gt;most difficult thing&lt;/span&gt; is the decision to &lt;span class="style2"&gt;act&lt;/span&gt;, the rest is merely
+          &lt;span class="style3"&gt;tenacity&lt;/span&gt;.
+        &lt;/p&gt;
+        &lt;p&gt;
+          가장 &lt;span class="style4"&gt;어려운 것&lt;/span&gt;은 &lt;span class="style5"&gt;행동하기로&lt;/span&gt; 결정하는 것이며, 나머지는 단지
+          &lt;span class="style6"&gt;끈기있게&lt;/span&gt;
+          하는 것이다
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;div class="mouse__info"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;clientX : &lt;span class="clientX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;clientY : &lt;span class="clientY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;offsetX : &lt;span class="offsetX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;offsetY : &lt;span class="offsetY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;pageX : &lt;span class="pageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;pageY : &lt;span class="pageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;screenX : &lt;span class="screenX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;screenY : &lt;span class="screenY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;
 </code></pre>
               </div>
               <div>
-                <pre><code class="language-css">
+                <pre><code class="language-css">/* mouseType */
+.mouse__wrap {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  overflow: hidden;
+  cursor: none;
+}
+.mouse__wrap p {
+  font-size: 2vw;
+  line-height: 2;
+  font-weight: 300;
+}
+.mouse__wrap p:last-child {
+  font-weight: 300;
+  font-size: 3vw;
+}
+.mouse__wrap p span {
+  border-bottom: 0.15vw dashed orange;
+  color: orange;
+}
+
+@media (max-width: 800px) {
+  .mouse__wrap p {
+    padding: 0 20px;
+    font-size: 24px;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .mouse__wrap p:last-child {
+    font-size: 40px;
+    line-height: 1.5;
+    text-align: center;
+    word-break: keep-all;
+  }
+}
+.mouse__cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(187, 127, 255, 0.6);
+  box-shadow: -1px 1px 20px aquamarine;
+  user-select: none;
+  pointer-events: none;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.6s;
+}
+.mouse__cursor.style1 {
+  background-color: rgba(255, 165, 0, 0.4);
+  border-color: orange;
+}
+.mouse__cursor.style2 {
+  background-color: rgba(140, 0, 255, 0.4);
+  border-color: rgb(140, 0, 255);
+  transform: scale(2) rotateX(720deg);
+}
+.mouse__cursor.style3 {
+  background-color: rgba(255, 68, 0, 0.4);
+  border-color: snow;
+  transform: scale(1.5) rotateY(180deg);
+}
+.mouse__cursor.style4 {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-color: bisque;
+  transform: scale(5) skew(-20deg);
+}
+.mouse__cursor.style5 {
+  background-color: rgba(100, 148, 237, 0.4);
+  border-color: lemonchiffon;
+}
+.mouse__cursor.style6 {
+  background-color: rgba(250, 128, 114, 0.4);
+  border-color: aquamarine;
+}
+.mouse__info {
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: white;
+}
 </code></pre>
               </div>
             </div>
