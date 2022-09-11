@@ -102,141 +102,103 @@ document.querySelectorAll("#parallax__nav li a").forEach((li) => {
 });
 </code></pre>
                 </div>
-                <h3 class="t_tit2">HTML 소스</h3>
-                <div class="t_code">
-                    <pre><code class="language-html">&lt;main id="parallax__cont"&gt;
-&lt;div id="contents"&gt;
-    &lt;section id="section1" class="content__item"&gt;
-        &lt;span class="content__item__num"&gt;01&lt;/span&gt;
-        &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
-        &lt;figure class="content__item__imgWrap"&gt;
-            &lt;div class="content__item__img"&gt;&lt;/div&gt;
-        &lt;/figure&gt;
-
-        &lt;p class="content__item__desc"&gt;한번의 실패와 영원한 실패를 혼동하지 마라&lt;/p&gt;
-    &lt;/section&gt;
-    &lt;!-- // section1 --&gt;
-
-    &lt;section id="section2" class="content__item"&gt;
-        &lt;span class="content__item__num"&gt;02&lt;/span&gt;
-        &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
-        &lt;figure class="content__item__imgWrap"&gt;
-            &lt;div class="content__item__img"&gt;&lt;/div&gt;
-        &lt;/figure&gt;
-
-        &lt;p class="content__item__desc"&gt;내일은 내일의 태양이 뜬다.&lt;/p&gt;
-    &lt;/section&gt;
-    &lt;!-- // section2 --&gt;
-
-    &lt;section id="section3" class="content__item"&gt;
-        &lt;span class="content__item__num"&gt;03&lt;/span&gt;
-        &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
-        &lt;figure class="content__item__imgWrap"&gt;
-            &lt;div class="content__item__img"&gt;&lt;/div&gt;
-        &lt;/figure&gt;
-
-        &lt;p class="content__item__desc"&gt;하루에 3시간을 걸으면 7년 후에 지구를 한바퀴 돌 수 있다.&lt;/p&gt;
-    &lt;/section&gt;
-    &lt;!-- // section3 --&gt;
-
-    &lt;section id="section4" class="content__item"&gt;
-        &lt;span class="content__item__num"&gt;04&lt;/span&gt;
-        &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
-        &lt;figure class="content__item__imgWrap"&gt;
-            &lt;div class="content__item__img"&gt;&lt;/div&gt;
-        &lt;/figure&gt;
-
-        &lt;p class="content__item__desc"&gt;행복은 습관이다,그것을 몸에 지니라&lt;/p&gt;
-    &lt;/section&gt;
-    &lt;!-- // section4 --&gt;
-
-    &lt;section id="section5" class="content__item"&gt;
-        &lt;span class="content__item__num"&gt;05&lt;/span&gt;
-        &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
-        &lt;figure class="content__item__imgWrap"&gt;
-            &lt;div class="content__item__img"&gt;&lt;/div&gt;
-        &lt;/figure&gt;
-
-        &lt;p class="content__item__desc"&gt;만약 우리가 할 수 있는 일을 모두 한다면 우리들은 우리자신에 깜짝 놀랄 것이다.&lt;/p&gt;
-    &lt;/section&gt;
-    &lt;!-- // section5 --&gt;
-
-    &lt;section id="section6" class="content__item"&gt;
-        &lt;span class="content__item__num"&gt;06&lt;/span&gt;
-        &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
-        &lt;figure class="content__item__imgWrap"&gt;
-            &lt;div class="content__item__img"&gt;&lt;/div&gt;
-        &lt;/figure&gt;
-
-        &lt;p class="content__item__desc"&gt;자신을 내보여라. 그러면 재능이 드러날 것이다.&lt;/p&gt;
-    &lt;/section&gt;
-    &lt;!-- // section6 --&gt;
-
-    &lt;section id="section7" class="content__item"&gt;
-        &lt;span class="content__item__num"&gt;07&lt;/span&gt;
-        &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
-        &lt;figure class="content__item__imgWrap"&gt;
-            &lt;div class="content__item__img"&gt;&lt;/div&gt;
-        &lt;/figure&gt;
-
-        &lt;p class="content__item__desc"&gt;겨울이 오면 봄이 멀지 않으리&lt;/p&gt;
-    &lt;/section&gt;
-    &lt;!-- // section7 --&gt;
-
-    &lt;section id="section8" class="content__item"&gt;
-        &lt;span class="content__item__num"&gt;08&lt;/span&gt;
-        &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
-        &lt;figure class="content__item__imgWrap"&gt;
-            &lt;div class="content__item__img"&gt;&lt;/div&gt;
-        &lt;/figure&gt;
-
-        &lt;p class="content__item__desc"&gt;자신감 있는 표정을 지으면 자신감이 생긴다.&lt;/p&gt;
-    &lt;/section&gt;
-    &lt;!-- // section8 --&gt;
-
-    &lt;section id="section9" class="content__item"&gt;
-        &lt;span class="content__item__num"&gt;09&lt;/span&gt;
-        &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
-        &lt;figure class="content__item__imgWrap"&gt;
-            &lt;div class="content__item__img"&gt;&lt;/div&gt;
-        &lt;/figure&gt;
-
-        &lt;p class="content__item__desc"&gt;길을 잃는 다는 것은 곧 길을 알게 된다는 것이다.&lt;/p&gt;
-    &lt;/section&gt;
-    &lt;!-- // section9 --&gt;
-&lt;/div&gt;
-&lt;/main&gt;
-&lt;!-- // main --&gt;
-
-&lt;aside id="parallax__info"&gt;
-&lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
-&lt;div class="info"&gt;
-    &lt;ul&gt;
-        &lt;li&gt;#section1 offset() : &lt;span class="offset1"&gt;0&lt;/span&gt;px&lt;/li&gt;
-        &lt;li&gt;#section2 offset() : &lt;span class="offset2"&gt;0&lt;/span&gt;px&lt;/li&gt;
-        &lt;li&gt;#section3 offset() : &lt;span class="offset3"&gt;0&lt;/span&gt;px&lt;/li&gt;
-        &lt;li&gt;#section4 offset() : &lt;span class="offset4"&gt;0&lt;/span&gt;px&lt;/li&gt;
-        &lt;li&gt;#section5 offset() : &lt;span class="offset5"&gt;0&lt;/span&gt;px&lt;/li&gt;
-        &lt;li&gt;#section6 offset() : &lt;span class="offset6"&gt;0&lt;/span&gt;px&lt;/li&gt;
-        &lt;li&gt;#section7 offset() : &lt;span class="offset7"&gt;0&lt;/span&gt;px&lt;/li&gt;
-        &lt;li&gt;#section8 offset() : &lt;span class="offset8"&gt;0&lt;/span&gt;px&lt;/li&gt;
-        &lt;li&gt;#section9 offset() : &lt;span class="offset9"&gt;0&lt;/span&gt;px&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/div&gt;
-&lt;/aside&gt;
-</code></pre>
-                </div>
+               
                 <p class="t_tit2">■ 핵심 파헤치기🪓</p>
 
-                <h2 class="t_tit3">✔ scrollTop 속성</h2>
-                <p class="t_desc">scrollTop은 메서드가 아닌 <i>속성</i>입니다. 이 속성은 요소의 수직 스크롤 바 위치를 나타냅니다.</p>
-                <h2 class="t_tit3">✔ scrollIntoView</h2>
+                <h2 class="t_tit3" style="border-bottom: 1px solid #ccc;">✔ preventDefault</h2>
                 <p class="t_desc">
-                    이 메서드는 화면의 특정 위치로 이동시켜주는 함수입니다. 요소 기반이므로 특정 요소를 기준으로 스크롤을 이동시킵니다. 여기서는 a링크의 href를 요소로 지정해주었으므로
+                    기본(default) 막다(prevent).
+                    <br>원래 a태그나 submit태그는 누르게 되면 href를 통해 이동하거나 창이 새로고침되어 실행되는 기능을 가지고있습니다.
+                    이 메서드는 이러한 <i>태그의 기본 이벤트(동작)을 막는 기능</i>을 합니다. 
+                    <br>이 속성은 <i>이벤트 메서드</i> 입니다. 밑에 간단한 예시를 만들어 봤으니 눌러보시고 파악해보세요.
+                    <br><br> <a href="http://www.google.com" target="_blank">메서드 미적용_ 눌러보세요 (구글로 새창이동)</a>
+                    <br> <a href="http://www.google.com" target="_blank" class="t_ablock" >메서드 적용_ 눌러보세요</a>
+                </p>
+                <p class="t_box">
+                    &lt;a href="http://www.google.com" target="_blank"&gt;메서드 미적용&lt;/a&gt;
+                    <br>&lt;a href="http://www.google.com" target="_blank" class="t_ablock"&gt;메서드 적용&lt;/a&gt;
+                    <br>
+                    <br>//스크립트
+                    <br>const ablock = document.querySelector(".t_ablock");
+                    <br>ablock.addEventListener("click", el => {
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;    el.preventDefault();
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;    alert("알람문구")
+                    <br>});
+                </p>
+                <script>
+                    const ablock = document.querySelector(".t_ablock");
+                    ablock.addEventListener("click", el => {
+                        el.preventDefault();
+                        alert(`
+                        막 Δ~~~Δ
+                        혀 ξ ･ェ･ ξ
+                        있 ξ　~　ξ
+                        지 ξ　　 ξ
+                        롱 ξ　　 “~～~～O
+                        ~  ξ　　　　　　 ξ
+                        ~  ξ ξ ξ~～~ξ ξ　
+                        ~  ξ_ξ_ξ　ξ_ξ_ξ`)
+                    });
+                </script>
+                <h2 class="t_tit3" style="border-bottom: 1px solid #ccc;">✔ getAttribute</h2>
+                <p class="t_desc">선택한 요소의 <i>특정 속성값</i>을 가져옵니다.</p>
+                <p class="t_box">
+                    문법 : element.getAttribute( 'attributename' )
+                </p>
+                <p class="t_desc">
+                    여기서는 a링크의 href값을 가져오는게 되겠군요. 메뉴1의 href를 예시로 들자면 #section1을 가져오겠네요
+                </p>
+                <h2 class="t_tit3" style="border-bottom: 1px solid #ccc;">✔ documentElement.scrollTop</h2>
+                <p class="t_box">
+                    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; 
+                </p>
+                <p class="t_desc">
+                    스크롤바의 현재 위치를 가져오는 방법인데요. 모든 문법이 현재위치를 가져올 수 있습니다. 다만 IE브라우저의 경우 window.scrollY의 프로퍼티가 존재하지 않습니다.
+                    이 경우 <i>document.documentElement.scrollTop;</i>를 사용합니다. 그래서 호환을 위해서 위와 같이 문법을 사용한 것입니다. 저렇게 사용하면
+                    IE 및 대부분 브라우저에서 현재 스크롤위치를 반환하게 됩니다.
+                </p>
+
+                <h2 class="t_tit3" style="border-bottom: 1px solid #ccc;">✔ scrollIntoView</h2>
+                <p class="t_desc">
+                    이 메서드는 화면의 <i>특정 위치로 이동</i>시켜주는 함수입니다. <i>요소 기반이므로 특정 요소를 기준으로 스크롤을 이동</i>시킵니다. 여기서는 a링크의 href를 요소로 지정해주었으므로
                     지정한 href요소로 이동을 시켜주겠네요. 그리고 3개의 문법(아무것도 사용하지 않고 그냥 사용 / 불린을 사용 / 옵션값 사용)중 옵션값을 사용하는 문법을 이용해줍니다.
                     behavior는 전환방식을 설정해줄 수 있는데 여기서는 'smooth'를 사용하여 부드럽게 이동하는 설정을 해줍니다.
                 </p>
-
+                <p class="t_box">
+                    - true : 요소의 상단 기준으로 스크롤 이동
+                    <br>- false : 요소의 하단 기준으로 스크롤 이동
+                    <br>- behavior : 전환 방식(애니메이션) 정의함 : auto || smooth
+                    <br>- block : 수직 정렬 : strat || center || end || nearest
+                    <br>- inline : 수평 정렬 : strat || center || end || nearest
+                </p>
+                <h2 class="t_tit3" style="border-bottom: 1px solid #ccc;">✔ Math.floor()</h2>
+                <p class="t_desc">
+                    <i>소수점 이하를 버림하는 메서드</i>입니다. 참고로 음수(-)는 편하게 생각하면 소숫점앞자리 숫자에서 -1을 하세요.(이해못하는 문과는 외웁니다...) 
+                    
+                    <br><br> - 내 멋대로 원리 이해하기 (믿거나 말거나)
+                    <br> 5.5라는 숫자에서 소숫점이하를 버림하면 5가 반환이됩니다. 여기까지는 이해가 쉬운데요. 소숫점이하를 버리게되면 반환되는 값는 원래 값보다 작아지잖아요? 
+                    그래서 음수의 경우도 반환되는 숫잔 원래 숫자보다 작아지게 되는거죠. 그래서 -3.4라는 숫자가 버림을 받게 되면 -3이아니라 -3.4보다 작은 -4가 반환되는 겁니다.
+                </p>
+                <h2 class="t_tit3" style="border-bottom: 1px solid #ccc;">✔ getElementById</h2>
+                <p class="t_desc">
+                    이 메서드는 주어진 문자열과 일치하는 ID를 가진 요소를 찾습니다. 여기서는 "section[i]"를 찾겠군요!
+                </p>
+                <h2 class="t_tit2">■ 코드 내멋대로 풀어헤치기👕</h2>
+                <p class="t_desc">js코드를 보며 같이 봐주세요. 위에서부터 순서대로 기재했습니다.</p>
+                <p class="t_desc">
+                    1. scrollTop에 스크롤의 현재위치값을 저장합니다.
+                    <br><br>
+                    2. 조건(스크롤위치값 >= 요소의 Y값 - 전체 Y값/2 )에 부합하면 각 섹션의 .active를 제거하고 해당하는 섹션에만 .active를 부여합니다.
+                    <br><br>
+                    3. 현재 스크롤 위치값을 소숫자리를 버림하여 ".scroll span"에 입력합니다.
+                    <br><br>
+                    4. 각 섹션의 offsetTop값을 getElementById메서드를 이용해서 입력합니다.
+                    <br><br>
+                    5. 메뉴버튼을 클릭하면 a태그의 기본기능을 중지시킵니다.
+                    <br><br>
+                    6. a태그의 href값을 가져와서 해당하는 href값으로 부드럽게 이동시킵니다.
+                </p>
+                
             </div>
         </main>
         <!-- //main end -->
