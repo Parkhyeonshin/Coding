@@ -47,6 +47,8 @@
             <div class="document">
                 <h2 class="t_tit">마우스 효과 01</h2>
                 <div class="t_desc2">
+                    이번시간에는 마우스관련 메서드를 이용해서 마우스를 따라다니는 효과를 만들어 보겠습니다. 
+                    또, 좌측하단에 각 메서드의 값들이 출력되게 해놨으니 어떻게 다른지 한번 보시면서 참고해보세요.
                 </div>
                 <hr />
 
@@ -62,9 +64,9 @@
                 </div>
                 <hr />
                 <div class="t_desc">
-                    ▶ 저번시간과 원리는 별반 다를게 없습니다. 'parallax__info span'에 현재 scrollTop값을 입력되게 해주고, 
-                    <i>'scrollTop >= 각 섹션 offsetTop'</i> 일때 해당되는 섹션의 메뉴버튼에 active클래스를 붙여줍니다.
-                    <br>또, 메뉴버튼에 해당되는 a링크에 <i>preventDefault</i>를 부여해서 a태그 <i>고유기능은 막고</i> scrollIntoView를 주어서 다른 스크롤이동 효과를 부여해줍니다.
+                    ▶ 좌측 하단에는 .mouse__info 를 이용해서 각 위치값에 대한 정보를 입력하고, 
+                    문구에 span태그와 class속성을 이용해서 마우스오버 효과도 각각 다르게 부여합니다.
+                    마우스포인터가 사라지는 것은 <i>cursor:none</i>을 이용했습니다.
                 </div>
                 <h3 class="t_tit2">JS 소스</h3>
                 <div class="t_code">
@@ -101,7 +103,7 @@ document.querySelectorAll(".mouse__wrap span").forEach((span) => {
                 </div>
                 <p class="t_tit2">■ 핵심 파헤치기🪓</p>
 
-                <h2 class="t_tit3" style="border-bottom: 1px solid #ccc;">✔ preventDefault</h2>
+                <h2 class="t_tit3" style="border-bottom: 1px solid #ccc;">✔ 좌표(위치)관련</h2>
                 <p class="t_desc">
                 </p>
                 <p class="t_box">
