@@ -44,6 +44,21 @@ body.img09 {
 body.img10 {
   background: url(../img/effect_bg10@2x.jpg) no-repeat center / cover;
 }
+body.img11 {
+  background: url(../img/effect_bg11@2x.jpg) no-repeat center / cover;
+}
+body.img12 {
+  background: url(../img/effect_bg12.jpg) no-repeat center / cover;
+}
+body.img13 {
+  background: url(../img/effect_bg13.jpg) no-repeat center / cover;
+}
+body.img14 {
+  background: url(../img/effect_bg14.jpg) no-repeat center / cover;
+}
+body.img15 {
+  background: url(../img/effect_bg15.jpg) no-repeat center / cover;
+}
 body::after {
   content: "";
   position: absolute;
