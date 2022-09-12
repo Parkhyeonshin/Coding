@@ -58,6 +58,9 @@
     top: 9px;
     background: #666;
 }
+.imgText__txt ul li a:hover{
+    text-decoration: underline;
+}
 .imgText__img {
     width: 49%;
     border-radius: 10px;
@@ -78,6 +81,7 @@
     background-color: rgb(43, 43, 43);
     transition: all 0.3s ease;
 }
+
 .imgText__img.img1 {
     background: url(../img/imgText_bg01_1.jpg) no-repeat center / cover;
 }
@@ -89,6 +93,7 @@
     .imgText__txt h3 {
         font-size: 37px;
     }
+    
     .imgbox {
         width: 68%;
     }
@@ -96,6 +101,9 @@
 @media (max-width: 768px){
     .imgText__txt{
         width: 48%;
+    }
+    .imgText__inner > div {
+        height: 450px;
     }
     .imgText__txt h3 {
         word-break: break-all;

@@ -10,7 +10,7 @@
 .slider__img .desc {
   width: 100%;
   margin: 0 auto;
-  padding: 100px 20px;
+  padding: 100px 120px;
   box-sizing: border-box;
 }
 .slider__img .desc span {
@@ -133,6 +133,9 @@
 @media (max-width: 768px) {
   .slider__inner {
     margin-top: 0;
+  }
+  .slider__img .desc {
+    padding: 100px 90px;
   }
   .slider__img .desc h3{
     font-size: 52px;

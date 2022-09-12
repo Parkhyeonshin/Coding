@@ -53,8 +53,7 @@
     background-color: #f8c3614b;
     border-radius: 50px;
 }
-
-@media (max-width: 480px){
+@media (max-width: 768px){
     .card__inner {
         display: block;
         justify-content: space-between;
