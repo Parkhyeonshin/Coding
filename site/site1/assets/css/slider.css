@@ -2,6 +2,7 @@
   margin-top: 70px;
 }
 .slider {
+  cursor: pointer;
   position: relative;
 }
 .slider__img {
