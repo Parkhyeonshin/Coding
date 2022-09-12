@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기01</title>
+
+    <link rel="stylesheet" href="../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../javascript/assets/css/dracula.css">
+
+    <style>
+        .document #main .btnflex{
+        	display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">   <!-- 시멘트태그(heaer, main, footer 등)--> 
+        <h1><a href="../index.html">사이트 만들기</a></h1>
+        <nav class="header_nav">
+            <ul class="study">
+                <li><a href="#.html">사이트 만들기01</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <div class="document">
+        <div id="main">
+            <h2 class="t_tit">사이트 만들기 _ 실전 돌입 01</h2>
+            <p class="t_desc2">
+                이게 맞을까요 <i>여러분...제보를</i> 기다립니다...🙏<i><em>부디</em></i>
+            </p>
+
+            <hr>
+
+            <h3></h3>
+            <div class="t_iframe">
+                <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2Fd1alnzzZPOOZzULTEK3Bv7%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D2362%253A1484" allowfullscreen></iframe>
+            </div>
+
+            <hr>
+            <div>
+                <details>   
+                    <summary>HTML코드보기</summary>
+                    <div class="t_code">
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+    &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;사이트 만들기 1&lt;/title&gt;
+
+    &lt;!-- SEO --&gt;
+    &lt;meta name="author" content="박현신" /&gt;
+    &lt;meta name="description" content="사이트 만들기 튜토리얼" /&gt;
+    &lt;meta name="keyword" content="사이트, 만들기, 튜토리얼" /&gt;
+    &lt;meta name="robots" content="all" /&gt;
+
+    &lt;!-- CSS --&gt;
+    &lt;link rel="stylesheet" href="assets/css/font.css" /&gt;
+    &lt;link rel="stylesheet" href="assets/css/reset.css" /&gt;
+    &lt;link rel="stylesheet" href="assets/css/common.css" /&gt;
+
+    &lt;!-- CSS(섹션별) --&gt;
+    &lt;link rel="stylesheet" href="assets/css/card.css" /&gt;
+    &lt;link rel="stylesheet" href="assets/css/image.css" /&gt;
+    &lt;link rel="stylesheet" href="assets/css/text.css" /&gt;
+    &lt;link rel="stylesheet" href="assets/css/header.css" /&gt;
+    &lt;link rel="stylesheet" href="assets/css/imgText.css" /&gt;
+    &lt;link rel="stylesheet" href="assets/css/banner.css" /&gt;
+    &lt;link rel="stylesheet" href="assets/css/footer.css" /&gt;
+    &lt;link rel="stylesheet" href="assets/css/slider.css" /&gt;
+
+    &lt;!-- 위로가기 버튼 --&gt;
+    &lt;style&gt;
+        .top__button{
+        position: fixed;
+        bottom: -200px;
+        left: 45%;
+        width: 100px;
+        height: 30px;
+        background-color: #000;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        box-sizing: border-box;
+        padding-top: 7px;
+        transition: all 0.3s ease;
+        }
+        .top__button:hover{
+        background-color: rgba(0, 0, 0, 0.104);
+        backdrop-filter: blur(2px);
+        color: #000;
+        }
+        .top__button.show{
+        bottom: 0;
+        left: 45%;
+        }
+    &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;div id="skip"&gt;
+        &lt;a href="#"&gt;헤더 영역 바로가기&lt;/a&gt;
+        &lt;a href="#"&gt;슬라이드 영역 바로가기&lt;/a&gt;
+        &lt;a href="#"&gt;이미지 영역 바로가기&lt;/a&gt;
+        &lt;a href="#"&gt;이미지/텍스트 영역 바로가기&lt;/a&gt;
+        &lt;a href="#"&gt;카드 영역 바로가기&lt;/a&gt;
+        &lt;a href="#"&gt;배너 영역 바로가기&lt;/a&gt;
+        &lt;a href="#"&gt;텍스트 영역 바로가기&lt;/a&gt;
+        &lt;a href="#"&gt;푸터 영역 바로가기&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;!-- //skip --&gt;
+
+    &lt;header id="headerType" class="header__wrap nexon"&gt;
+        &lt;div class="header__inner"&gt;
+        &lt;div class="header__logo"&gt;
+            &lt;a href="#"&gt;SSHINY&lt;em&gt; PERFUME&lt;/em&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;nav class="header__menu"&gt;
+            &lt;ul&gt;
+            &lt;li&gt;&lt;a class="active" href="#sliderType"&gt;MAIN&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#imgType"&gt;NEW&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#imgTextType"&gt;PERSONAL&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#cardType"&gt;BEST&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#bannerType"&gt;DAILY&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#textType"&gt;ABOUT&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+        &lt;div class="header__member"&gt;
+            &lt;a href="#"&gt;LOGIN&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="header__inner__side"&gt;
+        &lt;div class="header__tab"&gt;&lt;a class="blind"&gt;사이드바 열기/닫기&lt;/a&gt;&lt;/div&gt;
+        &lt;div class="header__box"&gt;
+            &lt;div class="header__logo2"&gt;
+            &lt;a href="#"&gt;SSHINY&lt;em&gt; PERFUME&lt;/em&gt;&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="header__member2"&gt;
+            &lt;a href="#"&gt;LOGIN&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;nav class="header__menu2"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a class="active" href="#sliderType"&gt;MAIN&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#imgType"&gt;NEW&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#imgTextType"&gt;PERSONAL&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#cardType"&gt;BEST&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#bannerType"&gt;DAILY&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#textType"&gt;ABOUT&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/nav&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;!-- //headerType --&gt;
+
+    &lt;main id="mainType"&gt;
+        &lt;section id="sliderType" class="slider__wrap nexon "&gt;
+        &lt;h2 class="blind"&gt;슬라이드영역&lt;/h2&gt;
+        &lt;div class="slider__inner"&gt;
+            &lt;div class="slider"&gt;
+            &lt;div class="slider__img"&gt;
+                &lt;div class="desc"&gt;
+                &lt;span&gt;NEW Product&lt;/span&gt;
+                &lt;h3&gt;SPRING SEASON&lt;/h3&gt;
+                &lt;p&gt;
+                    따스한 햇살을 타고 부드러운 꽃 향이 다가오는 지금
+                    &lt;br&gt;향기를 타고 봄이 다가온다
+                &lt;/p&gt;
+                &lt;div class="btn"&gt;
+                    &lt;a href="#"&gt;자세히 보기&lt;/a&gt;
+                    &lt;a href="#" class="black"&gt;제품 보기&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="slider__arrow"&gt;
+                &lt;a href="#" class="left"&gt;&lt;span class="ir"&gt;이전 이미지&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="right"&gt;&lt;span class="ir"&gt;다음 이미지&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="slider__dot"&gt;
+                &lt;a href="#" class="dot active"&gt;&lt;span class="ir"&gt;1&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;&lt;span class="ir"&gt;2&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;&lt;span class="ir"&gt;3&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="play"&gt;&lt;span class="ir"&gt;플레이&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="stop"&gt;&lt;span class="ir"&gt;정지&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;!--//sliderType--&gt;
+
+        &lt;section id="imgType" class="image__wrap nexon section"&gt;
+        &lt;h2&gt;화사한 봄꽃처럼&lt;/h2&gt;
+        &lt;p&gt;햇살이 반기는 맑은 하늘과 포근한 공기, 그 사이로 스며든 기분 좋은 향조들.&lt;/p&gt;
+        &lt;div class="image__inner container image__box"&gt;
+            &lt;article class="image img1"&gt;
+            &lt;h3 class="image__title"&gt;SPRING COOLTON&lt;/h3&gt;
+            &lt;p class="image__desc"&gt;
+                연분홍빛 꽃을 닮은 부드럽고 사랑스러운 향기.
+                &lt;br&gt;로즈와 스위트 재스민삼박, 프리지어의 폭발적인 달콤함을 느낄 수 있습니다.
+            &lt;/p&gt;
+            &lt;a class="image__btn" href="#" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+            &lt;/article&gt;
+            &lt;article class="image img2"&gt;
+            &lt;h3 class="image__title"&gt;FLOWER BOM&lt;/h3&gt;
+            &lt;p class="image__desc"&gt;
+                생동감이 폭발하는 봄을 닮은 향수.
+                &lt;br&gt;아이리스와 은방울꽃으로 시작해 센티폴리아 로즈, 우드 노트로 끝나는 향기를 느껴보세요.
+            &lt;/p&gt;
+            &lt;a class="image__btn yellow" href="#" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;!--//imageType--&gt;
+
+        &lt;section id="imgTextType" class="imgText__wrap nexon section gray"&gt;
+        &lt;h2 class="blind"&gt;유용한 사이트 살펴보기&lt;/h2&gt;
+        &lt;div class="imgText__inner container "&gt;
+            &lt;div class="imgText__txt"&gt;
+            &lt;span class="blind"&gt;이미지 텍스트 유형01&lt;/span&gt;
+            &lt;h3&gt;당신의 향수에&lt;br&gt;
+                만족하시나요?&lt;/h3&gt;
+            &lt;p&gt;수 만개의 향수 중 당신의 향수를 찾는 것
+                &lt;br&gt;그것은 운명과도 같은 일입니다.&lt;/p&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;당신만의 향수&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;무료로 시향하세요&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;당일 주문 / 당일 출고&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;당신만의 향수&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;무료로 시향하세요&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;당일 주문 / 당일 출고&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class="imgbox"&gt;
+            &lt;div class="imgText__img img1"&gt;
+                &lt;a href="#"&gt;PERSONAL&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="imgText__img img2"&gt;
+                &lt;a href="#" class="blue"&gt;CUSTOM&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;!--//imgTextType--&gt;
+
+        &lt;section id="cardType" class="card__wrap nexon section"&gt;
+        &lt;h2&gt;선인장에서 추출한 이국적 향&lt;/h2&gt;
+        &lt;p&gt;지중해 연안을 상징하는 선인장 열매인 프리클리 페어를 메인으로 시작되는 BSET EDITION&lt;/p&gt;
+        &lt;div class="card__inner container "&gt;
+            &lt;article class="card"&gt;
+            &lt;figure class="card__header"&gt;
+                &lt;img src="assets/img/card_bg01_01_1.jpg" alt="외형에 대한 오해 이미지" /&gt;
+            &lt;/figure&gt;
+            &lt;div class="card__body"&gt;
+                &lt;h3 class="tit"&gt;Cactus&lt;/h3&gt;
+                &lt;p class="desc"&gt;
+                오가닉 버베나와 선인장 추출물이
+                조화를 이루는 향으로
+                여름 갈증을 해소하는 이국적이고
+                상쾌한 기운을 느낄 수 있습니다.
+                &lt;br&gt;여름과 어울리는 밝고 신선한 향을 선사합니다.
+                &lt;/p&gt;
+                &lt;a class="btn" href="#"&gt;
+                더 자세히 보기
+                &lt;span aria-hidden="true"&gt;
+                    &lt;svg width="35" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                    &lt;path
+                        d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                        fill="black"
+                    /&gt;
+                    &lt;/svg&gt;
+                &lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+            &lt;figure class="card__header"&gt;
+                &lt;img src="assets/img/card_bg01_02_1.jpg" alt="도베르만의 성격 이미지" /&gt;
+            &lt;/figure&gt;
+            &lt;div class="card__body"&gt;
+                &lt;h3 class="tit"&gt;무더운 날씨에도 꽃피우는 향기&lt;/h3&gt;
+                &lt;p class="desc"&gt;
+                청량한 느낌이 낯설다면, 아마 이 향수가 없어서가 아닐까요?
+                &lt;br&gt;고객님들이 사랑해주신 이 향수
+                &lt;br&gt;당신과 어울리는 밝고 신선한 향을 선사해드립니다.
+                &lt;/p&gt;
+                &lt;a class="btn" href="#"&gt;
+                더 자세히 보기
+                &lt;span aria-hidden="true"&gt;
+                    &lt;svg width="35" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                    &lt;path
+                        d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                        fill="black"
+                    /&gt;
+                    &lt;/svg&gt;
+                &lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+            &lt;figure class="card__header"&gt;
+                &lt;img src="assets/img/card_bg01_03_1.jpg" alt="도베르만을 키울때 주의할 점 이미지" /&gt;
+            &lt;/figure&gt;
+            &lt;div class="card__body"&gt;
+                &lt;h3 class="tit"&gt;Very Royal Cactus&lt;/h3&gt;
+                &lt;p class="desc"&gt;
+                오가닉 버베나와 선인장 추출물이
+                조화를 이루는 향으로
+                여름 갈증을 해소하는 이국적이고
+                상쾌한 기운을 느낄 수 있습니다.
+                &lt;br&gt;여름과 어울리는 밝고 신선한 향을 선사합니다.
+                &lt;/p&gt;
+                &lt;a class="btn" href="#"&gt;
+                더 자세히 보기
+                &lt;span aria-hidden="true"&gt;
+                    &lt;svg width="35" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                    &lt;path
+                        d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                        fill="black"
+                    /&gt;
+                    &lt;/svg&gt;
+                &lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;!--//cardType--&gt;
+
+        &lt;section id="bannerType" class="banner__wrap nexon"&gt;
+        &lt;h2 class="blind"&gt;배너 영역&lt;/h2&gt;
+        &lt;div class="banner__inner"&gt;
+            &lt;h3 class="title"&gt;Daily Perfume&lt;/h3&gt;
+            &lt;p class="desc"&gt;
+            따스한 일요일 아침 화이트 셔츠의 두근거리는 설렘
+            &lt;a href="#" title="새로운 페이지 열림" target="_blank"&gt;sshin4882.tistory.com&lt;/a&gt;
+            &lt;/p&gt;
+            &lt;span class="small"&gt;SSHINY PREFUME&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;!--//bannerType--&gt;
+
+        &lt;section id="textType" class="text__wrap nexon section"&gt;
+        &lt;span class="blind"&gt;텍스트 유형01&lt;/span&gt;
+        &lt;h2 class="mb70"&gt;ABOUT US&lt;/h2&gt;
+        &lt;div class="text__inner container"&gt;
+            &lt;div class="text t1"&gt;
+            &lt;h3 class="text__title"&gt;글루텐 프리&lt;/h3&gt;
+            &lt;p class="text__desc"&gt;
+                알레르기를 유발할 수 있는 글루텐을 넣지 않음으로써, 남녀노소 모두가 쓸 수 있는 향수를 만듭니다.
+            &lt;/p&gt;
+            &lt;a class="text_btn" href="#"&gt;더보기&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="text t2"&gt;
+            &lt;h3 class="text__title"&gt;비건 향수&lt;/h3&gt;
+            &lt;p class="text__desc"&gt;
+                끗한 향수를 만들어 믿고 사용할 수 있는 제품을 만드는데 힘쓰고 있습니다. 친환경 원료만 사용해서 만든 대표적인 비건 향수입니다.
+            &lt;/p&gt;
+            &lt;a class="text_btn" href="#"&gt;더보기&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="text t3"&gt;
+            &lt;h3 class="text__title"&gt;크룰티 프리&lt;/h3&gt;
+            &lt;p class="text__desc"&gt;
+                동물 실험을 거치지 않고 만들어지는 향수입니다. 생명을 소중히 하며 윤리적인 기업이 되고자 노력하고 있습니다.
+            &lt;/p&gt;
+            &lt;a class="text_btn" href="#"&gt;더보기&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="text t4"&gt;
+            &lt;h3 class="text__title"&gt;리사이클러블 &lt;/h3&gt;
+            &lt;p class="text__desc"&gt;
+                자연을 침해하지 않는 범위 내에서 만들어진 클린의 제품들은 사용 후 다시 그대로 자연으로 돌아가는 전제품 ‘리사이클러블’을 추구하고 있습니다.
+            &lt;/p&gt;
+            &lt;a class="text_btn" href="#"&gt;더보기&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="text t5"&gt;
+            &lt;h3 class="text__title"&gt;환경친화 &lt;/h3&gt;
+            &lt;p class="text__desc"&gt;
+                최초 환경친화적인 지속 가능한 원료를 사용하여 깨끗한 지구 만들기에 앞장서고 있습니다.
+            &lt;/p&gt;
+            &lt;a class="text_btn" href="#"&gt;더보기&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="text t6"&gt;
+            &lt;h3 class="text__title"&gt;지속가능성 &lt;/h3&gt;
+            &lt;p class="text__desc"&gt;
+                자연과 환경을 사랑하는 우리는 천연자원의 고갈을 피하기 위해 지속 가능한 원료를 사용합니다.
+            &lt;/p&gt;
+            &lt;a class="text_btn" href="#"&gt;더보기&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;!--//textType--&gt;
+    &lt;/main&gt;
+    &lt;!-- //mainType --&gt;
+
+    &lt;footer id="footerType" class="footer__wrap nexon section"&gt;
+        &lt;h2 class="blind"&gt;푸터 영역&lt;/h2&gt;
+        &lt;div class="footer__inner container"&gt;
+        &lt;div class="footer__menu"&gt;
+            &lt;div&gt;
+            &lt;h3&gt;시즌&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;봄&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;여름&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;가을&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;겨울&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+            &lt;h3&gt;회사 소개&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;이용 약관&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;광고 제휴&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+            &lt;h3&gt;출처&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;비레디&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;UNSPLASH&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+            &lt;h3&gt;메뉴&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;메뉴&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;신제품&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;퍼스널 향수&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;베스트셀러&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;ABOUT US&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+            &lt;h3&gt;회원&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;회원 혜택&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;회원 후기&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;공지사항&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+            &lt;h3&gt;고객지원&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;A/S&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;1:1 문의&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="footer__right"&gt;
+        2022 SSHINY. Portfolio is Power&lt;br /&gt;
+        All rights reserved.
+        &lt;/div&gt;
+        
+    &lt;/footer&gt;
+    &lt;!-- //footerType --&gt;
+    
+    &lt;div class="top__button"&gt;&lt;span&gt;top&lt;/span&gt;&lt;/div&gt;
+    &lt;!-- //위로가기버튼 --&gt;
+    &lt;!-- script영역 --&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                </details>
+            </div>
+            
+            <div>
+                <details>   
+                    <summary>js 코드보기</summary>
+                    <div class="t_code">
+                        <pre><code class="language-js">window.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+    document.querySelectorAll("main > section").forEach((element, index) => {
+        if (scrollTop >= element.offsetTop - window.innerHeight / 6) {
+            document.querySelectorAll(".header__menu li a").forEach((li) => {
+                li.classList.remove("active");
+            });
+            document.querySelector(`.header__menu li:nth-child(${index + 1}) a`).classList.add("active");
+        }
+    });
+});
+
+// 스크롤 이동
+document.querySelectorAll(".header__menu li a").forEach((li) => {
+    li.addEventListener("click", (e) => {
+        e.preventDefault();
+        document.querySelector(li.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+        });
+    });
+});
+
+//  헤더영역 반응형
+let windowWidth = window.innerWidth;
+let headerBtn = document.querySelector(".header__inner__side .header__tab");
+
+headerBtn.addEventListener("click", () => {
+    let className = document.querySelector(".header__inner__side div").getAttribute('class');
+    console.log(className)
+    if(className == "header__tab"){
+    document.querySelector(".header__box").style.left="-500px";
+    headerBtn.classList.add("hide")
+    }else{
+    headerBtn.classList.remove("hide")
+    document.querySelector(".header__box").style.left="1px";
+    }
+});
+
+// 메뉴패럴랙스 (위와 비슷)
+window.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+    document.querySelectorAll("main > section").forEach((element, index) => {
+        if (scrollTop >= element.offsetTop - window.innerHeight / 6) {
+            document.querySelectorAll(".header__menu2 li a").forEach((li) => {
+                li.classList.remove("active");
+            });
+            document.querySelector(`.header__menu2 li:nth-child(${index + 1}) a`).classList.add("active");
+        }
+    });
+});
+
+// 최하단 top버튼
+window.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+    console.log(scrollTop)
+    console.log(document.body.scrollHeight)
+    console.log(window.innerHeight)
+    console.log(document.body.scrollHeight - (window.innerHeight + 1000))
+    if (scrollTop >= document.body.scrollHeight - (window.innerHeight + 600)) {
+        document.querySelector(".top__button").classList.add("show");
+    } else {
+        document.querySelector(".top__button").classList.remove("show");
+    }
+});
+
+// top버튼누르면 맨위로
+document.querySelector(".top__button").addEventListener("click", () => {
+    window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+});
+    
+</code></pre>
+                    </div>
+                </details>
+            </div>
+
+            <h3 class="t_tit2">결과보기</h3>
+            <div class="t_iframe">
+                <iframe src="https://parkhyeonshin.github.io/Coding/site/site1/index.html" frameborder="0"></iframe>
+            </div>
+            <div class="t_link btnflex">
+                <a href="https://github.com/Parkhyeonshin/Coding/blob/main/site/site1/index.html" target="_blank">원본 소스 보기</a>
+                <a href="https://parkhyeonshin.github.io/Coding/site/site1/index.html" target="_blank">원본 사이트</a>
+            </div>
+        </div>
+    </div>
+        <script src="../../javascript/assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+</html>
