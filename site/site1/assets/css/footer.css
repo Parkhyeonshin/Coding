@@ -1,6 +1,8 @@
+
 .footer__menu {
   display: flex;
   margin-bottom: 70px;
+  justify-content: space-between;
 }
 .footer__menu > div {
   width: 16%;
@@ -9,6 +11,7 @@
   font-size: 18px;
   margin-bottom: 20px;
 }
+
 .footer__menu li a {
   font-size: 14px;
   color: #666;
@@ -21,4 +24,19 @@
   padding-top: 40px;
   color: #666;
   line-height: 1.5;
+}
+
+@media (max-width: 480px){
+  .footer__menu {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 70px;
+    justify-content: space-between;
+  }
+  .footer__menu > div {
+    width: 33%;
+  }
+  .footer__menu div:first-child {
+    margin-bottom: 20px;
+  }
 }

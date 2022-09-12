@@ -1,5 +1,5 @@
 .banner__inner {
-  background-image: url(../img/banner_bg01.jpg);
+  background-image: url(../img/banner_bg01_1.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -22,11 +22,30 @@
 .banner__inner .desc a {
   color: white;
   display: block;
-}
+  width:fit-content;
+  margin: 0 auto;
+} 
 .banner__inner .desc a:hover {
   text-decoration: underline;
+  text-shadow: 1px 0px 3px blanchedalmond;
 }
 .banner__inner .small {
   font-size: 16px;
   text-decoration: underline;
+}
+
+
+@media (max-width: 768px){
+  .banner__inner .title {
+    font-size: 40px;
+  }
+  .banner__inner .desc {
+    font-size: 18px;
+  }
+  .banner__inner .small {
+    font-size: 14px;
+  }
+  .banner__inner .desc a {
+    font-size: 17px;
+  } 
 }
