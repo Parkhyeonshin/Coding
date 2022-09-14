@@ -26,7 +26,20 @@
   line-height: 1.5;
 }
 
-@media (max-width: 480px){
+@media (max-width: 960px) {
+  .footer__menu{
+    display: none;
+  }
+  .footer__right{
+    padding-top: 0;
+    border-top: 0;
+  }
+  .footer__wrap {
+    padding: 40px 0;
+  }
+}
+
+/* @media (max-width: 480px){
   .footer__menu {
     display: flex;
     flex-wrap: wrap;
@@ -39,4 +52,4 @@
   .footer__menu div:first-child {
     margin-bottom: 20px;
   }
-}
+} */

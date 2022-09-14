@@ -89,5 +89,9 @@
     }
     .text {
         width: 100%;
+        padding-left: 5px;
+    }
+    .text__desc {
+        font-size: 16px;
     }
 }

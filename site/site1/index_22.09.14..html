@@ -27,15 +27,39 @@
     <link rel="stylesheet" href="assets/css/footer.css" />
     <link rel="stylesheet" href="assets/css/slider.css" />
 
+    <!-- CSS 슬라이드 스와이프-->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/> -->
+    <link rel="stylesheet" href="assets/css/swiper.css" />
+
     <!-- 위로가기 버튼 -->
     <style>
-      #headerType {display: none;}
-      #sliderType {display: none;}
-      #imgTextType {display: none;}
-      #cardType {display: none;}
-      #bannerType {display: none;}
-      #textType {display: none;}
-      #footerType {display: none;}
+      .top__button{
+        position: fixed;
+        bottom: -200px;
+        right: 10px;;
+        width: 100px;
+        height: 30px;
+        background-color: #000;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        box-sizing: border-box;
+        padding-top: 7px;
+        transition: all 0.3s ease;
+      }
+      .top__button:hover{
+        background-color: rgba(0, 0, 0, 0.104);
+        backdrop-filter: blur(2px);
+        color: #000;
+      }
+      .top__button.show{
+        bottom: 0;
+        right: 10px;;
+      }
+
+
 
     </style>
   </head>
@@ -100,7 +124,56 @@
       <section id="sliderType" class="slider__wrap nexon ">
         <h2 class="blind">슬라이드영역</h2>
         <div class="slider__inner">
-          <div class="slider">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide slide01">
+                <div class="desc">
+                  <span>NEW Product</span>
+                  <h3>SPRING SEASON</h3>
+                  <p>
+                    따스한 햇살을 타고 부드러운 꽃 향이 다가오는 지금
+                    <br>향기를 타고 봄이 다가온다
+                  </p>
+                  <div class="btn">
+                    <a href="#">자세히 보기</a>
+                    <a href="#" class="black">제품 보기</a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide slide02">
+                <div class="desc">
+                  <span>NEW Product</span>
+                  <h3>SPRING SEASON</h3>
+                  <p>
+                    따스한 햇살을 타고 부드러운 꽃 향이 다가오는 지금
+                    <br>향기를 타고 봄이 다가온다
+                  </p>
+                  <div class="btn">
+                    <a href="#">자세히 보기</a>
+                    <a href="#" class="black">제품 보기</a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide slide03">
+                <div class="desc">
+                  <span>NEW Product</span>
+                  <h3>SPRING SEASON</h3>
+                  <p>
+                    따스한 햇살을 타고 부드러운 꽃 향이 다가오는 지금
+                    <br>향기를 타고 봄이 다가온다
+                  </p>
+                  <div class="btn">
+                    <a href="#">자세히 보기</a>
+                    <a href="#" class="black">제품 보기</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+          <!-- <div class="slider">
             <div class="slider__img">
               <div class="desc">
                 <span>NEW Product</span>
@@ -126,7 +199,7 @@
               <a href="#" class="play"><span class="ir">플레이</span></a>
               <a href="#" class="stop"><span class="ir">정지</span></a>
             </div>
-          </div>
+          </div> -->
         </div>
       </section>
       <!--//sliderType-->
@@ -400,6 +473,22 @@
     <div class="top__button"><span>top</span></div>
     <!-- //위로가기버튼 -->
     <!-- script영역 -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+          delay: 2000,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+        },
+      });
+    </script>
     <script>
       window.addEventListener("scroll", () => {
           let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;

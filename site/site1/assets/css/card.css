@@ -65,3 +65,18 @@
     }
     
 }
+@media (max-width: 480px){
+    .card__body {
+        padding: 13px;
+    }
+    .card__body .tit {
+        font-size: 22px;
+    }
+    .card__body .desc {
+        font-size: 15px;
+        margin-bottom: 3px;
+    }
+    .card__body .btn {
+        font-size: 14px;
+    }
+}
