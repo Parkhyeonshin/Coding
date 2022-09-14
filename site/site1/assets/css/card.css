@@ -16,6 +16,7 @@
 }
 .card__body { 
     padding: 24px;
+    background-color: snow;
 }
 .card__body .tit{
     font-size: 24px;
