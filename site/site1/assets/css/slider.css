@@ -223,7 +223,7 @@
   display: inline-block;
 }
 .swiper-slide .desc h3 {
-  font-size: 110px;
+  font-size: 100px;
   font-weight: 300;
   line-height: 1;
   color: #fff;
@@ -264,17 +264,17 @@
   .slider__inner{
     margin-top: 0;
   }
-}
-  
-@media (max-width: 960px){
   .swiper-slide{
     text-align: center;
   }
   .swiper-slide .desc h3{
-    font-size: 70px;
+    font-size: 63px;
   }
 }
-@media (max-width: 610px) {
+  
+/* @media (max-width: 960px){
+} */
+@media (max-width: 768px) {
   .swiper-slide .desc {
     padding: 80px 40px;
   }
