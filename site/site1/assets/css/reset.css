@@ -53,8 +53,9 @@ select,
 table,
 textarea{
     color: #000;
-    font-family: 'NexonLv1Gothic', 'AppleSDGothicNeo-Regular', 'Malgun Gothic', '맑은 고딕', dotum, 돋움;
+    font-family: 'NotoSansKR', 'AppleSDGothicNeo-Regular', 'Malgun Gothic', '맑은 고딕', dotum, 돋움;
 }
+/* 'NexonLv1Gothic' */
 
 /* 링크 초기화 */
 a {

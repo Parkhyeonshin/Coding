@@ -121,7 +121,7 @@
     <!-- //headerType -->
     
     <main id="mainType">
-      <section id="sliderType" class="slider__wrap nexon ">
+      <section id="sliderType" class="slider__wrap  ">
         <h2 class="blind">슬라이드영역</h2>
         <div class="slider__inner">
           <div class="swiper mySwiper">
@@ -204,7 +204,7 @@
       </section>
       <!--//sliderType-->
 
-      <section id="imgType" class="image__wrap nexon section">
+      <section id="imgType" class="image__wrap  section">
         <h2>화사한 봄꽃처럼</h2>
         <p>햇살이 반기는 맑은 하늘과 포근한 공기, 그 사이로 스며든 기분 좋은 향조들.</p>
         <div class="image__inner container image__box">
@@ -228,7 +228,7 @@
       </section>
       <!--//imageType-->
 
-      <section id="imgTextType" class="imgText__wrap nexon section gray">
+      <section id="imgTextType" class="imgText__wrap  section gray">
         <h2 class="blind">유용한 사이트 살펴보기</h2>
         <div class="imgText__inner container ">
           <div class="imgText__txt">
@@ -258,7 +258,7 @@
       </section>
       <!--//imgTextType-->
 
-      <section id="cardType" class="card__wrap nexon section">
+      <section id="cardType" class="card__wrap  section">
         <h2>선인장에서 추출한 이국적 향</h2>
         <p>지중해 연안을 상징하는 선인장 열매인 프리클리 페어를 메인으로 시작되는 BSET EDITION</p>
         <div class="card__inner container ">
@@ -342,7 +342,7 @@
       </section>
       <!--//cardType-->
 
-      <section id="bannerType" class="banner__wrap nexon">
+      <section id="bannerType" class="banner__wrap ">
         <h2 class="blind">배너 영역</h2>
         <div class="banner__inner">
           <h3 class="title">Daily Perfume</h3>
@@ -350,12 +350,12 @@
             따스한 일요일 아침 화이트 셔츠의 두근거리는 설렘
             <a href="#" title="새로운 페이지 열림" target="_blank">sshin4882.tistory.com</a>
           </p>
-          <span class="small">SSHINY PREFUME</span>
+          <span class="small">SSHINY PERFUME</span>
         </div>
       </section>
       <!--//bannerType-->
 
-      <section id="textType" class="text__wrap nexon section">
+      <section id="textType" class="text__wrap  section">
         <span class="blind">텍스트 유형01</span>
         <h2 class="mb70">ABOUT US</h2>
         <div class="text__inner container">
@@ -490,6 +490,7 @@
       });
     </script>
     <script>
+      // 헤더메뉴 페럴렉스 + 클릭 이동
       window.addEventListener("scroll", () => {
           let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
 
@@ -521,13 +522,12 @@
           });
       });
 
-      //  헤더영역 반응형
+      //  헤더영역 반응형시 표시
       let windowWidth = window.innerWidth;
       let headerBtn = document.querySelector(".header__inner__side .header__tab");
       
       headerBtn.addEventListener("click", () => {
         let className = document.querySelector(".header__inner__side div").getAttribute('class');
-        console.log(className)
         if(className == "header__tab"){
           document.querySelector(".header__box").style.left="-500px";
           headerBtn.classList.add("hide")
@@ -537,7 +537,7 @@
         }
       });
 
-      // 메뉴패럴랙스 (위와 비슷)
+      // 반응형메뉴패럴랙스 (위와 비슷)
       window.addEventListener("scroll", () => {
           let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
 
@@ -558,7 +558,7 @@
           console.log(scrollTop)
           console.log(document.body.scrollHeight)
           console.log(window.innerHeight)
-          console.log(document.body.scrollHeight - (window.innerHeight + 1000))
+          console.log(document.body.scrollHeight - (window.innerHeight + 500))
           if (scrollTop >= document.body.scrollHeight - (window.innerHeight + 600)) {
             document.querySelector(".top__button").classList.add("show");
           } else {

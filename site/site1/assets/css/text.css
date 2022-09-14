@@ -89,7 +89,13 @@
     }
     .text {
         width: 100%;
-        padding-left: 5px;
+    }
+    .text__title {
+        font-size: 20px;
+    }
+    .text__title::before {
+        transform: scale(0.8);
+        left: -5px;
     }
     .text__desc {
         font-size: 16px;

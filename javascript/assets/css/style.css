@@ -1,13 +1,14 @@
 /* 웹폰트 import 방식 _ 스타일시트 제일위에 위치해야함*/
 @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
 @import url('https://webfontworld.github.io/crown/CrownMychew.css');
+@import url('https://webfontworld.github.io/NexonMaplestory/NexonMaplestory.css');
 
 /* 리셋 */
 /* 여백 초기화 */
 *{
     margin: 0;
     padding: 0;
-    font-family: 'NexonLv1Gothic';
+    font-family: 'NexonMaplestory';
     font-size: 16px;
     line-height: 1.6;
     /* color: white; */
@@ -441,3 +442,29 @@ body{
     transition: all 0.6s;
     text-shadow: 1px 1px 10px #ffe056;
 }
+
+/* 220914 summary 블로그용 */
+summary:hover{
+    cursor: pointer;
+}
+.t_summary {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #eed974;
+    margin-bottom: 3px;
+}
+.t_summary:hover {
+    cursor: pointer;
+    background-color: #3a745f;
+    color: #eed974;
+}
+details[open] .t_summary{
+    background-color: #1f3b34;
+    color: #eed974;
+}
+details[open] .t_summary:hover{
+    background-color: #1f3b34;
+    color: #f0e6b5;
+}
+    

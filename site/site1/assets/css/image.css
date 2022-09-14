@@ -4,7 +4,6 @@
 }
 .image{
     width: 49%;
-    height: 370px;
     color: #fff;
     padding: 200px 30px 30px 30px;
     box-sizing: border-box;
@@ -78,7 +77,7 @@
     .image__title{
         font-size: 25px;
     }
-   
+
     .image__btn,
     .image__btn.yellow {
         font-size: 14px;

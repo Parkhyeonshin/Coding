@@ -13,6 +13,13 @@
 }
 .card__header{
     border-bottom: 2px solid black;
+    overflow: hidden;
+}
+.card__header img:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in;
+    filter: brightness(110%) contrast(110%);
+    cursor: pointer;
 }
 .card__body { 
     padding: 24px;
@@ -74,7 +81,7 @@
         font-size: 22px;
     }
     .card__body .desc {
-        font-size: 15px;
+        font-size: 16px;
         margin-bottom: 3px;
     }
     .card__body .btn {
