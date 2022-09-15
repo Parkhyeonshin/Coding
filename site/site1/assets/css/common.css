@@ -64,6 +64,14 @@ body{
 .gray{
     background-color: #f5f5f5;
 }
+/* fixed */
+body{
+    overflow: overlay;
+}
+body.fixed{
+    height: 100vh;
+    overflow: hidden;
+}
 
 /* 간격셋팅 */
 .mb0 {margin-bottom: 0 !important;}

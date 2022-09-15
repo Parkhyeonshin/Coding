@@ -170,6 +170,10 @@
               </div>
             </div>
             <div class="swiper-pagination"></div>
+            <div class="swiper-button">
+              <div class="swiper-button-play"><span class="ir">play</span></div>
+              <div class="swiper-button-stop"><span class="ir">stop</span></div>
+            </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
           </div>
@@ -486,8 +490,22 @@
         pagination: {
           el: '.swiper-pagination',
           type: 'bullets',
+          clickable : true,
         },
       });
+
+      document.querySelector(".swiper-button-stop").addEventListener("click", ()=>{
+        swiper.autoplay.stop();
+        document.querySelector(".swiper-button-stop").style.display = "none";
+        document.querySelector(".swiper-button-play").style.display = "flex";
+      });
+      document.querySelector(".swiper-button-play").addEventListener("click", ()=>{
+        swiper.autoplay.start();
+        document.querySelector(".swiper-button-play").style.display = "none";
+        document.querySelector(".swiper-button-stop").style.display = "flex";
+
+      });
+
     </script>
     <script>
       // 헤더메뉴 페럴렉스 + 클릭 이동

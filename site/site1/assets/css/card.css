@@ -21,6 +21,9 @@
     filter: brightness(110%) contrast(110%);
     cursor: pointer;
 }
+.card__header img:not(:hover){
+    transition: all 0.5s;
+}
 .card__body { 
     padding: 24px;
     background-color: snow;
