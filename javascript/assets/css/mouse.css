@@ -308,6 +308,7 @@ li {
 }
 .modal__box .cont > div {
   display: none;
+  height: 100%;
 }
 /* 스크롤바 얜머여*/
 /* .modal__box .cont > div::-webkit-scrollbar-track

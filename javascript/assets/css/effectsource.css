@@ -151,8 +151,8 @@
     margin-top: 82vh;
     opacity: 0;
 }
-.close__ment p {
-    font-size: 14px;
+.modal__close:hover .close__ment {
+    transform: scale(1.1);
     color: #bebebe;
 }
 .modal__close:hover{
