@@ -95,6 +95,13 @@
 			transform: scale(3);
 			background: rgba(36, 60, 180, 0.6);
 		}
+		.mouse__cursor.active__menu{
+			transform: scale(5);
+		}
+		.mouse__cursor2.active__menu{
+			transform: scale(3);
+			background: rgba(79, 172, 50, 0.6);
+		}
 
 	</style>
 </head>
@@ -499,6 +506,21 @@ document.querySelectorAll(".mouse__wrap span").forEach((span) => {
 				cursor.classList.add("active__btn");
 				cursor2.classList.add("active__btn");
 			});
+			document.querySelector(".modal__btn").addEventListener("mouseleave",()=>{
+				cursor.classList.remove("active__btn");
+				cursor2.classList.remove("active__btn");
+			});
+			const activeMenu = document.querySelectorAll("#header ul li a");
+			activeMenu.forEach(e=>{
+				e.addEventListener("mouseenter", () => {
+					cursor.classList.add("active__menu");
+					cursor2.classList.add("active__menu");
+				})
+				e.addEventListener("mouseleave", () => {
+					cursor.classList.remove("active__menu");
+					cursor2.classList.remove("active__menu");
+				})
+			})
 
 		});
 
