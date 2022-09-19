@@ -26,10 +26,49 @@
         </p>
 		<h3 class="t_tit2">1. 설치가 필요한 Extension</h3>
 		<p class="t_desc">▶ SASS</p>
+		<img src="https://github.com/Parkhyeonshin/Coding/blob/main/assets/tistory/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%82%B4%EC%9A%A9/Vscode_SASS_01.jpg?raw=true" alt="">
 		<p class="t_desc">▶ Live Sass Compiler</p>
+		<img src="https://github.com/Parkhyeonshin/Coding/blob/main/assets/tistory/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%82%B4%EC%9A%A9/Vscode_SASS_02.jpg?raw=true" alt="">
 		<p class="t_desc">▶ Live Server</p>
+		<img src="https://github.com/Parkhyeonshin/Coding/blob/main/assets/tistory/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%82%B4%EC%9A%A9/Vscode_SASS_03.jpg?raw=true" alt="">
 
-      </div>
+        <h2 class="t_tit">설정하기</h2>
+		<p class="t_desc">
+			Settings 에서 formats 검색 &gt; Live Sass Compiler &gt; Edit in settings.json 열기
+		</p>
+		<div class="t_code">
+<pre><code class="langauge-js">"liveSassCompile.settings.formats":[
+	// This is Default.
+	{
+		"format": "expanded",
+		"extensionName": ".css",
+		"savePath": null
+	},
+	// You can add more
+	{
+		"format": "compressed",
+		"extensionName": ".min.css",
+		"savePath": "/dist/css"
+	},
+	// More Complex
+	{
+		"format": "compressed",
+		"extensionName": ".min.css",
+		"savePath": "~/../css/"
+	}
+]
+</code></pre>
+		</div>
+		<p class="t_desc">
+			1. format 
+			<br> expanded, compact, compressed, nested가 있습니다. expanded가 default입니다.
+			<br>2. extensionName
+			<br> .css가 default입니다.
+			<br>3. savePath
+			<br> null이 default입니다. 현재 폴더위치에 css파일을 컴파일링 합니다.
+			다른 폴더로의 컴파일링을 원할 경우 '~/../css'같이 경로를 적어줍니다. 
+		</p>
+	</div>
     </main>
     <!-- //main end -->
     <footer id="footer">
