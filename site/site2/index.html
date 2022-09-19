@@ -190,15 +190,11 @@
                         </div>
                     </div>
                     <div class="swiper-pagination">
-                        <span class="swiper-pagination-bullet"></span>
-                        <span class="swiper-pagination-bullet"></span>
-                        <span class="swiper-pagination-bullet"></span>
-                        <span class="swiper-pagination-bullet"></span>
-                        <span class="swiper-pagination-bullet"></span>
-                    </div>
-                    <div class="swiper-button">
-                        <div class="swiper-button-play"><span class="ir">play</span></div>
-                        <div class="swiper-button-stop"><span class="ir">stop</span></div>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
@@ -250,7 +246,7 @@
                 prevEl: ".swiper-button-prev",
             },
             autoplay: {
-                delay: 2000,
+                delay: 3000,
                 disableOnInteraction: false,
             },
             pagination: {
@@ -261,19 +257,7 @@
         });
     </script>
     <script>
-        // 슬라이드영역 재생, 일시정지 버튼 동작
-        document.querySelector(".swiper-button-stop").addEventListener("click", () => {
-            swiper.autoplay.stop();
-            document.querySelector(".swiper-button-stop").style.display = "none";
-            document.querySelector(".swiper-button-play").style.display = "flex";
-        });
-        document.querySelector(".swiper-button-play").addEventListener("click", () => {
-            swiper.autoplay.start();
-            document.querySelector(".swiper-button-play").style.display = "none";
-            document.querySelector(".swiper-button-stop").style.display = "flex";
-
-        });
-
+        
         const btnHam = document.querySelector(".header__ham");
         const btnMenu = document.querySelector(".header__menu")
 
@@ -287,7 +271,7 @@
         window.addEventListener("resize", () => {
             let width = window.innerWidth;
 
-            if (width >= 1300) {
+            if (width >= 1280) {
                 document.body.classList.remove("fixed");
                 btnMenu.classList.remove("overlay");
                 btnHam.classList.remove("active");
