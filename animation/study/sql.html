@@ -194,13 +194,12 @@ Query OK, 0 rows affected (0.01 sec)
 </code></pre></div>
                 <h3 class="t_tit3">05_ 테이블 복사</h3>
                 <div class="t_box">
-                    - 추후 업로드예정 -
+                            CREATE TABLE 새로운테이블명 SELECT * FROM 복사할테이블명
                 </div>
                 <div class="t_code">
-<pre><code class="language-js">
- - 추후 업로드 예정 -
-</code></pre></div>
-            
+<pre><code class="language-js">CREATE TABLE member3 SELECT * FROM member;
+</code></pre>
+                </div>
                 <h2 class="t_tit2">■ 테이블 데이터</h2>
                 <h3 class="t_tit3">01_ 데이터 입력하기</h3>
                 <div class="t_box">
@@ -271,22 +270,124 @@ Query OK, 0 rows affected (0.01 sec)
 10 rows in set (0.00 sec)
 </code></pre></div>
 
-                <h3 class="t_tit3">데이터 수정하기</h3>
+                <h3 class="t_tit3">03_ 데이터 수정하기</h3>
                 <div class="t_box">
-                    - 추후 업로드예정 -
+                    UPDATE 테이블명(필드명) SET 컬럼명 조건
+                </div>
+                <p class="t_desc">03-1_ 모든 회원의 핸드폰 번호 변경</p>
+                <div class="t_code">
+<pre><code class="language-js">UPDATE member SET youPhone = "010-0000-0000";
+</code></pre></div>
+                <p class="t_desc">03-2_ 아이디가 3번인 회원의 비밀번호를 '0123'</p>
+                <div class="t_code">
+<pre><code class="language-js">UPDATE member SET youPass = '0123' WHERE myMemberID = 3;
+</code></pre></div>
+                <p class="t_desc">03-3_ 회원 아이디가 5~10번인 회원의 비밀번호를 '1234567'</p>
+                <div class="t_code">
+<pre><code class="language-js">UPDATE member SET youPass = '1234567' WHERE myMemberID BETWEEN 5 AND 10;
+</code></pre></div>
+                <p class="t_desc">03-4_ 비밀번호를 '1234567'로 변경하고 내림차순으로 10개만 변경하기</p>
+                <div class="t_code">
+<pre><code class="language-js">UPDATE member SET youPass = '1234567' ORDER BY youPass DESC LIMIT 10;
+</code></pre></div>
+                <h3 class="t_tit3">04_ 데이터 삭제하기</h3>
+                <div class="t_box">
+                    DELETE FROM 테이블명 조건;
+                </div>
+                <p class="t_desc">04-1_ 회원 아이디가 5번인 멤버 삭제</p>
+                <div class="t_code">
+<pre><code class="language-js">DELETE FROM member  WHERE myMemberID = 5;
+</code></pre></div>
+                <p class="t_desc">04-2_ 회원 비밀번호가 '1234'인 멤버 삭제</p>
+                <div class="t_code">
+<pre><code class="language-js">DELETE FROM member  WHERE youPAss = '1234';
+</code></pre></div>
+                <p class="t_desc">04-3_ 회원 이름을 기준으로 5번째까지 멤버 삭제</p>
+                <div class="t_code">
+<pre><code class="language-js">DELETE FROM member  ORDER BY youName LIMIT 5;
+</code></pre></div>
+                <p class="t_desc">04-4_ 지정한 멤버 삭제</p>
+                <div class="t_code">
+<pre><code class="language-js">DELETE FROM member  WHERE myMemberID IN(7,9,10);
+</code></pre></div>
+                <h2 class="t_tit2">■ 테이블 수정</h2>
+                <h3 class="t_tit3">01_ 필드 추가하기</h3>
+                <div class="t_box">
+                    ALTER TABLE 테이블명 ADD 추가할 필드명 AFTER 필드 위치
+                </div>
+                <p class="t_desc">01-1_ member 테이블 나이 위에 핸드폰 번호 필드를 추가</p>
+                <div class="t_code">
+<pre><code class="language-js">ALTER TABLE member ADD youPhone int(20) NOT NULL AFTER youAge;
+</code></pre></div>
+                <p class="t_desc">01-2_ member 테이블 핸드폰 번호 뒤에 성별 필드를 추가</p>
+                <div class="t_code">
+<pre><code class="language-js">ALTER TABLE member ADD youGender enum('m', 'w', 'x') default 'x' comment "남자 m, 여자 w" AFTER youPhone;
+</code></pre></div>
+
+                <h3 class="t_tit3">02_ 필드 수정하기</h3>
+                <div class="t_box">
+                    ALTER TABLE 테이블명 MODIFY 수정할 필드명
                 </div>
                 <div class="t_code">
-<pre><code class="language-js">
- - 추후 업로드 예정 -
+<pre><code class="language-js">ALTER TABLE member MODIFY youAge int(10);
 </code></pre></div>
-                <h3 class="t_tit3">데이터 삭제하기</h3>
+                <div class="t_code">
+<pre><code class="language-js">ALTER TABLE member MODIFY youGender enum('m', 'w');
+</code></pre></div>
+                <h3 class="t_tit3">03_ 필드 삭제하기</h3>
                 <div class="t_box">
-                    - 추후 업로드예정 -
+                    ALTER TABLE 테이블명 DROP 삭제할필드명;
                 </div>
                 <div class="t_code">
-<pre><code class="language-js">
- - 추후 업로드 예정 -
+<pre><code class="language-js">ALTER TABLE member DROP youGender;
 </code></pre></div>
+                <h2 class="t_tit2">■ 테이블 합치기</h2>
+                <h3 class="t_tit3">01_ 테이블 JOIN</h3>
+                <div class="t_box">
+                    SELECT 필드명 FROM 테이블명 엘리어스 JOIN 연결할테이블명 엘리어스 ON(조건문)               
+                </div>
+                <div class="t_code">
+<pre><code class="language-js">create table myMember (
+    myMemberID int(10) unsigned auto_increment,
+    youEmail varchar(40) NOT NULL,
+    youName varchar(20) NOT NULL,
+    youPass varchar(20) NOT NULL,
+    youBirth int(20) NOT NULL,
+    youAge int(5) NOT NULL,
+    youPhone varchar(20) NOT NULL,
+    regTime int(20) NOT NULL,
+    PRIMARY KEY (myMemberID)
+)charset=utf8;
+
+create table myReview (
+    myReviewID int(10) unsigned auto_increment,
+    myMemberID int(10) unsigned,
+    youText tinytext NOT NULL,
+    regTime int(20) NOT NULL,
+    PRIMARY KEY (myReviewID)
+)charset=utf8;
+
+INSERT INTO myMember(youmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('***@naver.com','***','1234','19990303','20','01099991111','1234567');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('***@naver.com', '***', '1234', '19970415','20','01099991111','1234567');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('***@naver.com', '***', '1234', '19970530', '20','01099991111','1234567');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('***@naver.com', '***', '1234', '19941009', '20','01099991111','1234567');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('***@naver.com', '***', '1234', '19990303', '20','01099991111','1234567');
+
+INSERT INTO myReview(myMemberID, youText, regTime) VALUES('1', '정말 감사합니다, 너무 좋네요!!', '1234567');
+INSERT INTO myReview(myMemberID, youText, regTime) VALUES('3', '☆*: .｡. o(≧▽≦)o .｡.:*☆, 너무 좋네요!!', '1234567');
+INSERT INTO myReview(myMemberID, youText, regTime) VALUES('2', 'ㄴㅇㄱ 상상도 못한 정체, 너무 좋네요!!', '1234567');
+INSERT INTO myReview(myMemberID, youText, regTime) VALUES('3', '대박사건, 너무 좋네요!!', '1234567');
+INSERT INTO myReview(myMemberID, youText, regTime) VALUES('4', '호박고구마!!!, 너무 좋네요!!', '1234567');
+INSERT INTO myReview(myMemberID, youText, regTime) VALUES('5', '정말 감사합니다, 너무 좋네요!!', '1234567');
+INSERT INTO myReview(myMemberID, youText, regTime) VALUES('2', '대박사건, 너무 좋네요!!', '1234567');
+INSERT INTO myReview(myMemberID, youText, regTime) VALUES('3', '룰루랄랄랄라, 너무 좋네요!!', '1234567');
+INSERT INTO myReview(myMemberID, youText, regTime) VALUES('4', '반갑습니다, 너무 좋네요!!', '1234567');
+INSERT INTO myReview(myMemberID, youText, regTime) VALUES('5', '훌륭합니다, 너무 좋네요!!', '1234567');
+
+SELECT m.youName, m.youEmail, r.youText, r.regTime FROM myEMember m JOIN myReview r ON (m.myMemberID = r.myMemberID) ORDER BY myReviewID DESC LIMIT 5;
+</code></pre></div>
+
+
             </div>
         </main>
         <!-- //main end -->

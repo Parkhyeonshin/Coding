@@ -19,7 +19,7 @@
     <!-- //header -->
     <main id="main">
       <!--main start-->
-      <div class="document">
+		<div class="document">
         <h2 class="t_tit">[VSCode] SASS Compile하기</h2>
         <p class="t_desc2">
           SCSS를 사용하면 편하게 CSS를 사용할 수 있다고 했습니다. 오늘은 VSCode에서 SCSS를 사용하는 법에 대해 알아볼까요
@@ -54,21 +54,34 @@
 	{
 		"format": "compressed",
 		"extensionName": ".min.css",
-		"savePath": "~/../css/"
+		"savePath": "~/../css/"			//컴파일된 css 파일이 저장될 경로
 	}
 ]
 </code></pre>
 		</div>
 		<p class="t_desc">
 			1. format 
-			<br> expanded, compact, compressed, nested가 있습니다. expanded가 default입니다.
+			<br>&nbsp;&nbsp; expanded, compact, compressed, nested가 있습니다. expanded가 default입니다.
 			<br>2. extensionName
-			<br> .css가 default입니다.
+			<br>&nbsp;&nbsp; .css가 default입니다.
 			<br>3. savePath
-			<br> null이 default입니다. 현재 폴더위치에 css파일을 컴파일링 합니다.
+			<br>&nbsp;&nbsp; null이 default입니다. 현재 폴더위치에 css파일을 컴파일링 합니다.
 			다른 폴더로의 컴파일링을 원할 경우 '~/../css'같이 경로를 적어줍니다. 
 		</p>
-	</div>
+		<p class="t_desc">
+			'liveSassCompile.settings.includeItems'는 상위폴더가 항상 scss일때만 컴파일을 하라는 뜻이고,
+			<br>'savePath'는 지금 scss가 들어있는 폴더 상위 폴더의 scss 폴더에 저장하라는 뜻입니다.
+		</p>
+
+        <h2 class="t_tit">사용 방법</h2>
+		<p class="t_desc">
+			.scss파일을 열고 하단의 'Watch SASS'를 누릅니다.
+			(<i>누르지 않으면 적용 안됩니다!!</i>)
+			<br>Watching으로 바뀌면서 저장할때마다 scss파일이 컴파일링 됩니다.
+		</p>
+		<img src="https://github.com/Parkhyeonshin/Coding/blob/main/assets/tistory/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%82%B4%EC%9A%A9/Vscode_SASS_05.jpg?raw=true" alt="">
+		<img src="https://github.com/Parkhyeonshin/Coding/blob/main/assets/tistory/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%82%B4%EC%9A%A9/Vscode_SASS_06.jpg?raw=true" alt="">
+		</div>
     </main>
     <!-- //main end -->
     <footer id="footer">

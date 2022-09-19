@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사이트 만들기 2</title>
+
+    <!-- SEO -->
+    <meta name="author" content="박현신" />
+    <meta name="description" content="사이트 만들기 튜토리얼" />
+    <meta name="keyword" content="사이트, 만들기, 튜토리얼" />
+    <meta name="robots" content="all" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/font.css" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+
+    <!-- CSS(섹션별) -->
+    <link rel="stylesheet" href="assets/css/slider.css" />
+    <link rel="stylesheet" href="assets/css/text.css" />
+    <link rel="stylesheet" href="assets/css/image.css" />
+    <link rel="stylesheet" href="assets/css/card.css" />
+    <link rel="stylesheet" href="assets/css/banner.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/imgText.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+
+    <!-- CSS 슬라이드 스와이프-->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/> -->
+    <link rel="stylesheet" href="assets/css/swiper.css" />
+
+    <!-- 위로가기 버튼 -->
+    <style>
+        .top__button {
+            position: fixed;
+            bottom: -200px;
+            right: 10px;
+            ;
+            width: 100px;
+            height: 30px;
+            background-color: #000;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            box-sizing: border-box;
+            padding-top: 7px;
+            transition: all 0.3s ease;
+        }
+
+        .top__button:hover {
+            background-color: rgba(0, 0, 0, 0.104);
+            backdrop-filter: blur(2px);
+            color: #000;
+        }
+
+        .top__button.show {
+            bottom: 0;
+            right: 10px;
+            ;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="skip">
+        <a href="#">헤더 영역 바로가기</a>
+        <a href="#">슬라이드 영역 바로가기</a>
+        <a href="#">이미지 영역 바로가기</a>
+        <a href="#">이미지/텍스트 영역 바로가기</a>
+        <a href="#">카드 영역 바로가기</a>
+        <a href="#">배너 영역 바로가기</a>
+        <a href="#">텍스트 영역 바로가기</a>
+        <a href="#">푸터 영역 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <header id="headerType" class="header__wrap Gmark">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="#">SSHINY site</a>
+            </div>
+            <nav class="header__menu">
+                <ul>
+                    <li><a class="active" href="#headerType">헤더영역</a></li>
+                    <li><a href="#sliderType">슬라이드 영역</a></li>
+                    <li><a href="#imgType">이미지 영역</a></li>
+                    <li><a href="#imgTextType">컨텐츠 영역</a></li>
+                    <li><a href="#cardType">푸터 영역</a></li>
+                </ul>
+            </nav>
+            <div class="header__ham">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <!-- //headerType -->
+
+    <main id="mainType">
+        <section id="sliderType" class="slider__wrap  ">
+            <h2 class="blind">슬라이드영역</h2>
+            <div class="slider__inner">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide slide01">
+                            <div class="desc">
+                                <h3>
+                                    FALL
+                                    <br>IS COMMING
+                                </h3>
+                                <p>
+                                    길을 걷다 마주한 그 냄새
+                                    <br>이런 은행을 밟았네요...
+                                    <br>벌써 가을이 다가온 듯 합니다
+                                </p>
+                                <div class="btn">
+                                    <a href="#">더 알아보기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide slide02">
+                            <div class="desc">
+                                <h3>
+                                    FALL
+                                    <br>IS COMMING
+                                </h3>
+                                <p>
+                                    길을 걷다 마주한 그 냄새
+                                    <br>이런 은행을 밟았네요...
+                                    <br>벌써 가을이 다가온 듯 합니다
+                                </p>
+                                <div class="btn">
+                                    <a href="#">더 알아보기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide slide03">
+                            <div class="desc">
+                                <h3>
+                                    FALL
+                                    <br>IS COMMING
+                                </h3>
+                                <p>
+                                    길을 걷다 마주한 그 냄새
+                                    <br>이런 은행을 밟았네요...
+                                    <br>벌써 가을이 다가온 듯 합니다
+                                </p>
+                                <div class="btn">
+                                    <a href="#">더 알아보기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide slide04">
+                            <div class="desc">
+                                <h3>
+                                    FALL
+                                    <br>IS COMMING
+                                </h3>
+                                <p>
+                                    길을 걷다 마주한 그 냄새
+                                    <br>이런 은행을 밟았네요...
+                                    <br>벌써 가을이 다가온 듯 합니다
+                                </p>
+                                <div class="btn">
+                                    <a href="#">더 알아보기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide slide05">
+                            <div class="desc">
+                                <h3>
+                                    FALL
+                                    <br>IS COMMING
+                                </h3>
+                                <p>
+                                    길을 걷다 마주한 그 냄새
+                                    <br>이런 은행을 밟았네요...
+                                    <br>벌써 가을이 다가온 듯 합니다
+                                </p>
+                                <div class="btn">
+                                    <a href="#">더 알아보기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination">
+                        <span class="swiper-pagination-bullet"></span>
+                        <span class="swiper-pagination-bullet"></span>
+                        <span class="swiper-pagination-bullet"></span>
+                        <span class="swiper-pagination-bullet"></span>
+                        <span class="swiper-pagination-bullet"></span>
+                    </div>
+                    <div class="swiper-button">
+                        <div class="swiper-button-play"><span class="ir">play</span></div>
+                        <div class="swiper-button-stop"><span class="ir">stop</span></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+        <!--//sliderType-->
+
+        <section id="imgType" class="image__wrap  section">
+
+        </section>
+        <!--//imageType-->
+
+        <section id="imgTextType" class="imgText__wrap  section gray">
+
+        </section>
+        <!--//imgTextType-->
+
+        <section id="cardType" class="card__wrap  section">
+
+        </section>
+        <!--//cardType-->
+
+        <section id="bannerType" class="banner__wrap ">
+
+        </section>
+        <!--//bannerType-->
+
+        <section id="textType" class="text__wrap  section">
+
+        </section>
+        <!--//textType-->
+    </main>
+    <!-- //mainType -->
+
+    <footer id="footerType" class="footer__wrap Gmark section">
+
+    </footer>
+    <!-- //footerType -->
+
+    <div class="top__button"><span>top</span></div>
+    <!-- //위로가기버튼 -->
+    <!-- script영역 -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true,
+            },
+        });
+    </script>
+    <script>
+        // 슬라이드영역 재생, 일시정지 버튼 동작
+        document.querySelector(".swiper-button-stop").addEventListener("click", () => {
+            swiper.autoplay.stop();
+            document.querySelector(".swiper-button-stop").style.display = "none";
+            document.querySelector(".swiper-button-play").style.display = "flex";
+        });
+        document.querySelector(".swiper-button-play").addEventListener("click", () => {
+            swiper.autoplay.start();
+            document.querySelector(".swiper-button-play").style.display = "none";
+            document.querySelector(".swiper-button-stop").style.display = "flex";
+
+        });
+
+        const btnHam = document.querySelector(".header__ham");
+        const btnMenu = document.querySelector(".header__menu")
+
+        // 햄버거버튼 클릭 시 동작 및 사이즈 반응형 동작      
+        btnHam.addEventListener("click", () => {
+            btnHam.classList.toggle("active");
+            btnMenu.classList.toggle("overlay");
+            document.body.classList.toggle("fixed");
+        })
+
+        window.addEventListener("resize", () => {
+            let width = window.innerWidth;
+
+            if (width >= 1300) {
+                document.body.classList.remove("fixed");
+                btnMenu.classList.remove("overlay");
+                btnHam.classList.remove("active");
+            }
+        })
+
+        // 헤더메뉴 페럴렉스 + 클릭 이동
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+            document.querySelectorAll("main > section").forEach((element, index) => {
+                if (scrollTop >= element.offsetTop - window.innerHeight / 6) {
+                    document.querySelectorAll(".header__menu li a").forEach((li) => {
+                        li.classList.remove("active");
+                    });
+                    document.querySelector(`.header__menu li:nth-child(${index + 1}) a`).classList.add("active");
+                }
+            });
+        });
+
+        // 스크롤 이동
+        document.querySelectorAll(".header__menu li a").forEach((li) => {
+            li.addEventListener("click", (e) => {
+                e.preventDefault();
+                document.body.classList.remove("fixed");
+                document.querySelector(".header__ham").classList.remove("active");
+                document.querySelector(".header__menu").classList.remove("overlay");
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth",
+                });
+            });
+        });
+
+        // 최하단 top버튼
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+            console.log(scrollTop)
+            console.log(document.body.scrollHeight)
+            console.log(window.innerHeight)
+            console.log(document.body.scrollHeight - (window.innerHeight + 500))
+            if (scrollTop >= document.body.scrollHeight - (window.innerHeight + 600)) {
+                document.querySelector(".top__button").classList.add("show");
+            } else {
+                document.querySelector(".top__button").classList.remove("show");
+            }
+        });
+
+        // top버튼누르면 맨위로
+        document.querySelector(".top__button").addEventListener("click", () => {
+            window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+        });
+    </script>
+</body>
+
+</html>
