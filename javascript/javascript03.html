@@ -986,7 +986,10 @@ funcA(function(){
                     <!--28번-->
                     <h3>28. 함수유형 : 내부 함수 : 스코프, 클로져</h3>
                     <p>
-
+                        함수 내부에 선언한 함수/
+                        <br>스코프 : 변수 또는 함수의 유효 범위, 참조 대상 식별자를 찾아내기 위한 규칙
+                        <br>클로져 : 내부함수는 외부함수의 지역변수에 접근 할 수있는데 외부함수의 실행이후 소멸되도 내부함수가 외부함수의
+                        변수에 접근할 수 있는 이런 메커니즘을 뜻함
                     </p>
                     <div class="script">
 <pre><code class="language-js">function func(){
@@ -1006,7 +1009,7 @@ func();
                         <details>
                             <summary>결과보기</summary>
                             <div class="sample28_result">
-                                <p>
+                                <p>함수가 실행되었습니다.함수가 실행되었습니다.
                                 </p>
                             </div>
                         </details>
@@ -1054,7 +1057,8 @@ info2.result();
                     <!--30번-->
                     <h3>30. 함수유형 : 클래스 상속</h3>
                     <p>
-
+                        하나의 클래스를 정의하고 이 클래스에서 기능을 추가하려 할 때, 
+                        또다른 클래스를 만들어 기존 클래스를 상속시켜 추가하려는 기능을 추가할 수 있음.
                     </p>
                     <div class="script">
 <pre><code class="language-js">class study {   

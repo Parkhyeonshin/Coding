@@ -105,11 +105,41 @@
 
             <h3 class="t_tit2">■ HTML</h3>
             <div class="t_code">
-<pre><code class="language-html">div.circle-wrap
-  -for (var x = 1; x&lt;=12; x++)
-    div.row
-      -for (var y = 1; y&lt;=12; y++)
-        div.circle
+<pre><code class="language-html">&lt;div class="hover__wrap"&gt;
+    &lt;div class="hover__updown"&gt;
+      &lt;figure class="front"&gt;
+        &lt;img src="https://github.com/Parkhyeonshin/Coding/blob/main/animation/img/hoveani01.jpg?raw=true" alt="hoverUp 이미지"&gt;
+        &lt;figcaption&gt;
+          &lt;h3&gt;Mouse Hover Effect&lt;/h3&gt;
+      &lt;p&gt;마우스 올리면 Up&lt;/p&gt;
+        &lt;/figcaption&gt;
+      &lt;/figure&gt;
+      &lt;figure class="back"&gt;
+        &lt;img src="https://parkhyeonshin.github.io/Coding/animation/img/hoveani02.jpg" alt="hoverDown 이미지"&gt;
+        &lt;figcaption&gt;
+          &lt;h3&gt;Mouse Hover Effect&lt;/h3&gt;
+      &lt;p&gt;마우스 내리면 Down&lt;/p&gt;
+        &lt;/figcaption&gt;
+      &lt;/figure&gt;
+      
+    &lt;/div&gt;
+    &lt;div class="hover__leftright"&gt;
+      &lt;figure class="front"&gt;
+        &lt;img src="https://parkhyeonshin.github.io/Coding/animation/img/hoveani04.jpg" alt="hoverLeft 이미지"&gt;
+        &lt;figcaption&gt;
+          &lt;h3&gt;Mouse Hover Effect&lt;/h3&gt;
+      &lt;p&gt;마우스 올리면 to Right&lt;/p&gt;
+        &lt;/figcaption&gt;
+      &lt;/figure&gt;
+      &lt;figure class="back"&gt;
+        &lt;img src="https://parkhyeonshin.github.io/Coding/animation/img/hoveani03.jpg" alt="hoverRight 이미지"&gt;
+        &lt;figcaption&gt;
+          &lt;h3&gt;Mouse Hover Effect&lt;/h3&gt;
+      &lt;p&gt;마우스 내리면 to Left&lt;/p&gt;
+        &lt;/figcaption&gt;
+      &lt;/figure&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 </code></pre></div>
             <h3 class="t_tit2">■ CSS</h3>
             <div class="t_code">
@@ -127,7 +157,7 @@
 
 body{
     font-family: 'LocusSangsang';
-	background-image : linear-gradient(120deg, #292970 0%, #483D8B 40%, #9370DB 100%);
+	background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 	height: 100vh;
 }
 
@@ -215,11 +245,11 @@ body{
             </div>
             <h2  class="t_tit2">■ 결과</h2>
             <div class="t_iframe">
-                <iframe src="https://codepen.io/parkhyeonshin/embed/YzLVEjG?default-tab=result&theme-id=light" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                    See the Pen <a href="https://codepen.io/parkhyeonshin/pen/YzLVEjG">
-                    Untitled</a> by Parkhyeonshin (<a href="https://codepen.io/parkhyeonshin">@parkhyeonshin</a>)
+                <iframe src="https://codepen.io/parkhyeonshin/embed/rNvwMzN?default-tab=result&theme-id=light" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/parkhyeonshin/pen/rNvwMzN">
+                    애니메이션발표</a> by Parkhyeonshin (<a href="https://codepen.io/parkhyeonshin">@parkhyeonshin</a>)
                     on <a href="https://codepen.io">CodePen</a>.
-                  </iframe>
+                </iframe>
             </div>
         </div>
     </main> <!-- //main end -->
