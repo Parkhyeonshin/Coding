@@ -126,6 +126,9 @@
 
 
 @media (max-width: 1280px) {
+	#sliderType {
+		margin-top: 76px;
+	}
 	.swiper-slide .desc{
 		width: 100%;
 		box-sizing: border-box;
@@ -135,6 +138,7 @@
 }
 
 @media (max-width: 900px) {
+
 	.swiper-slide .desc h3 {
 		font-size: 60px;
 	}
@@ -149,6 +153,9 @@
 }
 
 @media (max-width: 480px) {
+	#sliderType {
+		margin-top: 67px;
+	}
 	.swiper-slide .desc h3 {
 		font-size: 35px;
 	}
