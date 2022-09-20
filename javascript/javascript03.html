@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dracula.css">
+    <link rel="stylesheet" href="assets/css/topbutton.css">
 </head>
 
 <body>
@@ -1105,12 +1106,14 @@ info1.result2();
         <!--/mainsample-->
     </main>
     <!-- //main -->
-
+    <div class="top__button">TOP</div>
+    <!-- //top__button -->
     <footer id="footer">
         <a href="mailto:sshin4882@naver.com">sshin4882@naver.com</a>
     </footer>
     <!-- //footer -->
     <script src="assets/js/highlight.min.js"></script>
+    <script src="assets/js/topbutton.js"></script>
     <script>
         hljs.highlightAll();
     </script>
@@ -1511,37 +1514,37 @@ info1.result2();
         }
         // 30번 : 클래스 : 상속
         {
-            class study {   
-                constructor(num, name, job){
-                    this.num = num;
-                    this.name = name;
-                    this.job = job;
-                }
+            // class study {   
+            //     constructor(num, name, job){
+            //         this.num = num;
+            //         this.name = name;
+            //         this.job = job;
+            //     }
 
-                result(){
-                    document.write(this.num + ". 내 이름은 " + this.name + "이며, 직업은" + this.job + "입니다.")
-                }
-            }
+            //     result(){
+            //         document.write(this.num + ". 내 이름은 " + this.name + "이며, 직업은" + this.job + "입니다.")
+            //     }
+            // }
 
-            // extends : 상속받겠다 
-            class study2 extends study {
-                constructor(num, name, job, age){
-                    super(num, name, job);
-                    this.age = age;
-                }
-                result(){
-                    document.write(this.num + ". 내 이름은 " + this.name + "이며, 직업은" + this.job + "나이는 " + this.age +"입니다.")
-                }
-            }
+            // // extends : 상속받겠다 
+            // class study2 extends study {
+            //     constructor(num, name, job, age){
+            //         super(num, name, job);
+            //         this.age = age;
+            //     }
+            //     result(){
+            //         document.write(this.num + ". 내 이름은 " + this.name + "이며, 직업은" + this.job + "나이는 " + this.age +"입니다.")
+            //     }
+            // }
 
 
 
-            const info1 = new study("1", "웹쓰", "웹퍼블리셔");
-            const info2 = new study2("2", "웹스토리보이", "프론트엔드 개발자",100);
+            // const info1 = new study("1", "웹쓰", "웹퍼블리셔");
+            // const info2 = new study2("2", "웹스토리보이", "프론트엔드 개발자",100);
             
-            info1.result();
-            info2.result();
-            info1.result2();
+            // info1.result();
+            // info2.result();
+            // info1.result2();
         }
     </script>
 </body>
