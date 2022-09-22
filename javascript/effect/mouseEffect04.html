@@ -12,7 +12,6 @@
 
 	<style>
 		/* mouseType */
-
 		.mouse__wrap {
 			width: 100%;
 			height: 100vh;
@@ -30,11 +29,14 @@
 			overflow: hidden;
 			position: relative;
 			transition: transform 500ms ease;
+			cursor: none;
 		}
+
 		.mouse__wrap figure:hover {
 			transform: scale(1.025);
 		}
-		.mouse__wrap figure img{
+
+		.mouse__wrap figure img {
 			position: absolute;
 			left: -5%;
 			top: -5%;
@@ -42,7 +44,8 @@
 			height: 110%;
 			object-fit: cover;
 		}
-		.mouse__wrap figure figcaption{
+
+		.mouse__wrap figure figcaption {
 			position: absolute;
 			left: 50%;
 			top: 50%;
@@ -53,7 +56,8 @@
 			font-size: 16px;
 			font-weight: 300;
 		}
-		.mouse__cursor{
+
+		.mouse__cursor {
 			position: absolute;
 			left: 0;
 			top: 0;
@@ -64,6 +68,15 @@
 			z-index: 1000;
 			user-select: none;
 			pointer-events: none;
+		}
+
+		.mouse__info {
+			position: absolute;
+			left: 20px;
+			bottom: 10px;
+			font-size: 14px;
+			line-height: 1.6;
+			color: white;
 		}
 	</style>
 </head>
@@ -98,6 +111,14 @@
 			</div>
 		</section>
 
+		<div class="mouse__info">
+			<ul>
+				<li>mousePageX : <span class="mousePageX">0</span>px</li>
+				<li>mousePageY : <span class="mousePageY">0</span>px</li>
+				<li>centerPageX : <span class="centerPageX">0</span>px</li>
+				<li>centerPageY : <span class="centerPageY">0</span>px</li>
+			</ul>
+		</div>
 	</main>
 	<!-- /main -->
 
@@ -194,15 +215,142 @@
 					</div>
 					<div class="cont">
 						<div class="active">
-							<pre><code class="language-js">
+<pre><code class="language-js">const cursor = document.querySelector(".mouse__cursor");
+	const cursorRect = cursor.getBoundingClientRect();
+
+	document.querySelector(".mouse__wrap figure").addEventListener("mousemove", (e) => {
+		// 커서
+		gsap.to(cursor, {
+			duration: .5,
+			left: e.pageX - cursorRect.width / 2,
+			top: e.pageY - cursorRect.height / 2,
+		})
+
+		// 마우스 좌표 값
+		let mousePageX = e.pageX;
+		let mousePageY = e.pageY;
+
+		// 전체 가로
+		// window.innerWidth;		//1920 : 브라우저 크기
+		// window.outerrWidth;		//1920 : 브라우저 크기 (스크롤바 포함)
+		// window.screen.width;		//1920 : 화면 크기
+
+		// 마우스 좌표 값 가운데로 초기화
+		// 전체 길이/2 - 마우스 좌표값 == 0
+		let centerPageX = window.innerWidth / 2 - mousePageX;
+		let centerPageY = window.innerHeight / 2 - mousePageY;
+
+		// 이미지 움직이기
+		const imgMove = document.querySelector(".mouse__wrap figure img");
+		// imgMove.style.transform = "translate("+centerPageX / 20 +"px, "+ centerPageY / 20 +"px)";
+		// js를 쓰면 부드럽지가않아서 gsap로 더 부드럽게 ㄱㄱ
+
+		gsap.to(imgMove, {
+			duration: .3,
+			x: centerPageX /20,
+			y: centerPageY /20,
+		})
+
+		// 출력
+		document.querySelector(".mousePageX").textContent = mousePageX;
+		document.querySelector(".mousePageY").textContent = mousePageY;
+		document.querySelector(".centerPageX").textContent = centerPageX;
+		document.querySelector(".centerPageY").textContent = centerPageY;
+	}); 
 </code></pre>
 						</div>
 						<div>
-							<pre><code class="language-html">
+<pre><code class="language-html">&lt;section id="mouseType"&gt;
+	&lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+	&lt;div class="mouse__wrap"&gt;
+		&lt;figure&gt;
+			&lt;img src="../assets/img/effect_bg17.jpg" alt="이미지"&gt;
+			&lt;figcaption&gt;
+				&lt;p&gt;Even if it collects dust, it is dust&lt;/p&gt;
+				&lt;p&gt;티끌 모아봤자 티끌이다&lt;/p&gt;
+			&lt;/figcaption&gt;
+		&lt;/figure&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;div class="mouse__info"&gt;
+	&lt;ul&gt;
+		&lt;li&gt;mousePageX : &lt;span class="mousePageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+		&lt;li&gt;mousePageY : &lt;span class="mousePageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+		&lt;li&gt;centerPageX : &lt;span class="centerPageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+		&lt;li&gt;centerPageY : &lt;span class="centerPageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
 </code></pre>
 						</div>
 						<div>
-							<pre><code class="language-css">
+<pre><code class="language-css">/* mouseType */
+	.mouse__wrap {
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		color: white;
+		overflow: hidden;
+	}
+
+	.mouse__wrap figure {
+		width: 50vw;
+		height: 50vh;
+		overflow: hidden;
+		position: relative;
+		transition: transform 500ms ease;
+		cursor: none;
+	}
+
+	.mouse__wrap figure:hover {
+		transform: scale(1.025);
+	}
+
+	.mouse__wrap figure img {
+		position: absolute;
+		left: -5%;
+		top: -5%;
+		width: 110%;
+		height: 110%;
+		object-fit: cover;
+	}
+
+	.mouse__wrap figure figcaption {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		line-height: 1.5;
+		white-space: nowrap;
+		font-size: 16px;
+		font-weight: 300;
+	}
+
+	.mouse__cursor {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 20px;
+		height: 20px;
+		background: #fff;
+		border-radius: 50%;
+		z-index: 1000;
+		user-select: none;
+		pointer-events: none;
+	}
+
+	.mouse__info {
+		position: absolute;
+		left: 20px;
+		bottom: 10px;
+		font-size: 14px;
+		line-height: 1.6;
+		color: white;
+	}
 </code></pre>
 						</div>
 					</div>
@@ -227,10 +375,47 @@
 	<script src="../assets/js/common.js"></script>
 	<script src="../assets/js/gsap.js"></script>
 	<script>
-		const circle = document.querySelector(".mouse__cursor").getBoundingClientRect();
+		const cursor = document.querySelector(".mouse__cursor");
+		const cursorRect = cursor.getBoundingClientRect();
 
-		document.querySelector(".mouse__wrap figure").addEventListener("mouseover", e => {
+		document.querySelector(".mouse__wrap figure").addEventListener("mousemove", (e) => {
+			// 커서
+			gsap.to(cursor, {
+				duration: .5,
+				left: e.pageX - cursorRect.width / 2,
+				top: e.pageY - cursorRect.height / 2,
+			})
 
+			// 마우스 좌표 값
+			let mousePageX = e.pageX;
+			let mousePageY = e.pageY;
+
+			// 전체 가로
+			// window.innerWidth;		//1920 : 브라우저 크기
+			// window.outerrWidth;		//1920 : 브라우저 크기 (스크롤바 포함)
+			// window.screen.width;		//1920 : 화면 크기
+
+			// 마우스 좌표 값 가운데로 초기화
+			// 전체 길이/2 - 마우스 좌표값 == 0
+			let centerPageX = window.innerWidth / 2 - mousePageX;
+			let centerPageY = window.innerHeight / 2 - mousePageY;
+
+			// 이미지 움직이기
+			const imgMove = document.querySelector(".mouse__wrap figure img");
+			// imgMove.style.transform = "translate("+centerPageX / 20 +"px, "+ centerPageY / 20 +"px)";
+			// js를 쓰면 부드럽지가않아서 gsap로 더 부드럽게 ㄱㄱ
+
+			gsap.to(imgMove, {
+				duration: .3,
+				x: centerPageX /20,
+				y: centerPageY /20,
+			})
+
+			// 출력
+			document.querySelector(".mousePageX").textContent = mousePageX;
+			document.querySelector(".mousePageY").textContent = mousePageY;
+			document.querySelector(".centerPageX").textContent = centerPageX;
+			document.querySelector(".centerPageY").textContent = centerPageY;
 		}); 
 	</script>
 </body>
