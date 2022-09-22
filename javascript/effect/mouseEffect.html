@@ -1,47 +1,76 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>데이터 효과</title>
-
-    <link rel="stylesheet" href="../assets/css/style.css">
-
-
-    <style>
-        body{
-            padding: 0;
-            box-sizing: border-box;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-            background: radial-gradient(circle farthest-corner at center, rgb(156, 171, 193), #180b37);
-        }
-        .intro_menu{
-            background: rgba(156, 171, 193,0.1);
-        }
-        .intro_menu li {
-            color:rgb(255, 255, 255);
-        }
-        .white{
-            color: #fff;
-        }
-        .white a{
-            color: #fff !important;
-        }
-    </style>
-</head>
-
-<body>
-    <main>
-        <div class="intro_menu white">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>페럴럭스이펙트</title>
+        <link rel="stylesheet" href="../assets/css/style.css" />
+        <style>
+            /* body {
+                overflow: hidden;
+                padding: 0;
+                width: 100%;
+                height: 100vh;
+                background: #11e8bb;
+                background: linear-gradient(to bottom, #11e8bb 0%, #8200c9 100%);
+            }
+            #canvas {
+                position: absolute;
+                left: 0;
+                right: 0;
+                z-index: -1;
+            } */
+            .main_menu ul li a:hover{
+                text-shadow: 0px 0px 10px #961414;
+                color: white;
+                transition: text-shadow 0.5s;
+            }
+        </style>
+    </head>
+    <header id="header">
+        <!-- 시멘트태그(heaer, main, footer 등)-->
+        <h1><a href="mouseEffect.html">Javascript Effect</a></h1>
+        <nav class="header_nav">
             <ul>
-                <li>01. 마우스 이펙트 : 1부터 100까지 출력하기 <a href="mouseEffect01.html">👀</a></li>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
             </ul>
-        </div>
-    </main>
-
-</body>
-
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+                <li><a href="../javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="searchEffect.html">검색 효과</a></li>
+                <li><a href="quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="dataEffect.html">데이터 효과</a></li>
+                <li class="active"><a href="mouseEffect.html">마우스 효과</a></li>
+                <li><a href="sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="parallaxEffect.html">패랠랙스 효과</a></li>
+                <li><a href="gameEffect.html">게임 효과</a></li>
+            </ul>
+        </nav>
+    </header>
+    <body>
+        <main>
+            <div class="container">
+                <div class="main_menu">
+                    <ul>
+                        <li>01. 마우스 이펙트 : 마우스 따라다니기 <a href="mouseEffect01.html">👀</a></li>
+                        <li>02. 마우스 이펙트 : 마우스 따라다니기(GSAP) <a href="mouseEffect02.html">👀</a></li>
+                        <li>03. 마우스 이펙트 : 조명 효과 <a href="mouseEffect03.html">👀</a></li>
+                        <li>04. 마우스 이펙트 : 이미지 효과 <a href="mouseEffect04.html">👀</a></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </body>
 </html>
