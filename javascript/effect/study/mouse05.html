@@ -33,8 +33,8 @@
             <div class="document">
                 <h2 class="t_tit">마우스 효과 05</h2>
                 <div class="t_desc2">
-                    이번 시간에는 정가운데에 있는 그림내부에서만 마우스오버 효과가 작동하고, 
-                    이미지가 마우스위치에 따라서 살짝씩 움직이는 효과를 만들어보겠습니다.
+                    마우스 효과 다섯번째 시간입니다. "mouse__cursor"에 반전효과를 부여하고 마우스 위치에 따라 
+                    이미지가 약간씩 기우는 효과를 만들어 보겠습니다.
                 </div>
                 <hr />
 
@@ -51,54 +51,52 @@
                 <hr />
                 <h3 class="t_tit2">■ n줄 요약</h3>
                 <div class="t_desc">
-                    ▶ 그림 위에 클릭이벤트(마우스오버)를 부여해서 그림위에서만 작동할 수 있게 구성하고, 
-                    <br>그림의 이동은 마우스좌표값을 화면의 정가운데로 초기화 시킨 뒤 그 값에 포인터 좌표값을 빼주어서 
-                    이동효과를 부여합니다.
+                    ▶ 마우스커서에 "mix-blend-mode : difference"를 주어 마우스포인터(원)이 겹치는 부분에 반전효과를 줄 수 있습니다.
+                    <br>이미지에는 "transform-style : preserve-3d"를 주어서 3D효과를 줍니다.
                 </div>
                 <h3 class="t_tit2">JS 소스</h3>
                 <div class="t_code">
-<pre><code class="language-js">const cursor = document.querySelector(".mouse__cursor");
-const cursorRect = cursor.getBoundingClientRect();
-
-document.querySelector(".mouse__wrap figure").addEventListener("mousemove", (e) => {
-    // 커서
-    gsap.to(cursor, {
-        duration: .5,
-        left: e.pageX - cursorRect.width / 2,
-        top: e.pageY - cursorRect.height / 2,
-    })
-
-    // 마우스 좌표 값
+<pre><code class="language-js">const mouseMove = (e) => {
+    // 마우스 좌표값
     let mousePageX = e.pageX;
     let mousePageY = e.pageY;
 
-    // 전체 가로
-    // window.innerWidth;		//1920 : 브라우저 크기
-    // window.outerrWidth;		//1920 : 브라우저 크기 (스크롤바 포함)
-    // window.screen.width;		//1920 : 화면 크기
-
-    // 마우스 좌표 값 가운데로 초기화
-    // 전체 길이/2 - 마우스 좌표값 == 0
+    // 마우스 좌표 기준점을 가운데로 변경
     let centerPageX = window.innerWidth / 2 - mousePageX;
     let centerPageY = window.innerHeight / 2 - mousePageY;
 
-    // 이미지 움직이기
-    const imgMove = document.querySelector(".mouse__wrap figure img");
-    // imgMove.style.transform = "translate("+centerPageX / 20 +"px, "+ centerPageY / 20 +"px)";
-    // js를 쓰면 부드럽지가않아서 gsap로 더 부드럽게 ㄱㄱ
+    // 최소값은 -100, 최대값은 100으로 설정
+    let maxPageX = Math.max(-200, Math.min(200, centerPageX));
+    let maxPageY = Math.max(-200, Math.min(200, centerPageY));
 
-    gsap.to(imgMove, {
-        duration: .3,
-        x: centerPageX /20,
-        y: centerPageY /20,
-    })
+    // 각도 줄이는 설정
+    let anglePageX = maxPageX * 0.1;
+    let anglePageY = maxPageY * 0.05;
+
+    // 부드럽게 설정
+    let softPageX = 0, softPageY = 0;
+    softPageX += (anglePageX - softPageX) * 0.4;
+    softPageY += (anglePageY - softPageY) * 0.4;
+
+    // 이미지 움직이기
+    const imgMove = document.querySelector(".mouse__img");
+    imgMove.style.transform = "perspective(600px) rotateX("+softPageY+"deg) rotateY("+ -softPageX+"deg)";
+
+    // 커서
+    gsap.to(".mouse__cursor", {duration: .3, left: mousePageX - 50, top: mousePageY - 50})
 
     // 출력
     document.querySelector(".mousePageX").textContent = mousePageX;
     document.querySelector(".mousePageY").textContent = mousePageY;
     document.querySelector(".centerPageX").textContent = centerPageX;
     document.querySelector(".centerPageY").textContent = centerPageY;
-}); 
+    document.querySelector(".maxPageX").textContent = maxPageX;
+    document.querySelector(".maxPageY").textContent = maxPageY;
+    document.querySelector(".anglePageX").textContent = Math.round(anglePageX);
+    document.querySelector(".anglePageY").textContent = Math.round(anglePageY);
+  };
+
+  window.addEventListener("mousemove", mouseMove);
 </code></pre>
                 </div>
                 <p class="t_tit2">■ 핵심 찍먹하기🪓</p>
@@ -111,24 +109,35 @@ document.querySelector(".mouse__wrap figure").addEventListener("mousemove", (e) 
                     <br> 사용된 속성은 다음과 같습니다.
                 </p>
                 <p class="t_box">
-                    - duration : 애니메이션의 지속시간을 설정합니다. 0.3s로 지정했는데 이 지속시간이 계속 누적되어 진행되므로 마치 마우스가
-                    천천히 따라오는듯한 효과를 내는 것입니다.
-                    <br>- left: e.pageX, top : e.pageY : 이제는 다들 아시겠지만 CSS에 left와 top값을 부여했었는데요. 이 값을 pageX,Y(문서 상단 경계 기준으로 좌표값 추출)만큼 이동시킵니다. 
-                    <br>- x, y : transform : translate 속성을 의미합니다.
+                    - duration : 애니메이션의 지속시간을 설정합니다. '.3'은 '0.3s'의 의미와 동일합니다.
+                    <br>- left: CSS에 left와 top값을 부여했었는데요. 이 값을 pageX,Y(문서 상단 경계 기준으로 좌표값 추출)만큼 이동시킵니다. 
+                    
                 </p>
-                <h2 class="t_tit3" style="border-bottom: 1px solid #ccc;">✔ getBoundingClientRect() 이용해서 포인터 위치 조절하기</h2>
+                <h2 class="t_tit3" style="border-bottom: 1px solid #ccc;">✔ 기울기 설정하기</h2>
+                <p class="t_box">
+                    // 최소값은 -100, 최대값은 100으로 설정
+                    <br>let maxPageX = Math.max(-200, Math.min(200, centerPageX));
+                    <br>let maxPageY = Math.max(-200, Math.min(200, centerPageY));
+                    <br>
+                    <br>// 각도 줄이는 설정
+                    <br>let anglePageX = maxPageX * 0.1;
+                    <br>let anglePageY = maxPageY * 0.05;
+                </p>
                 <p class="t_desc">
-                    'mouse__cursor'요소의 각종 속성들을 객체로 불러온 뒤 우리가 필요한 가로, 세로를 뽑아내서 포인터 위치를 조절합니다. 
-                    (이정돈 이젠 구구절절 설명할 필요가 없겠죠?)
-                    <br>이후에 마우스 좌표값을 변수(mousePageX, Y)로 넣어줍니다.
-                    이후에 그림을 이동할 건데요.
-                    <br>그림을 이동하려면 transform: translate를 이용해야 겠죠? 그래서 마우스 좌표값을 정가운데에 왔을때 (0,0)으로 초기화 해줘야 합니다.
-                    <br> <i>좌표값 정가운데를 0,0으로 만들기</i> : <i>전체 길이 /2 - 마우스 포인터 위치</i>(정가운데 있다고 가정) <i>= 0</i>
-                    그렇게 초기화를 하고 마우스포인터 위치값을 빼면 이미지는 좌표의 반대값만큼 이동하게 됩니다.
-                    <br>그리고 이렇게 만들면 너무 많이 이동하니까 ÷ 20을 해서 반대로 조금만 이동하게 만들어서 
-                    좀더 그럴듯하게 만들어줍니다. 더 그럴듯하게 만들어 주려면 이미지박스에 'overflow: hidden'을 줍시다.
+                    Math.max를 통해서 기울어질 값의 최대값과 최소값을 지정해줍니다. 직접 테스트해보니 숫자가 
+                    클 수록 각도가 많아져서 한바퀴도 돌아가고 난리가 나더라구요 ^_^!
+                    이런 컨트롤부분은 직접 입력해보시면서 이해하시는게 더 잘될것같네요. 
+                    <br><i>기울어질 최대, 최소값을 Math를 이용</i>해서 지정한 뒤, <i>정교한 컨트롤은 소숫점을</i> 곱해주면서 수정해줍시다!
+                    <br>이후 "mouse__img"를 style을 이용해서 수정합시다. 
                 </p>
-                <img src="blogimg/mouseEffect04_blog1.jpg" alt="이미지">
+                <h2 class="t_tit3" style="border-bottom: 1px solid #ccc;">✔ perspective</h2>
+                <p class="t_desc">
+                    이 속성은 3D효과에서만 적용되는 속성입니다. 3D 공간에서 요소와 관측점과의 거리를 지정하는 속성입니다.
+                    한마디로 더 쉽게 표현하자면? <i>원근감</i>을 지정하는 속성입니다.
+                    <br>속성 값이 작을 수록 가까워 보이고, 클수록 멀게 보입니다. 
+                    <br> 백문이 불여일견! 이 속성은 직접 값을 수정해보시는게 이해하기 편한 속성입니다. 
+                    뭘 하고 계시죠? 빨리 직접 해보세요!
+                </p>
                 
 
                 <hr style="margin-bottom : 10px">

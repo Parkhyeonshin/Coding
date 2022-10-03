@@ -496,34 +496,6 @@
             let scrollTop = window.scrollY;
             document.querySelector("#parallax__info .scroll").innerText = Math.round(scrollTop) + "px";
 
-            // CSS 클래스 추가(노가다)
-            // document.querySelectorAll(".content__item").forEach(item => {
-            //     if (scrollTop >= item.offsetTop) {
-            //         item.querySelector(".split").classList.add("show");
-            //     }
-            // })
-
-            // document.querySelectorAll(".content__item").forEach(item=>{
-            //     if(scrollTop >= item.offsetTop){
-            //         item.querySelectorAll(".split span").forEach((span, index) => {
-            //             span.classList.add("show")
-            //         })
-            //     }
-            // })
-
-            // document.querySelectorAll(".content__item").forEach(item=>{
-            //     if(scrollTop >= item.offsetTop){
-            //         for(let i=0; i<=item.length; i++){
-
-            //             item.querySelectorAll(".split span:nth-child["+ i +"]").forEach((span, index) => {
-            //                 span.classList.add("show");
-            //                 span.classList.add("q");
-
-            //             })
-            //         }
-            //     }
-            // })
-
             document.querySelectorAll(".content__item").forEach(item => {
                 if (scrollTop >= item.offsetTop) {
                     item.querySelectorAll(".split span").forEach((e, i) => {
@@ -536,10 +508,6 @@
             })
 
             requestAnimationFrame(scroll);
-
-            //첫번째 span --> 0.01
-            //첫번째 span --> 0.02
-            //첫번째 span --> 0.03
         }
         scroll();
     </script>

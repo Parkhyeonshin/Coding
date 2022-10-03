@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 검색05</title>
+
+    <link rel="stylesheet" href="../../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../../javascript/assets/css/dracula.css">
+
+    <style>
+        #main .document .btnflex{
+    	    display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <!-- 시멘트태그(heaer, main, footer 등)-->
+        <h1><a href="../../../javascript/index.html">Javascript_Search</a></h1>
+        <nav class="header_nav">
+            <ul class="study">
+                <li><a href="quiz01.html">퀴즈 만들기1</a></li>
+                <li><a href="quiz02.html">퀴즈 만들기2</a></li>
+                <li><a href="quiz03.html">퀴즈 만들기3</a></li>
+                <li><a href="quiz04.html">퀴즈 만들기4</a></li>
+                <li><a href="quiz05.html">퀴즈 만들기5</a></li>
+                <li><a href="quiz06.html">퀴즈 만들기6</a></li>
+                <li><a href="search01.html">검색 이펙트1</a></li>
+                <li><a href="search02.html">검색 이펙트2</a></li>
+                <li><a href="animation.html">애니메이션 만들기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <!--main start-->
+        <div class="document">
+            <h2 class="t_tit">검색 효과</h2>
+            <div class="t_desc2">
+                검색 효과 다섯번째 시간입니다. 중요도 순으로 보는 방법을 만들어 보겠습니다.
+            </div>
+            <hr>
+            
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://parkhyeonshin.github.io/Coding/javascript/effect/searchEffect05.html" frameborder="0"></iframe>
+            </div>
+            
+            <div class="t_link btnflex">
+                <a href="https://github.com/Parkhyeonshin/Coding/blob/main/javascript/effect/searchEffect05.html" target="_blank">원본 소스 보기</a>
+                <a href="https://parkhyeonshin.github.io/Coding/javascript/effect/searchEffect05.html" target="_blank">원본 사이트</a>
+            </div>
+            <hr>
+            <h3 class="t_tit2">■ n줄 요약</h3>
+                <div class="t_desc">
+                    ▶ 
+                </div>
+            
+                <h3 class="t_tit2">JS 소스</h3>
+                <div class="t_code">
+<pre><code class="language-js">const cssProperty = [
+    { name: "accent-color", desc: " 일부 요소가 생성하는 사용자 인터페이스 컨트롤의 강조색을 지정합니다."},
+    { name: "align-content", desc: " 콘텐츠 사이와 콘텐츠 주위 빈 공간을 교차축(flex박스) 또는 블록축(grid)을 따라 배치할지 속성할 수 있습니다."},
+...이하 생략
+];
+
+// 출력하기
+const searchInfo = document.querySelector('span.num');
+const searchList = document.querySelector('.search__list ul');
+const searchGrade = document.querySelectorAll('.search__click ul li a');
+const starData = [
+    '🤍🤍🤍🤍🤍',
+    '💙🤍🤍🤍🤍',
+    '💙💙🤍🤍🤍',
+    '💙💙💙🤍🤍',
+    '💙💙💙💙🤍',
+    '💙💙💙💙💙',
+];
+
+function updateList(list) {
+    let listCSS = "";
+
+    for(const data of list) {
+        // listCSS += `<li>${data.name} : ${data.desc} <em>${starData[data.star]}</em></li>`;
+        listCSS += `<li>${data.name} : ${data.desc} <em>${searchGrade[data.star].innerText}</em></li>`;
+    }
+    searchList.innerHTML = listCSS;
+    searchInfo.innerHTML = list.length;
+}
+
+updateList(cssProperty);
+
+// 클릭하기
+const searchClick = document.querySelectorAll('.search__click ul li');
+const searchClick2 = document.querySelectorAll('.search__click ul')[1].querySelectorAll('li');
+
+searchClick.forEach((el, i) => {
+    el.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = i || el.dataset.el;
+        const filterList = cssProperty.filter((data) => {
+            return data.el == target;
+        });
+        updateList(filterList);
+    });
+});
+
+searchClick2.forEach((el, i) => {
+    el.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = i + 1;
+        const filterList = cssProperty.filter((data) => {
+            return data.el >= target;
+        });
+        updateList(filterList);
+    });
+});
+</code></pre>
+                </div>
+                <p class="t_tit2">■ 핵심 찍먹하기🪓</p>
+
+                <h2 class="t_tit3" style="border-bottom: 1px solid #ccc;">✔</h2>
+                <p class="t_desc">
+                </p>
+
+                <p class="t_tit2">■ 소스 분석하기🙄</p>
+                <p class="t_desc">
+                </p>
+
+                <hr style="margin-bottom : 10px">
+                <p class="p_desc" style="font-size: 14px; text-align: center;">🙇‍♀️ 틀린 점에 대한 지적은 언제나 환영합니다 🙇‍♂️</p>
+            
+        </div>
+    </main> <!-- //main end -->
+    <footer id="footer">
+        <a href="mailto:sshin4882@naver.com">sshin4882@naver.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../../javascript/assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

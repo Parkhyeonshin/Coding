@@ -529,23 +529,23 @@
         const searchClick = document.querySelectorAll('.search__click ul li');
         const searchClick2 = document.querySelectorAll('.search__click ul')[1].querySelectorAll('li');
 
-        searchClick.forEach((star, idx) => {
-            star.addEventListener('click', (e) => {
+        searchClick.forEach((el, i) => {
+            el.addEventListener('click', (e) => {
                 e.preventDefault();
-                const target = idx || star.dataset.star;
+                const target = i || el.dataset.el;
                 const filterList = cssProperty.filter((data) => {
-                    return data.star == target;
+                    return data.el == target;
                 });
                 updateList(filterList);
             });
         });
         
-        searchClick2.forEach((star, idx) => {
-            star.addEventListener('click', (e) => {
+        searchClick2.forEach((el, i) => {
+            el.addEventListener('click', (e) => {
                 e.preventDefault();
-                const target = idx + 1;
+                const target = i + 1;
                 const filterList = cssProperty.filter((data) => {
-                    return data.star >= target;
+                    return data.el >= target;
                 });
                 updateList(filterList);
             });

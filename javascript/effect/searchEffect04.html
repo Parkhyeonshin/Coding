@@ -1161,8 +1161,8 @@ li{
 
             
     // 출력하기
+    searchNum.innerHTML = cssProperty.length; // 프로퍼티 총 갯수 
     cssProperty.map((e,i)=>{
-        searchNum.innerHTML = cssProperty.length; // 프로퍼티 총 갯수 
         // (= serachNum.innerHTML = index +1;)
 
         searchList.innerHTML += `<span>${e.name}</span>`;
@@ -1188,12 +1188,12 @@ li{
     });
 
     // 클릭하기
-    document.querySelectorAll(".search__list span").forEach(span => {
-        span.addEventListener("click", () => {
-            const clickWord = span.innerText;
-            findProperty(clickWord);
-        });
-    });
+    // document.querySelectorAll(".search__list span").forEach(span => {
+    //     span.addEventListener("click", () => {
+    //         const clickWord = span.innerText;
+    //         findProperty(clickWord);
+    //     });
+    // });
 
     // 속성 찾기
     function findProperty(searchData) {
