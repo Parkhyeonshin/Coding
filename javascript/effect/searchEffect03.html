@@ -37,6 +37,7 @@
             
             <div class="search__info">
                 <div class="keyword">
+                    <span class="all">All</span>
                     <span>a</span>
                     <span>b</span>
                     <span>c</span>
@@ -64,7 +65,10 @@
                     <span>y</span>
                     <span>z</span>
                 </div>
-                속성 갯수 : <span class="num">0</span>
+                <div>
+                    전체 속성 갯수 : <span class="num">0</span>
+                </div>
+                <div><span class="num2"> </span></div>
             </div>
             <div class="search__list">
                 <div class="html">
@@ -1150,22 +1154,23 @@ text-decoration: underline;
         {
             const searchkeyWord = document.querySelectorAll(".search__info .keyword span");   //알파벳
             const searchList = document.querySelectorAll(".search__list ul li");    //목록 리스트
-            const searchInfo = document.querySelector(".search__info .num");
-            
+            const searchInfo = document.querySelector(".search__info .num");    //전체 갯수
+            const searchInfo2 = document.querySelector(".search__info .num2");    //현재 갯수
+            const name = document.querySelector(".search__info .name");           //누른 것 이름
+
             // 전채 갯수 구하기
             searchInfo.textContent = searchList.length
-            
 
 
             // 
             searchkeyWord.forEach(el =>{
                 el.addEventListener("click", () =>{
                     const searchWord = el.innerText;    //사용자가 클릭한 알파벳
-
+                    
 
                     searchList.forEach(el => {
                         const cssName = el.querySelector("strong").innerText;           //속성 텍스트
-
+                        
                         // 알파벳 첫글자 == CSS 속성의 첫글자
                         if(searchWord.charAt(0)==cssName.charAt(0)){
                             el.classList.remove("hide");
@@ -1173,9 +1178,19 @@ text-decoration: underline;
                         } else{
                             el.classList.add("hide");
                         }
+                        if(searchWord == "All"){
+                            el.classList.remove("hide");
+                        }
                     })
                     const searchList2 = document.querySelectorAll(".search__list ul .hide");
-                    searchInfo.textContent = searchList.length -= searchList2.length;
+                    let currentcnt = searchList.length -= searchList2.length;
+                    searchInfo.textContent =searchList.length
+                    
+                    if(currentcnt==0){
+                        searchInfo2.innerHTML = `선택한 속성은 ' ${searchWord} ' 입니다. 검색 결과가 없습니다.`;
+                    }else{
+                        searchInfo2.innerHTML = `선택한 속성은 ' ${searchWord} ' 입니다. ${currentcnt}개가 있습니다.`;
+                    }
 
                 });
             });

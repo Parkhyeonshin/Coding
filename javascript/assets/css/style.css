@@ -210,9 +210,10 @@ body{
     padding: 6px;
 }
 .sample .table table tr td[class*="_P"] {
-    color: #fff;
+    opacity: 0;
 } 
 .sample .table table tr td[class*="_P"]:hover {
+    opacity: 1;
     color: #000;
     background-color: #f5f5f5;
     cursor:help;
