@@ -54,13 +54,10 @@
                 <a href="https://parkhyeonshin.github.io/Coding/javascript/effect/searchEffect05.html" target="_blank">원본 사이트</a>
             </div>
             <hr>
-            <h3 class="t_tit2">■ n줄 요약</h3>
-                <div class="t_desc">
-                    ▶ 
-                </div>
+           
             
-                <h3 class="t_tit2">JS 소스</h3>
-                <div class="t_code">
+            <h3 class="t_tit2">JS 소스</h3>
+            <div class="t_code">
 <pre><code class="language-js">const cssProperty = [
     { name: "accent-color", desc: " 일부 요소가 생성하는 사용자 인터페이스 컨트롤의 강조색을 지정합니다."},
     { name: "align-content", desc: " 콘텐츠 사이와 콘텐츠 주위 빈 공간을 교차축(flex박스) 또는 블록축(grid)을 따라 배치할지 속성할 수 있습니다."},
@@ -97,41 +94,69 @@ updateList(cssProperty);
 const searchClick = document.querySelectorAll('.search__click ul li');
 const searchClick2 = document.querySelectorAll('.search__click ul')[1].querySelectorAll('li');
 
-searchClick.forEach((el, i) => {
+searchClick.forEach((el, idx) => {
     el.addEventListener('click', (e) => {
         e.preventDefault();
-        const target = i || el.dataset.el;
+        const target = idx || el.dataset.star;
         const filterList = cssProperty.filter((data) => {
-            return data.el == target;
+            return data.star == target;
         });
         updateList(filterList);
     });
 });
 
-searchClick2.forEach((el, i) => {
+searchClick2.forEach((el, idx) => {
     el.addEventListener('click', (e) => {
         e.preventDefault();
-        const target = i + 1;
+        const target = idx + 1;
         const filterList = cssProperty.filter((data) => {
-            return data.el >= target;
+            return data.star >= target;
         });
         updateList(filterList);
     });
 });
 </code></pre>
-                </div>
-                <p class="t_tit2">■ 핵심 찍먹하기🪓</p>
+            </div>
+            <p class="t_tit2">■ 핵심 찍먹하기🪓</p>
 
-                <h2 class="t_tit3" style="border-bottom: 1px solid #ccc;">✔</h2>
-                <p class="t_desc">
-                </p>
+            <h2 class="t_tit3" style="border-bottom: 1px solid #ccc;">✔ filter()</h2>
+            <p class="t_desc">
+                filter()메서드는 주어진 함수의 조건에 맞는 요소를 모아 새로운 배열로 반환하는 메서드입니다.
+            </p>
+            <p class="t_box">
+                const numbers = [1, 2, 3, 4, 5];
+                <br>const result = numbers.filter(number => number > 3);
+                <br>
+                console.log(numbers);
+                <br>// [1, 2, 3, 4, 5];
+                <br>
+                <br>console.log(result);
+                <br>// [4, 5]
+                <br><br>출처: https://7942yongdae.tistory.com/49 [프로그래머 YD:티스토리]
+            </p>
 
-                <p class="t_tit2">■ 소스 분석하기🙄</p>
-                <p class="t_desc">
-                </p>
+            <p class="t_tit2">■ 소스 분석하기🙄</p>
+            <p class="t_desc">
+                &lt; 출력하기 
+                <br> updateList실행문에 cssProperty를 매개변수로 받아 실행시킵니다.
+                <br> for of 문과 ``(백틱)을 이용해서 ' 이름 : 설명 &nbsp; 별점'순으로 텍스트형식으로 입력합니다.
 
-                <hr style="margin-bottom : 10px">
-                <p class="p_desc" style="font-size: 14px; text-align: center;">🙇‍♀️ 틀린 점에 대한 지적은 언제나 환영합니다 🙇‍♂️</p>
+                <br><br>&lt; 클릭하기
+                <br> serachClick은 별점을 가져오고 2는 두번째 ul의 'n개이상' 리스트를 가져옵니다.
+                <br> 정확한 별점개수일치하는 버튼은 간단합니다. 버튼을 클릭시 해당 버튼의 index값을 가져옵니다.
+                <br> 그리고 이 가져온값을 <i>filter()</i>메서드를 이용해서 프로퍼티배열 중 'star 데이터'가 누른 별점갯수li의 index값과 일치하는 것들만
+                배열로 반환합니다.
+                <br>그리고 이 값들을 다시 updateList()함수에 매개변수로 전달하여 'searchList'(내용란)을 덮어씌우므로 
+                결과창이 바뀌게 됩니다.
+                <br> 마찬가지로 n개이상버튼은 클릭시 해당 index에 +1을 시킵니다. (1개이상은 index로 따지면 0이니깐요)
+                <br> 그리고 마찬가지로 filter()메서드로 조건에 맞는 값들만 배열식으로 뽑아냅니다. 단, 여기서 조건은 '~이상'이므로 
+                'target'의 이상값들을 전부 뽑아냅니다. 
+                <br> 이후 이 값들을 다시 updateList()의 매개변수로 보냅니다. 
+
+            </p>
+
+            <hr style="margin-bottom : 10px">
+            <p class="p_desc" style="font-size: 14px; text-align: center;">🙇‍♀️ 틀린 점에 대한 지적은 언제나 환영합니다 🙇‍♂️</p>
             
         </div>
     </main> <!-- //main end -->

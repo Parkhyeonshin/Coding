@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디 테스트04</title>
+
+
+    <style>
+        @import url('https://webfontworld.github.io/naver/NanumGothic.css');
+        *{
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            font-family: 'NanumGothic';
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        .container{
+            width: 1100px !important;
+            margin: 0 auto;
+        }
+        .blind {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            clip: rect(0 0 0 0);
+            overflow: hidden;
+        }
+        #header{
+            display: flex;
+            align-items: flex-end;
+            margin-top: 60px;
+            vertical-align: text-bottom;
+            box-sizing: border-box;
+            padding: 0 1%;
+
+        }
+        #header .logo{
+            width: 30%;
+            margin-bottom: 15px;
+            margin-left: 80px;
+        }
+        #header .logo a{
+            font-size: 1.8rem;
+            position: relative;
+            font-weight: bold;
+
+        }
+        #header .logo a::before{
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -50px;
+            width: 40px;
+            height: 50px;
+            background: url(../siteTest4/img/logo.png) no-repeat;
+            background-size: contain;
+
+        }
+        #header .desc{
+            width: 70%;
+        }
+        #header ul {
+            text-align: right;
+            margin-bottom: 5px;
+        }
+        #header li {
+            display: inline-block;
+            margin: 15px;
+        }
+        #header .desc li a{
+            font-size: 1.1rem;
+        }
+        
+        #slide{
+            width: 100%;
+            height: 500px;
+            background: #666;
+            overflow: hidden;
+        }
+        #card{
+            width: 100%;
+            background: #f5f5f5;
+        }
+        .card__container {
+            width: 1100px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding: 30px;
+            position: relative;
+        }
+        .card__container h2 {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .card__container a{
+            position: absolute;
+            display: block;
+            top: 25px;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            background: url(img/more.png) no-repeat;
+            background-size: contain;
+            border: 1px solid black;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        .card__wrap{
+            display: flex;
+            justify-content: space-between;
+        }
+        .card__wrap > .card{
+            background: #fff;
+            width: 24%;
+            box-sizing: border-box;
+            padding: 30px;
+        }
+        .card > div:nth-child(1){
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid blue;
+            border-radius: 5px;
+        }
+
+
+        #text{
+            width: 100%;
+            height: 100px;
+            background: #888;
+        }
+        #footer{
+            width: 100%;
+            height: 100px;
+            background: #222;
+        }
+    </style>
+
+</head>
+<body>
+    <header id="header" class="container">
+        <div class="logo">
+            <a href="#">K I T A <span>.NET</span></a>
+        </div>
+        <div class="desc">
+            <ul>
+                <li><a href="#">무역통상정보</a></li>
+                <li><a href="#">회원/업무지원</a></li>
+                <li><a href="#">무역통계</a></li>
+                <li><a href="#">협회안내</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- //header -->
+    <main>
+        <section id="slide" class="slide">
+            <div class="img__wrap">
+                <div class="img__box">
+                    <div class="img">
+                        <!-- <a href="#" class="blind">이전</a>
+                        <a href="#" class="blind">다음</a>
+                        <div class="img__desc">
+                            <h2>STARTUP Germany<br>2019 참가업체 모집</h2>
+                            <p>사업기간2019-07-02 ~ 2019-08-09</p>
+                        </div> -->
+                    </div>
+                    <div class="img">
+                        <!-- <a href="#" class="blind">이전</a>
+                        <a href="#" class="blind">다음</a>
+                        <div class="img__desc">
+                            <h2>STARTUP Germany<br>2019 참가업체 모집</h2>
+                            <p>사업기간2019-07-02 ~ 2019-08-09</p>
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- //slide -->
+        <section id="card">
+            <div class="card__container">
+                <h2>KITA 사업 일정</h2>
+                <a href="#"><span class="blind">더보기</span></a>
+                <div class="card__wrap">
+                    <div class="card">
+                        <div>모집마감 -4일</div>
+                        <div>『2019 태국 국제식품전시회』업체모집</div>
+                        <div>
+                            <p>사업기간</p>
+                            <p> 2019-05-28 ~ 2019-06-01</p>
+                        </div>
+                        <div>
+                            <p>모집기간</p>
+                            <p> 2019-01-17 ~ 2019-02-12</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>모집마감 -4일</div>
+                        <div>[아카데미]무역실무기초 단기속성(1차,야간)개최</div>
+                        <div>
+                            <p>사업기간</p>
+                            <p> 2019-02-18 ~ 2019-02-22</p>
+                        </div>
+                        <div>
+                            <p>모집기간</p>
+                            <p> 2019-01-23 ~ 2019-02-12</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>모집마감 -4일</div>
+                        <div>해외 온라인판매 글로벌 셀러 양성과정 참가자 모집</div>
+                        <div>
+                            <p>사업기간</p>
+                            <p> 2019-02-14 ~ 2019-03-05</p>
+                        </div>
+                        <div>
+                            <p>모집기간</p>
+                            <p> 2019-01-25 ~ 2019-02-12</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>모집마감 -4일</div>
+                        <div>대전 수출활력 촉진단 행사 개최(2/14)</div>
+                        <div>
+                            <p>사업기간</p>
+                            <p> 2019-02-14 ~ 2019-02-14</p>
+                        </div>
+                        <div>
+                            <p>모집기간</p>
+                            <p> 2019-02-01 ~ 2019-02-12</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //card? -->
+        <section id="text" class="container"></section>
+        <!-- //text -->
+        <section id="banner"></section>
+        <!-- banner -->
+
+    </main>
+    <!-- //main -->
+    <footer id="footer"></footer>
+    <!-- footer -->
+</body>
+</html>

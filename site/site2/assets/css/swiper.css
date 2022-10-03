@@ -18,7 +18,7 @@
 }
 
 :root {
-    --swiper-theme-color: #fff
+    --swiper-theme-color: #007aff
 }
 
 .swiper {
@@ -350,8 +350,8 @@
     height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 8px));
     display: inline-block;
     border-radius: 50%;
-    /* background: var(--swiper-pagination-bullet-inactive-color, #000); */
-    /* opacity: var(--swiper-pagination-bullet-inactive-opacity, .2) */
+    background: var(--swiper-pagination-bullet-inactive-color, #000);
+    opacity: var(--swiper-pagination-bullet-inactive-opacity, .2)
 }
 
 button.swiper-pagination-bullet {

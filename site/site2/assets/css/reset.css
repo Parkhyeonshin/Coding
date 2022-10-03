@@ -28,6 +28,7 @@ figure,
 figcaption {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 /* 시멘틱 태그 초기화 */
@@ -47,19 +48,12 @@ section {
 
 /* 폰트 초기화 */
 body,
-button,
 input,
 select,
 table,
-textarea{
+textarea {
     color: #000;
     font-family: 'GmarketSans', 'AppleSDGothicNeo-Regular', 'Malgun Gothic', '맑은 고딕', dotum, 돋움;
-}
-/* 'NexonLv1Gothic' */
-/* 가로모드 초기화 */
-html {
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
 }
 
 /* 링크 초기화 */
@@ -86,7 +80,8 @@ h6 {
 }
 
 /* 폰트 스타일 초기화 */
-em, address{
+em,
+address {
     font-style: normal;
 }
 
@@ -97,7 +92,9 @@ img {
 }
 
 /* 보더 초기화 */
-img, fieldset, button {
+img,
+fieldset,
+button {
     border: 0;
 }
 
@@ -105,27 +102,29 @@ img, fieldset, button {
 .clearfix {
     zoom: 1;
 }
+
 .clearfix::before,
 .clearfix::after {
     content: '';
     display: block;
     line-height: 0;
 }
+
 .clearfix::after {
     clear: both;
 }
 
 /* 블라인드 효과 */
-.blind{
+.blind {
     position: absolute;
     clip: rect(0 0 0 0);
     width: 1px;
     height: 1px;
     margin: -1px;
-    overflow: hidden;
+    overflow: hidden
 }
 
-/* 이미지 대체효과(ir효과) */
+/* 이미지 대체(ir) 효과 */
 .ir {
     display: block;
     overflow: hidden;
