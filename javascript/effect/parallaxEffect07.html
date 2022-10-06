@@ -414,7 +414,7 @@
                     <div class="content__item__img"></div>
                 </figure>
 
-                <p class="content__item__desc split reveal reveal_TWO reveal_BTT"><span>자신감 있는 표정을 지으면 자신감이 생긴다.</span></p>
+                <p class="content__item__desc split reveal reveal_TWO reveal_BTT">자신감 있는 표정을 지으면 자신감이 생긴다.</p>
             </section>
             <!-- // section8 -->
 
@@ -425,7 +425,7 @@
                     <div class="content__item__img"></div>
                 </figure>
 
-                <p class="content__item__desc split reveal"><span>길을 잃는 다는 것은 곧 길을 알게 된다는 것이다.</span></p>
+                <p class="content__item__desc split reveal">길을 잃는 다는 것은 곧 길을 알게 된다는 것이다.</p>
             </section>
             <!-- // section9 -->
         </div>
@@ -564,7 +564,15 @@
     <script>
 
         // reveal 클래스 자식에 글씨만 있다면? 가상으로 span 태그를 만들어서 넣어주세요~
+        const contDesc = document.querySelectorAll(".content__item .reveal");
 
+        contDesc.forEach(e=>{
+            let text = e.innerText;
+            if (text) {
+                // e.innerHTML = text;
+                e.innerHTML = "<span>" + text + "</span>"
+            }
+        })
 
 
        function scroll(){
@@ -591,7 +599,7 @@
             }
         });
 
-        document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
+        document.querySelector(".scroll span").innerText = Math.round(scrollTop);
         requestAnimationFrame(scroll);
        }
        scroll();
