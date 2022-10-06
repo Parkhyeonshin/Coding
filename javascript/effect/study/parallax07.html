@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>자바스크립트 : 페럴렉스06</title>
+        <title>자바스크립트 : 페럴렉스07</title>
 
         <link rel="stylesheet" href="../../../javascript/assets/css/style.css" />
         <link rel="stylesheet" href="../../../javascript/assets/css/dracula.css" />
@@ -21,9 +21,9 @@
         <main id="main">
             <!--main start-->
             <div class="document">
-                <h2 class="t_tit">페럴렉스 효과 06</h2>
+                <h2 class="t_tit">페럴렉스 효과 07</h2>
                 <div class="t_desc2">
-                    이번 시간에는 글씨가 나타나는 효과를 주겠습니다.
+                    
                 </div>
                 <hr />
 
@@ -42,32 +42,7 @@
                 </div>
                 <h3 class="t_tit2">JS 소스</h3>
                 <div class="t_code">
-<pre><code class="language-js">document.querySelectorAll(".split").forEach(text => {
-    let splitText = text.innerText;
-    let splitWrap = splitText.split('').join("&lt;/span&gt;&lt;span aria-hidden='true'&gt;");
-    splitWrap = "&lt;span aria-hidden='true'&gt;" + splitWrap + "&lt;/span&gt;";
-    text.innerHTML = splitWrap;
-    text.setAttribute("aria-label", splitText);
-})
-
-function scroll() {
-    let scrollTop = window.scrollY;
-    document.querySelector("#parallax__info .scroll").innerText = Math.round(scrollTop) + "px";
-
-    document.querySelectorAll(".content__item").forEach(item => {
-        if (scrollTop >= item.offsetTop) {
-            item.querySelectorAll(".split span").forEach((e, i) => {
-                e.classList.add("show")
-                item.querySelector(".split span:nth-child(" + (i + 1) + ")").style.transform = "translateX(10px)";
-                item.querySelector(".split span:nth-child(" + (i + 1) + ")").style.transitionDelay = (i/0.5) + "00ms";//"0."+i+"s"
-                item.querySelector(".split span:nth-child(" + (i + 1) + ")").style.opacity = "1";
-            })
-        }
-    })
-
-    requestAnimationFrame(scroll);
-}
-scroll();
+<pre><code class="language-js">
 </code></pre>
                 </div>
                 <h2 class="t_tit2">■ 핵심 찍먹하기🪓</h2>
