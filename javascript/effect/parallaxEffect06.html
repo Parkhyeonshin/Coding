@@ -270,7 +270,7 @@
         }
 
         .style4.split span.show {
-
+            opacity: 1;
             animation: wobble 1s 1 ease-in forwards;
         }
 
@@ -313,6 +313,7 @@
         }
 
         .style5.split span.show {
+            opacity: 1;
 
             animation: bounceInleft 1s 1 ease-in forwards;
         }
@@ -349,6 +350,7 @@
                 transform: translate3d(0, 0, 0);
             }
         }
+
         .style6.split span {
             opacity: 0;
             min-width: 1vw;
@@ -356,10 +358,158 @@
         }
 
         .style6.split span.show {
+            opacity: 1;
 
-            animation: bounceInleft 1s 1 ease-in forwards;
+            animation: flash 1s 1 ease-in forwards;
         }
 
+        @keyframes flash {
+
+            0%,
+            50%,
+            100% {
+                opacity: 1;
+            }
+
+            25%,
+            75% {
+                opacity: 0;
+            }
+        }
+
+        .style7.split span {
+            opacity: 0;
+            min-width: 1vw;
+            display: inline-block;
+        }
+
+        .style7.split span.show {
+
+            opacity: 1;
+            animation: bounce 1s 1 ease-in forwards;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            53%,
+            100% {
+                animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                transform: translate3d(0, 0, 0);
+            }
+
+            40%,
+            43% {
+                animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+                transform: translate3d(0, -30px, 0) scaleY(1.1);
+            }
+
+            70% {
+                animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+                transform: translate3d(0, -15px, 0) scaleY(1.05);
+            }
+
+            80% {
+                transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                transform: translate3d(0, 0, 0) scaleY(0.95);
+            }
+
+            90% {
+                transform: translate3d(0, -4px, 0) scaleY(1.02);
+            }
+        }
+
+        .style8.split span {
+            opacity: 0;
+            min-width: 1vw;
+            display: inline-block;
+        }
+
+        .style8.split span.show {
+
+            opacity: 1;
+            animation: jello 1s 1 ease-in forwards;
+        }
+
+        @keyframes jello {
+
+            0%,
+            11.1%,
+            100% {
+                transform: translate3d(0, 0, 0);
+            }
+
+            22.2% {
+                transform: skewX(-12.5deg) skewY(-12.5deg);
+            }
+
+            33.3% {
+                transform: skewX(6.25deg) skewY(6.25deg);
+            }
+
+            44.4% {
+                transform: skewX(-3.125deg) skewY(-3.125deg);
+            }
+
+            55.5% {
+                transform: skewX(1.5625deg) skewY(1.5625deg);
+            }
+
+            66.6% {
+                transform: skewX(-0.78125deg) skewY(-0.78125deg);
+            }
+
+            77.7% {
+                transform: skewX(0.390625deg) skewY(0.390625deg);
+            }
+
+            88.8% {
+                transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+            }
+        }
+
+        .style9.split span {
+            opacity: 0;
+            min-width: 1vw;
+            display: inline-block;
+        }
+
+        .style9.split span.show {
+
+            opacity: 1;
+            animation: rubberBand 1s 1 ease-in forwards;
+        }
+
+        @keyframes rubberBand {
+            0% {
+                transform: scale3d(1, 1, 1);
+            }
+
+            30% {
+                transform: scale3d(1.25, 0.75, 1);
+            }
+
+            40% {
+                transform: scale3d(0.75, 1.25, 1);
+            }
+
+            50% {
+                transform: scale3d(1.15, 0.85, 1);
+            }
+
+            65% {
+                transform: scale3d(0.95, 1.05, 1);
+            }
+
+            75% {
+                transform: scale3d(1.05, 0.95, 1);
+            }
+
+            100% {
+                transform: scale3d(1, 1, 1);
+            }
+        }
     </style>
 </head>
 
@@ -435,7 +585,7 @@
                     <div class="content__item__img"></div>
                 </figure>
 
-                <p class="content__item__desc split">만약 우리가 할 수 있는 일을 모두 한다면 우리들은 우리자신에 깜짝 놀랄 것이다.</p>
+                <p class="content__item__desc split style5">만약 우리가 할 수 있는 일을 모두 한다면 우리들은 우리자신에 깜짝 놀랄 것이다.</p>
             </section>
             <!-- // section5 -->
 
@@ -446,7 +596,7 @@
                     <div class="content__item__img"></div>
                 </figure>
 
-                <p class="content__item__desc split">자신을 내보여라. 그러면 재능이 드러날 것이다.</p>
+                <p class="content__item__desc split style6">자신을 내보여라. 그러면 재능이 드러날 것이다.</p>
             </section>
             <!-- // section6 -->
 
@@ -457,7 +607,7 @@
                     <div class="content__item__img"></div>
                 </figure>
 
-                <p class="content__item__desc split">겨울이 오면 봄이 멀지 않으리</p>
+                <p class="content__item__desc split style7">겨울이 오면 봄이 멀지 않으리</p>
             </section>
             <!-- // section7 -->
 
@@ -468,7 +618,7 @@
                     <div class="content__item__img"></div>
                 </figure>
 
-                <p class="content__item__desc split">자신감 있는 표정을 지으면 자신감이 생긴다.</p>
+                <p class="content__item__desc split style8">자신감 있는 표정을 지으면 자신감이 생긴다.</p>
             </section>
             <!-- // section8 -->
 
@@ -479,7 +629,7 @@
                     <div class="content__item__img"></div>
                 </figure>
 
-                <p class="content__item__desc split">길을 잃는 다는 것은 곧 길을 알게 된다는 것이다.</p>
+                <p class="content__item__desc split style9">길을 잃는 다는 것은 곧 길을 알게 된다는 것이다.</p>
             </section>
             <!-- // section9 -->
         </div>
@@ -651,66 +801,66 @@
         // }
         // scroll();
 
-            // 글씨 쪼개기
-            // let text = document.querySelector('#section1 .content__item__desc');
-            // let splitTextWrap = text.innerText.split('').join('</span><span>');
-            // splitTextWrap = "<span>" + splitTextWrap + "</span>";
-            // text.innerHTML = splitTextWrap;
+        // 글씨 쪼개기
+        // let text = document.querySelector('#section1 .content__item__desc');
+        // let splitTextWrap = text.innerText.split('').join('</span><span>');
+        // splitTextWrap = "<span>" + splitTextWrap + "</span>";
+        // text.innerHTML = splitTextWrap;
 
-            // 글씨 쪼개기(다중이)
-            // let texts = document.querySelectorAll('.content__item__desc');
-            // texts.forEach((text, index) => {
-            //     let splitTextWrap = text.innerText.split('').join('</span><span>');
-            //     splitTextWrap = "<span>" + splitTextWrap + "</span>";
-            //     text.innerHTML = splitTextWrap;
+        // 글씨 쪼개기(다중이)
+        // let texts = document.querySelectorAll('.content__item__desc');
+        // texts.forEach((text, index) => {
+        //     let splitTextWrap = text.innerText.split('').join('</span><span>');
+        //     splitTextWrap = "<span>" + splitTextWrap + "</span>";
+        //     text.innerHTML = splitTextWrap;
+        // });
+
+        document.querySelectorAll('.split').forEach((text) => {
+            let splitText = text.innerText;
+            let splitWrap = splitText.split('').join('</span><span aria-hidden = "true">');
+            splitWrap = "<span aria-hidden = 'true'>" + splitWrap + "</span>";
+            text.innerHTML = splitWrap;
+            text.setAttribute("aria-label", splitText);
+        });
+
+        function scroll() {
+            let scrollTop = window.scrollY;
+            document.querySelector('.scroll span').innerText = Math.ceil(scrollTop);
+
+            // css 클래스 추가(수동적 방법)
+            // document.querySelectorAll('.content__item').forEach((item) => {
+            //     if(scrollTop >= item.offsetTop - 200) {
+            //         item.querySelector('.split').classList.add('show');
+            //     }
             // });
-        
-            document.querySelectorAll('.split').forEach((text) => {
-                let splitText = text.innerText;
-                let splitWrap = splitText.split('').join('</span><span aria-hidden = "true">');
-                splitWrap = "<span aria-hidden = 'true'>" + splitWrap + "</span>";
-                text.innerHTML = splitWrap;
-                text.setAttribute("aria-label", splitText);
+
+            // document.querySelectorAll('.content__item').forEach((item) => {
+            //     if(scrollTop >= item.offsetTop - 200) {
+            //         item.querySelector('.split').classList.add('show');
+            //         item.querySelectorAll('.split span').forEach((span, index) => {
+            //             span.style.transitionDelay = `${index * 50}ms`;
+            //         });
+            //     }
+            // });
+            // requestAnimationFrame(scroll);
+
+            document.querySelectorAll('.content__item').forEach((item) => {
+                if (scrollTop >= item.offsetTop-window.innerHeight/2) {
+                    item.querySelectorAll(".split span").forEach((span, index) => {
+                        setTimeout(() => {
+                            span.classList.add("show");
+                        }, 50 * index);
+                    });
+                }
             });
-        
-            function scroll() {
-                let scrollTop = window.scrollY;
-                document.querySelector('.scroll span').innerText = Math.ceil(scrollTop);
-
-                // css 클래스 추가(수동적 방법)
-                // document.querySelectorAll('.content__item').forEach((item) => {
-                //     if(scrollTop >= item.offsetTop - 200) {
-                //         item.querySelector('.split').classList.add('show');
-                //     }
-                // });
-                
-                // document.querySelectorAll('.content__item').forEach((item) => {
-                //     if(scrollTop >= item.offsetTop - 200) {
-                //         item.querySelector('.split').classList.add('show');
-                //         item.querySelectorAll('.split span').forEach((span, index) => {
-                //             span.style.transitionDelay = `${index * 50}ms`;
-                //         });
-                //     }
-                // });
-                // requestAnimationFrame(scroll);
-
-                document.querySelectorAll('.content__item').forEach((item) => {
-                    if(scrollTop >= item.offsetTop) {
-                        item.querySelectorAll(".split span").forEach((span, index) => {
-                            setTimeout(() => {
-                                span.classList.add("show");
-                            }, 50 * index);
-                        });
-                    }
-                });
-                requestAnimationFrame(scroll);
-            }
-            scroll();
+            requestAnimationFrame(scroll);
+        }
+        scroll();
 
 
 
             // 첫 번째 span 0.01, 
-            // 두 번째 span 0.02, 
+            // 두 번째 span 0.02,
             // 세 번째 span 0.03
 
     </script>
