@@ -1,23 +1,58 @@
-.musci__wrap {}
-.musci__inner {
-    width: 5px;
-    justify-self: 3px;
+.music__wrap {}
+.music__inner {
+    width: 450px;
     background: #000;
     position: absolute;
     right: 100px;
     top: 100px;
+    padding: 10px;
+    padding-top: 0;
 }
-.musci__header {
+.music__header {
     width: 100%;
     height: 30px;
-    background: #ccc;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: white;
 }
-.musci__header h2{
+.music__header h2{
     font-size: 14px;
 }
-.musci__contents {}
-.musci__footer {}
+.music__contents {
+    background: #c4c4c4;
+    width: 100%;
+}
+.music__view{
+    display: flex;
+    padding: 20px;
+}
+.music__view .img {
+    width: 30%;
+}
+.music__view .img img{
+    width: 100%;
+}
+.music__view .title {
+    width: 70%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.music__view .title h3{
+    margin-bottom: 5px;
+    font-size: 30px;
+    line-height: 1.2;
+}
+.music__view .title p{
+    color: red;
+    text-transform: uppercase;
+}
+.music__control {
+    width: 100%;
+    
+}
+
+.music__footer {}
