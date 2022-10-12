@@ -19,37 +19,37 @@ const allMusic = [
     },
     {
         name: "Music Track 04",
-        artist: "Jeremy Black",
+        artist: "Various artist",
         img: "music_view04",
         audio: "music_audio04"
     },
     {
         name: "Music Track 05",
-        artist: "Patrick Patrikios",
+        artist: "Various artist",
         img: "music_view05",
         audio: "music_audio05"
     },
     {
         name: "Music Track 06",
-        artist: "DJ Freedem",
+        artist: "Various artist",
         img: "music_view06",
         audio: "music_audio06"
     },
     {
         name: "Music Track 07",
-        artist: "Asher Fulero",
+        artist: "Various artist",
         img: "music_view07",
         audio: "music_audio07"
     },
     {
         name: "Music Track 08",
-        artist: "Jeremy Black",
+        artist: "Various artist",
         img: "music_view08",
         audio: "music_audio08"
     },
     {
         name: "Music Track 09",
-        artist: "Kwon",
+        artist: "Various artist",
         img: "music_view09",
         audio: "music_audio09"
     },
@@ -69,10 +69,10 @@ const musicProgressDuration = musicWrap.querySelector(".progress .timer .duratio
 const musicRepeat = musicWrap.querySelector("#control-repeat");
 const musicListBtn = musicWrap.querySelector("#control-list");
 const musicList = musicWrap.querySelector(".music__list");
-const musicListUl = document.querySelector(".music__list ul");
+const musicListUl = musicWrap.querySelector(".music__list ul");
 
 
-let musicIndex = 3;
+let musicIndex = 1;
 // 음악 재생
 function loadMusic(num) {
     musicName.innerText = allMusic[num - 1].name;
@@ -128,7 +128,7 @@ musicAudio.addEventListener("timeupdate", e => {
     let currentSec = Math.floor(currentTime % 60);
     if(currentSec < 10) currentSec = `0${currentSec}`;        
     musicProgressCurrent.innerText = `${currentMin}:${currentSec}`;
-    console.log(currentSec)
+    // console.log(currentSec)
 
 
     // 진행바 클릭
@@ -164,7 +164,7 @@ musicRepeat.addEventListener("click", ()=>{
 
 // 뮤직 리스트 버튼
 musicListBtn.addEventListener("click", () => {
-    musicList.classList.add("show");
+    musicList.classList.toggle("show");
 })
 
 
@@ -178,8 +178,9 @@ for(let i=0; i<allMusic.length; i++){
     </li>
     `;
     musicListUl.innerHTML += li;
-
 }
+
+
 
 // 오디오가 끝나면
 musicAudio.addEventListener("ended", ()=> {
