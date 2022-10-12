@@ -31,14 +31,14 @@ body {
     color: #fff;
 }
 
-.mouse__cursor {
+.mouse__cursor img{
     position: absolute;
     left: 0;
     top: 0;
     width: 50px;
     height: 50px;
-    background: url(../img/cusor.png) no-repeat; 
-    background-size: cover;
+    /* background: url(../img/cursor.png) no-repeat; 
+    background-size: cover; */
     user-select: none;
     pointer-events: none;
     z-index: 1000000;
@@ -60,6 +60,7 @@ body {
     padding: 2px;
     white-space: nowrap;
     text-align: center;
+    border-radius: 5px;
 }
 .icon2 {
     position: absolute;
@@ -73,6 +74,7 @@ body {
     color: white;
     padding: 2px;
     text-align: center;
+    border-radius: 5px;
     white-space: nowrap;
 }
 .icon3 {
@@ -86,6 +88,7 @@ body {
     background: #000;
     color: white;
     padding: 2px;
+    border-radius: 5px;
     text-align: center;
     white-space: nowrap;
 }
@@ -97,6 +100,7 @@ body {
 }
 .icon4 span {
     display: block;
+    border-radius: 5px;
     background: #000;
     color: white;
     text-align: center;
@@ -112,6 +116,7 @@ body {
 .icon5 span {
     display: block;
     text-align: center;
+    border-radius: 5px;
     background: #000;
     color: white;
     padding: 2px;
