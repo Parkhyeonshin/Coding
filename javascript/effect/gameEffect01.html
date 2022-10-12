@@ -10,15 +10,33 @@
     <link rel="stylesheet" href="../assets/css/dracula.css">
 </head>
 <body>
+
     <header id="header">
         <h1>Crazy Computer</h1>
         <div class="time"></div>
     </header>
     <!-- // header -->
     <main id="main">
+        <div class="mouse__cursor"></div>
         <div class="icon_box">
-            <div class="icon1">
-                <img src="" alt="뮤직">
+            <div class="icon1 icon">
+                <img src="../assets/img/icon01.svg" alt="뮤직">
+                <span>노래 듣기</span>
+            </div>
+            <div class="icon2 icon">
+                <img src="../assets/img/icon02.svg" alt="뮤직">
+                <span>노래 듣기</span>
+            </div>
+            <div class="icon3 icon">
+                <img src="../assets/img/icon03.svg" alt="뮤직">
+                <span>노래 듣기</span>
+            </div>
+            <div class="icon4 icon">
+                <img src="../assets/img/icon04.svg" alt="뮤직">
+                <span>노래 듣기</span>
+            </div>
+            <div class="icon5 icon">
+                <img src="../assets/img/icon05.svg" alt="뮤직">
                 <span>노래 듣기</span>
             </div>
         </div>
@@ -28,14 +46,36 @@
         <div class="agent"></div>
     </footer>
     <!-- // footer -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	<script src="../assets/js/gsap.js"></script>
     <script>
+        // 아이콘 이동시키기
+        $(".icon1").draggable();
+        $(".icon2").draggable();
+        $(".icon3").draggable();
+        $(".icon4").draggable();
+        $(".icon5").draggable();
+
+
+        // 마우스커서변경
+        const cursor = document.querySelector(".mouse__cursor");
+
+        window.addEventListener("mousemove", (e) => {
+            // gsap.to(cursor, {left: e.pageX -5, top: e.pageY -5});
+            cursor.style.left = e.clientX - 0 + "px";
+            cursor.style.top = e.clientY - 0 + "px";
+        });
+
+
         function printTime() {
             const clock = document.querySelector('.time');
             const now = new Date();
             const nowTime = `${now.getFullYear()}년 ${now.getMonth()}월 ${now.getDate()}일 ${now.getHours()}시 ${now.getMinutes()}분 ${now.getSeconds()}초`;
             clock.innerHTML = nowTime;
             setInterval(() => {
-                printTime();
+                printTime();    
             }, 1000);
         }
         function printAgent() {

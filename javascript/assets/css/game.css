@@ -10,6 +10,7 @@ body {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    cursor: none;
 }
 #header {
     display: flex;
@@ -29,6 +30,95 @@ body {
     font-size: 16px;
     color: #fff;
 }
+
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background: url(../img/cusor.png) no-repeat; 
+    background-size: cover;
+    user-select: none;
+    pointer-events: none;
+    z-index: 1000000;
+  }
+
+.icon1 {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    width: 85px;
+}
+.icon img {
+    width: 100%;
+}
+.icon1 span {
+    display: block;
+    background: #000;
+    color: white;
+    padding: 2px;
+    white-space: nowrap;
+    text-align: center;
+}
+.icon2 {
+    position: absolute;
+    left: 200px;
+    top: 200px;
+    width:85px;
+}
+.icon2 span {
+    display: block;
+    background: #000;
+    color: white;
+    padding: 2px;
+    text-align: center;
+    white-space: nowrap;
+}
+.icon3 {
+    position: absolute;
+    left: 300px;
+    top: 300px;
+    width:85px;
+}
+.icon3 span {
+    display: block;
+    background: #000;
+    color: white;
+    padding: 2px;
+    text-align: center;
+    white-space: nowrap;
+}
+.icon4 {
+    position: absolute;
+    left: 400px;
+    top: 200px;
+    width:85px;
+}
+.icon4 span {
+    display: block;
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 2px;
+    white-space: nowrap;
+}
+.icon5 {
+    position: absolute;
+    left: 500px;
+    top: 100px;
+    width:85px;
+}
+.icon5 span {
+    display: block;
+    text-align: center;
+    background: #000;
+    color: white;
+    padding: 2px;
+    white-space: nowrap;
+}
+
+
 #footer {
     position: fixed;
     left: 0;
