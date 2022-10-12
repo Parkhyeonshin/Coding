@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../assets/css/bg.css">
     <link rel="stylesheet" href="../assets/css/game.css">
     <link rel="stylesheet" href="../assets/css/music.css">
-    <link rel="stylesheet" href="../assets/css/dracula.css">
 </head>
 <body>
 
@@ -27,19 +26,23 @@
                 <span>노래 듣기</span>
             </div>
             <div class="icon2 icon">
-                <img src="../assets/img/icon01.svg" alt="뮤직">
+                <img src="../assets/img/icon02.svg" alt="뮤직">
                 <span>노래 듣기</span>
             </div>
             <div class="icon3 icon">
-                <img src="../assets/img/icon01.svg" alt="뮤직">
+                <img src="../assets/img/icon03.svg" alt="뮤직">
                 <span>노래 듣기</span>
             </div>
             <div class="icon4 icon">
-                <img src="../assets/img/icon01.svg" alt="뮤직">
+                <img src="../assets/img/icon04.svg" alt="뮤직">
                 <span>노래 듣기</span>
             </div>
             <div class="icon5 icon">
-                <img src="../assets/img/icon01.svg" alt="뮤직">
+                <img src="../assets/img/icon05.svg" alt="뮤직">
+                <span>노래 듣기</span>
+            </div>
+            <div class="icon6 icon">
+                <img src="../assets/img/icon06.svg" alt="뮤직">
                 <span>노래 듣기</span>
             </div>
         </div>
@@ -61,17 +64,17 @@
             <div class="music__contents">
                 <div class="music__view">
                     <div class="img">
-                        <img src="" alt="커버">
+                        <img src="../assets/img/music_view01.png" alt="커버">
                     </div>
                     <div class="title">
-                        <h3>ㅇㅇㅇ-ㅇㅇㅇㅇㅇ</h3>
-                        <p>ㅇㅇㅇㅇㅇㅇ</p>
+                        <h3></h3>
+                        <p></p>
                     </div>
                 </div>
                 <div class="music__control">
                     <div class="progress">
                         <div class="bar">
-                            <audio id="main-audio" src="../assets/audio/musicAudio1.mp3"></audio>
+                            <audio id="main-audio" src="../assets/audio/music_audio01.mp3"></audio>
                         </div>
                         <div class="timer">
                             <span class="current">0:00</span>
@@ -79,18 +82,30 @@
                         </div>
                     </div>
                     <div class="control">
-                        <i title="전체 반복" class="repeat"></i>
-                        <i title="이전 재생" class="prev" id="control-prev"></i>
+                        <i title="전체 반복" class="repeat" id="control-repeat"></i>
+                        <i title="이전곡 재생" class="prev" id="control-prev"></i>
                         <i title="재생" class="play" id="control-play"></i>
-                        <i title="다음 재생" class="next" id="control-next"></i>
-                        <i title="재생목록" class="list"></i>
-                        <!-- <i title="한곡 반복" class="repeat_one"></i>
-                        <i title="랜덤 반복" class="shuffle"></i>
-                        <i title="정지" class="stop"></i> -->
+                        <i title="다음곡 재생" class="next" id="control-next"></i>
+                        <i title="재생 목록" class="list" id="control-list"></i>
+
+                        <!-- <i title="한곡 반복" class="repeat_one"></i>-->
+                        <!-- <i title="랜덤 반복" class="shuffle"></i> -->
+                        <!-- <i title="정지" class="stop"></i> -->
                     </div>
                 </div>
             </div>
-            <div class="music__footer"></div>
+            <div class="music__footer">
+                <div class="music__list">
+                    <h3><span class="list"></span>MUSIC LIST</h3>
+                    <ul>
+                        <!-- <li>
+                            <strong>제목</strong>
+                            <em>아티스트</em>
+                            <span>재생시간</span>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -101,6 +116,18 @@
 	<script src="../assets/js/gsap.js"></script>
     <script src="../assets/js/music.js"></script>
     <script>
+       
+        function poketmon(){
+            let poketmoncount = Math.floor(Math.random()*12)
+        }
+        
+        // const Icon = document.querySelectorAll(".icon_box > div");
+        // Icon.forEach(e=>{
+        //     e.addEventListener("click",()=>{
+        //         poketmon();
+        //     })
+        // })
+
         // 아이콘 이동시키기
         $(".icon1").draggable({
             drag : function() {
@@ -127,15 +154,20 @@
                 $(".mouse__cursor img").attr("src","../assets/img/cursor6.png")
             }
         });
-
+        $(".icon6").draggable({
+            drag : function() {
+                $(".mouse__cursor img").attr("src","../assets/img/cursor6.png")
+            }
+        });
+        $(".music__wrap").draggable();
 
         // 마우스커서변경
         const cursor = document.querySelector(".mouse__cursor img");
 
         window.addEventListener("mousemove", (e) => {
             // gsap.to(cursor, {left: e.pageX -5, top: e.pageY -5});
-            cursor.style.left = e.clientX - 0 + "px";
-            cursor.style.top = e.clientY - 0 + "px";
+            cursor.style.left = e.pageX - 0 + "px";
+            cursor.style.top = e.pageY - 0 + "px";
         });
 
 
