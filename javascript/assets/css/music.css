@@ -1,0 +1,23 @@
+.musci__wrap {}
+.musci__inner {
+    width: 5px;
+    justify-self: 3px;
+    background: #000;
+    position: absolute;
+    right: 100px;
+    top: 100px;
+}
+.musci__header {
+    width: 100%;
+    height: 30px;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+.musci__header h2{
+    font-size: 14px;
+}
+.musci__contents {}
+.musci__footer {}
