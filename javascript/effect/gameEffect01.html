@@ -128,7 +128,7 @@
         //     })
         // })
         const iconAll = document.querySelectorAll(".icon_box .icon")
-        let poketmon
+        let poketmon = Math.floor(Math.random()*12) + 1;
         iconAll.forEach(e => {
             e.addEventListener("click",()=>{
                 poketmon = Math.floor(Math.random()*12) + 1;
