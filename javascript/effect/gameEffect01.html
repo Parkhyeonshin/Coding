@@ -23,27 +23,27 @@
         <div class="icon_box">
             <div class="icon1 icon">
                 <img src="../assets/img/icon01.svg" alt="뮤직">
-                <span>노래 듣기</span>
+                <span>Folder 01</span>
             </div>
             <div class="icon2 icon">
                 <img src="../assets/img/icon02.svg" alt="뮤직">
-                <span>노래 듣기</span>
+                <span>Folder 02</span>
             </div>
             <div class="icon3 icon">
                 <img src="../assets/img/icon03.svg" alt="뮤직">
-                <span>노래 듣기</span>
+                <span>Folder 03</span>
             </div>
             <div class="icon4 icon">
                 <img src="../assets/img/icon04.svg" alt="뮤직">
-                <span>노래 듣기</span>
+                <span>Folder 04</span>
             </div>
             <div class="icon5 icon">
                 <img src="../assets/img/icon05.svg" alt="뮤직">
-                <span>노래 듣기</span>
+                <span>Folder 05</span>
             </div>
             <div class="icon6 icon">
                 <img src="../assets/img/icon06.svg" alt="뮤직">
-                <span>노래 듣기</span>
+                <span>Folder 06</span>
             </div>
         </div>
     </main>
@@ -116,6 +116,7 @@
 	<!-- <script src="../assets/js/gsap.js"></script> -->
     <script src="../assets/js/music.js"></script>
     <script>
+        const cursor = document.querySelector(".mouse__cursor img");
        
         // function poketmon(){
         //     let poketmoncount = Math.floor(Math.random()*12)
@@ -131,6 +132,7 @@
         let poketmon = Math.floor(Math.random()*12) + 1;
         iconAll.forEach(e => {
             e.addEventListener("click",()=>{
+                // cursor.style.borderRadius = 0 + "%";
                 poketmon = Math.floor(Math.random()*12) + 1;
                 console.log(poketmon)
             })
@@ -170,7 +172,6 @@
         $(".music__wrap").draggable();
 
         // 마우스커서변경
-        const cursor = document.querySelector(".mouse__cursor img");
 
         window.addEventListener("mousemove", (e) => {
             cursor.style.left = e.pageX - 0 + "px";
@@ -206,7 +207,7 @@
 
             const nowTime = `${now.getFullYear()}년 ${now.getMonth()}월 ${now.getDate()}일 ${nowHour} : ${nowMin} : ${nowSec}`;
             clock.innerHTML = nowTime;
-            setInterval(() => {
+            setTimeout(() => {
                 printTime();    
             }, 1000);
         }

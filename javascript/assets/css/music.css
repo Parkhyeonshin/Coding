@@ -2,7 +2,7 @@
 
 .music__inner {
     width: 450px;
-    background: #000;
+    background: #011937;
     position: absolute;
     right: 100px;
     top: 100px;
@@ -98,12 +98,12 @@
     justify-content: space-between;
     margin: 0 auto;
     margin-top: 30px;
-    width: 90%;
+    width: 70%;
 }
 
 .music__control .control i {
     /* background-color: #000 !important; */
-    transform: scale(0.7);
+    transform: scale(0.6);
 }
 
 .music__control .control .repeat {
@@ -246,7 +246,7 @@
     /* transition: background 0.1s ease; */
 }
 .music__list li:hover{
-    background: rgba(0,0,0,0.6);
+    background: #0119379f;
     color: snow;
 }
 .music__list li:hover em {
@@ -255,7 +255,7 @@
 
 .music__list li.playing{
     color: snow;
-    background: rgba(0, 0, 0, 0.9);
+    background: #011937e7;
 }
 .music__list li.playing em{
     color: snow;
@@ -288,10 +288,10 @@
 }
 
 .music__list ul::-webkit-scrollbar-thumb {
-    background: rgb(0, 0, 0);
+    background: #011937;
     /* border-radius: 50px; */
 }
 
 .music__list ul::-webkit-scrollbar-thumb:hover {
-    background: white;
+    background: #435d7e;
 }
