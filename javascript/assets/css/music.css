@@ -72,7 +72,7 @@
     width: 100%;
     height: 6px;
     border-radius: 5px;
-    background: #000;
+    background: linear-gradient(90deg, rgba(122,122,122,1) 0%, rgba(205,205,205,1) 10%, rgba(255,255,255,1) 100%);;
 }
 
 .music__control .progress .bar {
@@ -80,7 +80,7 @@
     width: 0%;
     height: inherit;
     border-radius: 5px;
-    background: linear-gradient(90deg, rgba(122,122,122,1) 0%, rgba(205,205,205,1) 28%, rgba(255,255,255,1) 100%);
+    background: #000;
     transition: all 0.1s linear;
 }
 
@@ -99,6 +99,7 @@
     margin: 0 auto;
     margin-top: 30px;
     width: 70%;
+    position: relative;
 }
 
 .music__control .control i {
@@ -168,6 +169,72 @@
     background: url('../img/music_icon.svg');
     background-position: -432px 0px;
 }
+.music__control .control .mute {
+    width: 48px;
+    height: 48px;
+    background: url('../img/music_icon.svg');
+    background-position: -576px 0px;
+}
+.music__control .control .sound {
+    width: 48px;
+    height: 48px;
+    background: url('../img/music_icon.svg');
+    background-position: -624px 0px;
+}
+.music__control .control .volumeBox {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    right: 0;
+    bottom: -45px;
+    width: 80%;
+    background: #ccc;
+    z-index: 1;
+    /* height: 200px; */
+
+}
+.music__control .control .volumeBox .volumeDown {
+    width: 48px;
+    height: 48px;
+    background: url('../img/music_icon.svg');
+    background-position: -480px 0px;
+}
+.music__control .control .volumeBox .volumeUp {
+    width: 48px;
+    height: 48px;
+    background: url('../img/music_icon.svg');
+    background-position: -528px 0px;
+}
+/* input박스 스타일 */
+
+.volume__bar[type=range] {
+    margin-top: 20px;
+    appearance: none;
+    overflow: hidden;
+    /* background: transparent; */
+    height: 8px;
+    /* border: 1px solid red; */
+    border-radius: 20px;
+    background: #e5e4e3;
+    cursor: none;
+}
+.volume__bar[type=range]:focus {
+    outline: none;
+    /* background: #000; */
+}
+.volume__bar[type=range]::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #011937;
+    box-shadow: -100vw 0 0 100vw #011937;
+    /* border: 0.01px solid #fff;
+    border-radius: 50%; */
+    cursor: none;
+}
+
+
+
 
 .music__footer {
     /* background: #c4c4c4; */

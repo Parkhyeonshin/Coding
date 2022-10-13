@@ -62,6 +62,9 @@ const musicAudio = musicWrap.querySelector("#main-audio");
 const musicPlay = musicWrap.querySelector("#control-play");
 const musicPrevBtn = musicWrap.querySelector("#control-prev");
 const musicNextBtn = musicWrap.querySelector("#control-next");
+const soundOnOff = musicWrap.querySelector("#control-mute");
+const soundUp = musicWrap.querySelector("#control-volumeUp");
+const soundDown = musicWrap.querySelector("#control-volumeDown");
 const musicProgress = musicWrap.querySelector(".progress");
 const musicProgressBar = musicWrap.querySelector(".progress .bar");
 const musicProgressCurrent = musicWrap.querySelector(".progress .timer .current");
@@ -70,7 +73,6 @@ const musicRepeat = musicWrap.querySelector("#control-repeat");
 const musicListBtn = musicWrap.querySelector("#control-list");
 const musicList = musicWrap.querySelector(".music__list");
 const musicListUl = musicWrap.querySelector(".music__list ul");
-
 
 let musicIndex = 1;
 // 음악 재생
@@ -81,6 +83,7 @@ function loadMusic(num) {
     musicView.alt = allMusic[num - 1].name;
     musicAudio.src = `../assets/audio/${allMusic[num - 1].audio}.mp3`;
 }
+
 // 재생 버튼
 function playMusic() {
     musicWrap.classList.add("paused");
@@ -98,14 +101,58 @@ function pauseMusic() {
 // 이전 곡 듣기 버튼(
 function prevMusic() {
     musicIndex == 1 ? musicIndex = allMusic.length : musicIndex--;
-    loadMusic(musicIndex);
-    playMusic();
+    let getAttr = musicRepeat.getAttribute("class");
+    
+    switch(getAttr){
+        case "repeat" : 
+            loadMusic(musicIndex);
+            playMusic();
+        break;
+        case "repeat_one":
+            loadMusic(musicIndex);
+            playMusic();
+        break;
+        case "shuffle" :
+            let randomIndex = Math.floor(Math.random()*allMusic.length + 1);  //랜덤인덱스생성
+
+            do {
+                randomIndex = Math.floor(Math.random()*allMusic.length + 1);
+            } while ( musicIndex==randomIndex)
+            musicIndex = randomIndex;       // 현재 인덱스를 랜덤   인덱스 변경
+            loadMusic(musicIndex);          // 랜덤 인덱스가 반영된 현재 인덱스 값으로 음악을 다시 로드    
+            playMusic();                    // 로드한 음악을 재생
+        break;
+    }
+    playlistMusic()     //리스트갱신
 }
 // 다음 곡 듣기 버튼(
 function nextMusic() {
     musicIndex == allMusic.length ? musicIndex = 1 : musicIndex++;
-    loadMusic(musicIndex);
-    playMusic();
+    // playMusic();
+    let getAttr = musicRepeat.getAttribute("class");
+    
+    switch(getAttr){
+        case "repeat" : 
+            loadMusic(musicIndex);
+            playMusic();
+        break;
+        case "repeat_one":
+            loadMusic(musicIndex);
+            playMusic();
+        break;
+        case "shuffle" :
+            let randomIndex = Math.floor(Math.random()*allMusic.length + 1);  //랜덤인덱스생성
+
+            do {
+                randomIndex = Math.floor(Math.random()*allMusic.length + 1);
+            } while ( musicIndex==randomIndex)
+            musicIndex = randomIndex;       // 현재 인덱스를 랜덤   인덱스 변경
+            loadMusic(musicIndex);          // 랜덤 인덱스가 반영된 현재 인덱스 값으로 음악을 다시 로드    
+            playMusic();                    // 로드한 음악을 재생
+        break;
+    }
+    playlistMusic()     //리스트갱신
+
 }
 // 뮤직 진행바
 musicAudio.addEventListener("timeupdate", e => {
@@ -131,7 +178,10 @@ musicAudio.addEventListener("timeupdate", e => {
     // console.log(currentSec)
 
 
-    // 진행바 클릭
+    
+});
+
+// 진행바 클릭
     // 진행바 전체길이구한뒤 각 구간의 값(백분율형식)으로 알면 구현가능함.
     musicProgress.addEventListener("click", (e) => {
         let progressWidth = musicProgress.clientWidth;  // 진행바 전체 길이구하기
@@ -140,7 +190,7 @@ musicAudio.addEventListener("timeupdate", e => {
     
         musicAudio.currentTime = (clickedOffsetX / progressWidth) * songDuration;   // 백분위로 나눈 숫자에 전체길이 곱함 이로인해 현재 재생값으로 바꿈
     })
-});
+
 
 // 반복 버튼 클릭
 musicRepeat.addEventListener("click", ()=>{
@@ -268,16 +318,69 @@ musicAudio.addEventListener("ended", ()=> {
             playMusic();                    // 로드한 음악을 재생
         break;
     }
-})
-playlistMusic()     //리스트갱신
-
-
-
-window.addEventListener("load", () => {
-    loadMusic(musicIndex);
+    playlistMusic()     //리스트갱신
 })
 
+
+// 음소거 시키기
+soundOnOff.addEventListener("click",()=>{ 
+    const myAudio = document.getElementById("main-audio");
+    if(soundOnOff.classList.contains("mute")){
+        soundOnOff.setAttribute("title", "음소거 해제");
+        soundOnOff.setAttribute("class", "sound");
+        myAudio.muted = true;
+    } else {
+        soundOnOff.setAttribute("title", "음소거");
+        soundOnOff.setAttribute("class", "mute");
+        myAudio.muted = false;
+    }
+})
+// 볼륨 컨트롤 바
+function soundCotrol(control){
+    document.querySelector('#control-volume').value = control * 10;
+}
+
+document.querySelector('#control-volume').addEventListener('input',e=>{
+    let volume = (e.target.value) * 0.1;
+    let volume2 = volume.toFixed(1);
+
+    const myAudio = document.getElementById("main-audio");
+    myAudio.volume = volume2;
+    soundCotrol(volume2);
+});
+
+soundUp.addEventListener("click",()=>{
+    let soundUpCurrent = document.querySelector('#control-volume').value ;
+    soundUpCurrent++;
+    if(soundUpCurrent >= 11) return;
+    document.querySelector('#control-volume').value = soundUpCurrent;
+    const myAudio = document.getElementById("main-audio");
+    myAudio.volume = (soundUpCurrent * 0.1).toFixed(1);
+
+    // const soundUpCurrent = document.querySelector('#control-volume').value * 0.1 + 0.1;
+    // const soundUpCurrent2 = soundUpCurrent.toFixed(1);
+    // console.log(soundUpCurrent2)
+    // if(soundUpCurrent2 >= 1.1){
+    //     return;
+    // }
+    // document.querySelector('#control-volume').value = soundUpCurrent2 * 10;
+})
+soundDown.addEventListener("click",()=>{
+    let soundDownCurrent = document.querySelector('#control-volume').value ;
+    soundDownCurrent--;
+    if(soundDownCurrent <= -1) return;
+    document.querySelector('#control-volume').value = soundDownCurrent;
+    const myAudio = document.getElementById("main-audio");
+    myAudio.volume = (soundDownCurrent * 0.1).toFixed(1);
+    console.log((soundDownCurrent * 0.1).toFixed(1))
+    console.log(soundDownCurrent)
+})
+
+
+
+// 창 로드시 
 window.addEventListener("load", () => {
     loadMusic(musicIndex);      //음악재생
     playlistMusic();            //리스트 갱신
-})
+});
+
