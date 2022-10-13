@@ -96,11 +96,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 0 auto;
     margin-top: 30px;
+    width: 90%;
 }
 
 .music__control .control i {
     /* background-color: #000 !important; */
+    transform: scale(0.7);
 }
 
 .music__control .control .repeat {
@@ -158,6 +161,12 @@
     height: 48px;
     background: url('../img/music_icon.svg');
     background-position: -192px 0px;
+}
+.music__control .control .list.close {
+    width: 48px;
+    height: 48px;
+    background: url('../img/music_icon.svg');
+    background-position: -432px 0px;
 }
 
 .music__footer {
@@ -231,10 +240,26 @@
     border-bottom: 1px solid #000;
     list-style: none;
     position: relative;
-    padding: 5px 0;
-    margin-bottom: 4px;
+    padding: 8px 0;
+    padding-left: 5px;
+    /* margin-bottom: 4px; */
+    /* transition: background 0.1s ease; */
+}
+.music__list li:hover{
+    background: rgba(0,0,0,0.6);
+    color: snow;
+}
+.music__list li:hover em {
+    color: snow;
 }
 
+.music__list li.playing{
+    color: snow;
+    background: rgba(0, 0, 0, 0.9);
+}
+.music__list li.playing em{
+    color: snow;
+}
 .music__list li strong {
     display: block;
     font-size: 20px;
@@ -249,6 +274,7 @@
     position: absolute;
     right: 0;
     top: 10px;
+    padding-right: 3px;
 }
 
 .music__list ul::-webkit-scrollbar {
@@ -257,7 +283,8 @@
 }
 
 .music__list ul::-webkit-scrollbar-track {
-    background: transparent;
+    /* background: transparent; */
+    background: rgba(68, 68, 68, 0.05);
 }
 
 .music__list ul::-webkit-scrollbar-thumb {

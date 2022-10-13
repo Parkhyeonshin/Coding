@@ -170,16 +170,19 @@ musicPlay.addEventListener("click", () => {
 // 이전곡 버튼 클릭
 musicPrevBtn.addEventListener("click", () => {
     prevMusic();
+    playlistMusic()     //리스트갱신
 })
 // 다음곡 버튼 클릭
 musicNextBtn.addEventListener("click", () => {
-    nextMusic();                
+    nextMusic(); 
+    playlistMusic()     //리스트갱신               
 })
 
 
 // 뮤직 리스트 버튼
 musicListBtn.addEventListener("click", () => {
     musicList.classList.toggle("show");
+    musicListBtn.classList.toggle("close");
 })
 
 
@@ -216,6 +219,17 @@ function playlistMusic(){
     const musiclistAll = musicListUl.querySelectorAll("li");    //뮤직리스트목록 가져오기
     for(let i=0; i<musiclistAll.length; i++){
         let audioTag = musiclistAll[i].querySelector(".audio-duration");
+
+        if(musiclistAll[i].classList.contains("playing")){
+            musiclistAll[i].classList.remove("playing");                //클래스 삭제
+            let adDuration = audioTag.getAttribute("data-duration");    // 오디오 길이 값 가져오기
+            audioTag.innerText = adDuration;                            // 오디오 길이 값 넣기 (위에 이미 길이값 가져옴)
+        }
+
+        if(musiclistAll[i].getAttribute("data-index")==musicIndex){     //현재 인덱스 == 리스트인덱스
+            musiclistAll[i].classList.add("playing");                   //클래스 playing 추가
+            audioTag.innerText = "재생중";      
+        }
 
         musiclistAll[i].setAttribute("onclick", "clicked(this)");
     }
@@ -255,7 +269,7 @@ musicAudio.addEventListener("ended", ()=> {
         break;
     }
 })
-
+playlistMusic()     //리스트갱신
 
 
 
