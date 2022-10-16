@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,51 @@
     <link rel="stylesheet" href="../assets/css/bg.css">
     <link rel="stylesheet" href="../assets/css/game.css">
     <link rel="stylesheet" href="../assets/css/music.css">
+
+    <style>
+        .modal__btn {
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50px;
+            display: inline-block;
+            padding: 10px 20px;
+            position: absolute;
+            right: 20px;
+            bottom: 35px;
+            cursor: pointer;
+            transition: background-color 0.3s color 0.3s;
+        }
+
+        .modal__btn:hover {
+            text-shadow: -1px 0 #8545f3, 0 1px #9359f7, 1px 0 #8545f3, 0 -1px #413be1;
+            border: 1px solid rgba(187, 127, 255, 0.6);
+            box-shadow: -1px 1px 8px aquamarine;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .modal__btn.active {
+            opacity: 0.2;
+            background-color: black;
+            color: #383838;
+            border-color: #383838;
+        }
+
+        .modal__cont {
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(250, 250, 250, 0.2);
+            position: fixed;
+            left: 0;
+            top: 0;
+            overflow-x: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* transform: scale(0); */
+        }
+    </style>
 </head>
+
 <body>
 
     <header id="header">
@@ -50,6 +95,14 @@
     <!-- // main -->
     <footer id="footer">
         <div class="agent"></div>
+        <div class="modal__wrap">
+            <div class="modal__btn"></div>
+            <div class="modal__cont">
+                <div class="iframe__box" style="width: 80vw;">
+                    <iframe src="https://parkhyeonshin.github.io/Coding/javascript/effect/mouseEffect02.html" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
     </footer>
     <!-- // footer -->
 
@@ -118,15 +171,15 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-	<!-- <script src="../assets/js/gsap.js"></script> -->
+    <!-- <script src="../assets/js/gsap.js"></script> -->
     <script src="../assets/js/music.js"></script>
     <script>
         const cursor = document.querySelector(".mouse__cursor img");
-       
+
         // function poketmon(){
         //     let poketmoncount = Math.floor(Math.random()*12)
         // }
-        
+
         // const Icon = document.querySelectorAll(".icon_box > div");
         // Icon.forEach(e=>{
         //     e.addEventListener("click",()=>{
@@ -134,44 +187,44 @@
         //     })
         // })
         const iconAll = document.querySelectorAll(".icon_box .icon")
-        let poketmon = Math.floor(Math.random()*12) + 1;
+        let poketmon = Math.floor(Math.random() * 12) + 1;
         iconAll.forEach(e => {
-            e.addEventListener("click",()=>{
+            e.addEventListener("click", () => {
                 // cursor.style.borderRadius = 0 + "%";
-                poketmon = Math.floor(Math.random()*12) + 1;
+                poketmon = Math.floor(Math.random() * 12) + 1;
                 console.log(poketmon)
             })
         })
 
         // 아이콘 이동시키기
         $(".icon1").draggable({
-            drag : function() {
-                $(".mouse__cursor img").attr("src",`../assets/img/cursor${poketmon}.png`)
+            drag: function () {
+                $(".mouse__cursor img").attr("src", `../assets/img/cursor${poketmon}.png`)
             }
         });
         $(".icon2").draggable({
-            drag : function() {
-                $(".mouse__cursor img").attr("src",`../assets/img/cursor${poketmon}.png`)
+            drag: function () {
+                $(".mouse__cursor img").attr("src", `../assets/img/cursor${poketmon}.png`)
             }
         });
         $(".icon3").draggable({
-            drag : function() {
-                $(".mouse__cursor img").attr("src",`../assets/img/cursor${poketmon}.png`)
+            drag: function () {
+                $(".mouse__cursor img").attr("src", `../assets/img/cursor${poketmon}.png`)
             }
         });
         $(".icon4").draggable({
-            drag : function() {
-                $(".mouse__cursor img").attr("src",`../assets/img/cursor${poketmon}.png`)
+            drag: function () {
+                $(".mouse__cursor img").attr("src", `../assets/img/cursor${poketmon}.png`)
             }
         });
         $(".icon5").draggable({
-            drag : function() {
-                $(".mouse__cursor img").attr("src",`../assets/img/cursor${poketmon}.png`)
+            drag: function () {
+                $(".mouse__cursor img").attr("src", `../assets/img/cursor${poketmon}.png`)
             }
         });
         $(".icon6").draggable({
-            drag : function() {
-                $(".mouse__cursor img").attr("src",`../assets/img/cursor${poketmon}.png`)
+            drag: function () {
+                $(".mouse__cursor img").attr("src", `../assets/img/cursor${poketmon}.png`)
             }
         });
         $(".music__wrap").draggable();
@@ -192,28 +245,28 @@
             let nowMin = now.getMinutes();
             let nowSec = now.getSeconds();
             // 13=01,14=02...24=00, 0=00
-            if(nowHour >=13  && nowHour < 24 ){
-                nowHour = nowHour-12;
-                if(nowHour < 10){
+            if (nowHour >= 13 && nowHour < 24) {
+                nowHour = nowHour - 12;
+                if (nowHour < 10) {
                     nowHour = `PM 0${nowHour}`;
                 } else {
                     nowHour = `PM ${nowHour}`;
                 };
             } else if (nowHour < 10) {
                 nowHour = `AM 0${nowHour}`;
-            } else if(nowHour == 11 || nowHour==10){
+            } else if (nowHour == 11 || nowHour == 10) {
                 nowHour = `AM ${nowHour}`;
             } else {
                 nowHour = `PM ${nowHour}`;
             };
 
-            if(nowSec < 10) nowSec = `0${nowSec}`;
-            if(nowMin < 10) nowMin = `0${nowMin}`;
+            if (nowSec < 10) nowSec = `0${nowSec}`;
+            if (nowMin < 10) nowMin = `0${nowMin}`;
 
             const nowTime = `${now.getFullYear()}년 ${now.getMonth()}월 ${now.getDate()}일 ${nowHour} : ${nowMin} : ${nowSec}`;
             clock.innerHTML = nowTime;
             setTimeout(() => {
-                printTime();    
+                printTime();
             }, 1000);
         }
 
@@ -222,27 +275,28 @@
             const agent = document.querySelector('.agent');
             const os = navigator.userAgent.toLocaleLowerCase();
             agent.innerHTML = os;
-            if(os.indexOf("windows")) {
-                agent.innerHTML = "현재 윈도우를 사용하고, 화면 크기는 "+ screen.width +" *" + screen.height+" 입니다.";
+            if (os.indexOf("windows")) {
+                agent.innerHTML = "현재 윈도우를 사용하고, 화면 크기는 " + screen.width + " *" + screen.height + " 입니다.";
                 document.querySelector('body').classList.add('window');
             }
-            else if(os.indexOf("macintosh")) {
-                agent.innerHTML = "현재 맥을 사용하고, 화면 크기는 "+ screen.width +" *" + screen.height+" 입니다.";
+            else if (os.indexOf("macintosh")) {
+                agent.innerHTML = "현재 맥을 사용하고, 화면 크기는 " + screen.width + " *" + screen.height + " 입니다.";
                 document.querySelector('body').classList.add('mac');
             }
-            else if(os.indexOf("iphone")) {
-                agent.innerHTML = "현재 아이폰을 사용하고, 화면 크기는 "+ screen.width +" *" + screen.height+" 입니다.";
+            else if (os.indexOf("iphone")) {
+                agent.innerHTML = "현재 아이폰을 사용하고, 화면 크기는 " + screen.width + " *" + screen.height + " 입니다.";
                 document.querySelector('body').classList.add('iphone');
             }
-            else if(os.indexOf("android")) {
-                agent.innerHTML = "현재 안드로이드를 사용하고, 화면 크기는 "+ screen.width +" *" + screen.height+" 입니다.";
+            else if (os.indexOf("android")) {
+                agent.innerHTML = "현재 안드로이드를 사용하고, 화면 크기는 " + screen.width + " *" + screen.height + " 입니다.";
                 document.querySelector('body').classList.add('android');
             }
         }
-        window.onload = function() {
+        window.onload = function () {
             printTime();
             printAgent();
         }
     </script>
 </body>
+
 </html>
