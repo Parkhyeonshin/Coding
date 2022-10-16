@@ -43,6 +43,9 @@ body.img09 {
 body.img10 {
   background: url(../img/effect_bg10@2x.jpg) no-repeat center / cover;
 }
+body.img11 {
+  background: url(../img/effect_img12.jpg) no-repeat center / cover;
+}
 body::after {
   content: "";
   position: absolute;
