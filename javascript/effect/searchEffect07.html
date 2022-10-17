@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>검색 이펙트7</title>
-    
+
     <link rel="icon" href="data:,">
     <link rel="stylesheet" href="../assets/css/search.css">
     <link rel="stylesheet" href="../assets/css/search__ani.css">
@@ -1768,7 +1768,7 @@
         const searchRestart = document.querySelector(".search__result .restart");
 
 
-        let timeReamining = 5,        // 남은 시간
+        let timeReamining = 120,        // 남은 시간
             score = 0,                  // 점수
             answers = {};               // 새로운 정답
 
@@ -1786,6 +1786,9 @@
 
         // 게임 시작하기
         function startQuiz() {
+            // 인풋박스 초기화
+            searchInput.value = "";
+
             answerCount = 0;
             // 시작 버튼 없애기, 속성 리스트 없애기
             searchStart.style.display = "none";
@@ -1911,7 +1914,12 @@
             searchResultWrap.classList.remove("show");
             searchStart.style.display = "block";
             serachList.style.display = "none";
+            searchAnswers.style.display = "none";
+            searchAnswers.innerHTML = ``;
+            searchMissAnswers.style.display = "none";
+            searchMissAnswers.innerHTML = ``;
             answerCount = 0;
+            document.querySelector(".answerNum").innerText = answerCount;
             startQuiz();
         }
 
