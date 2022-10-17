@@ -1,4 +1,6 @@
-.music__wrap {}
+.music__wrap {
+    position: relative;
+}
 
 .music__inner {
     width: 450px;
