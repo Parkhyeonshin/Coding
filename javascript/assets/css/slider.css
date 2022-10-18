@@ -46,6 +46,12 @@ body.img10 {
 body.img11 {
   background: url(../img/effect_img12.jpg) no-repeat center / cover;
 }
+body.img12 {
+  background: url(../img/effect_img24.jpg) no-repeat center / cover;
+}
+body.img13 {
+  background: url(../img/effect_img23.jpg) no-repeat center / cover;
+}
 body::after {
   content: "";
   position: absolute;
