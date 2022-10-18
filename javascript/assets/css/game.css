@@ -20,6 +20,7 @@ body {
     width: 100%;
     background-color: #011937;
     padding: 0 15px;
+    z-index: 3000;
 }
 #header h1 {
     font-size: 25px;
@@ -49,19 +50,22 @@ body {
     position: absolute;
     left: 100px;
     top: 450px;
-    width: 85px;
+    /* width: 85px; */
 }
 .icon img {
-    width: 100%;
-}
-.icon1 span {
+    width: 85px;
     display: block;
+    margin: 0 auto;
+}
+.icon span {
+    display: inline-block;
     background: #000;
     color: white;
-    padding: 2px;
+    padding: 4px 6px 6px 6px;
     white-space: nowrap;
     text-align: center;
     border-radius: 5px;
+    margin-top: 3px;
 }
 .icon2 {
     position: absolute;
@@ -69,76 +73,42 @@ body {
     top: 450px;
     width:85px;
 }
-.icon2 span {
-    display: block;
-    background: #000;
-    color: white;
-    padding: 2px;
-    text-align: center;
-    border-radius: 5px;
-    white-space: nowrap;
-}
+
 .icon3 {
     position: absolute;
     left: 400px;
     top: 450px;
     width:85px;
 }
-.icon3 span {
-    display: block;
-    background: #000;
-    color: white;
-    padding: 2px;
-    border-radius: 5px;
-    text-align: center;
-    white-space: nowrap;
-}
+
 .icon4 {
     position: absolute;
     left: 100px;
     top: 300px;
     width:85px;
 }
-.icon4 span {
-    display: block;
-    border-radius: 5px;
-    background: #000;
-    color: white;
-    text-align: center;
-    padding: 2px;
-    white-space: nowrap;
-}
+
 .icon5 {
     position: absolute;
     left: 250px;
     top: 300px;
     width:85px;
 }
-.icon5 span {
-    display: block;
-    text-align: center;
-    border-radius: 5px;
-    background: #000;
-    color: white;
-    padding: 2px;
-    white-space: nowrap;
-}
+
 .icon6 {
     position: absolute;
     left: 400px;
     top: 300px;
     width:85px;
 }
-.icon6 span {
-    display: block;
-    text-align: center;
-    border-radius: 5px;
-    background: #000;
-    color: white;
-    padding: 2px;
-    white-space: nowrap;
+.icon:hover{
+    filter:brightness(120%);
+    transform: scale(1.1);
+    transition: all 0.5s ease;
 }
-
+.icon:not(:hover){
+    transition: all 0.5s ease;
+}
 
 #footer {
     position: fixed;
@@ -151,6 +121,7 @@ body {
     justify-content: center;
     padding: 5px 10px;
     color: #fff;
+    z-index: 3000;
 }
 #footer .agent {
 }
