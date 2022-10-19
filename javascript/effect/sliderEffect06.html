@@ -564,7 +564,7 @@
 
 		function init() {
 			// 이미지 갯수만큼 닷 메뉴 생기게
-			for (i = 1; i <= sliderLength + 2; i++) {
+			for (i = 1; i <= sliderLength; i++) {
 				sliderDot.innerHTML += `<a href='#' class='dot'>이미지${i}</a>`;
 			}
 			sliderDot.firstElementChild.classList.add("active");
@@ -576,11 +576,9 @@
 			sliderInner.classList.add("transition");
 			posInitial = sliderInner.offsetLeft;
 			console.log(posInitial)
+			console.log(currentIndex)
 
 
-			const sliderDotAs = sliderDot.querySelectorAll('a');
-			sliderDotAs.forEach((a) => a.classList.remove('active'));
-			sliderDotAs[currentIndex].classList.add('active');
 
 			if (direction == -1) {
 				sliderInner.style.left = (posInitial + sliderWidth) + "px";
@@ -590,10 +588,12 @@
 
 				sliderInner.style.left = (posInitial - sliderWidth) + "px";
 				currentIndex++;
-			}
-			
+			} 
+			if(currentIndex == 9){currentIndex = 0;}
 			console.log(currentIndex)
-
+			const sliderDotAs = sliderDot.querySelectorAll('a');
+			sliderDotAs.forEach((a) => a.classList.remove('active'));
+			sliderDotAs[currentIndex].classList.add('active');
 
 		}
 
@@ -601,7 +601,7 @@
 			sliderInner.classList.remove("transition");
 			sliderBtn.classList.add("disable");
 
-			if (currentIndex == sliderLength) {
+			if (currentIndex == sliderLength-1) {
 				sliderInner.style.left = -(1 * sliderWidth) + "px";
 				currentIndex = 0;
 			}
