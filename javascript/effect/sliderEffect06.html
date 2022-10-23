@@ -12,7 +12,7 @@
 
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
-		
+
 
 		/* slider */
 		.slider__wrap {
@@ -504,15 +504,491 @@
 					</div>
 					<div class="cont">
 						<div class="active">
-							<pre><code class="language-js">
+<pre><code class="language-js">const sliderWrap = document.querySelector('.slider__wrap');
+	const sliderImg = document.querySelector('.slider__img');
+	const sliderInner = document.querySelector('.slider__inner');
+	const slider = document.querySelectorAll('.slider');
+	const sliderBtn = document.querySelector('.slider__btn');
+	const sliderBtnPrev = sliderBtn.querySelector('.slider__btn .prev');
+	const sliderBtnNext = sliderBtn.querySelector('.slider__btn .next');
+	const sliderDot = document.querySelector('.slider__dot');
+
+	let currentIndex = 0;
+	let sliderLength = slider.length;
+	let sliderWidth = sliderImg.offsetWidth; 	// 이미지 가로 값
+	let sliderFirst = slider[0],			 	// 첫번째 이미지
+		sliderLast = slider[sliderLength - 1],	// 마지막 이미지
+		cloneFirst = sliderFirst.cloneNode(true),	// 첫번째 이미지 복사
+		cloneLast = sliderLast.cloneNode(true);		// 마지막 이미지 복사
+	dotIndex = "";
+
+	// 이미지 총 길이 넣기
+	sliderInner.style.width = (sliderWidth * (sliderLength + 3)) + "px";
+
+
+
+	sliderInner.appendChild(cloneFirst);
+	sliderInner.insertBefore(cloneLast, sliderFirst);
+
+	function init() {
+		// 이미지 수만큼 dot 추가
+		for (let i = 0; i &lt; sliderLength; i++) {                
+			dotIndex += "&lt;a href='#' class='dot'&gt;이미지1&lt;/a&gt;";
+		}
+		sliderDot.innerHTML = dotIndex;
+		sliderDot.firstChild.classList.add("active");       // 첫 번째만 + active
+	}
+	init();
+
+	function gotoSlider(direction) {
+		sliderInner.classList.add("transition");    
+		sliderBtn.classList.add("disable");
+		posInitial = sliderInner.offsetLeft;    
+		
+
+		if (direction == -1) {
+			sliderInner.style.left = (posInitial + sliderWidth) + "px"; // 초기화
+			currentIndex--;
+		} else if (direction == 1) {
+			sliderInner.style.left = (posInitial - sliderWidth) + "px"; // 초기화
+			currentIndex++;
+		}
+	}
+
+	function checkIndex() {
+		sliderInner.classList.remove("transition");
+		console.log(currentIndex);
+
+		// 마지막 - >처음
+		if (currentIndex == sliderLength) {
+			sliderInner.style.left = -(1 * sliderWidth) + "px";
+			currentIndex = 0;
+		}
+
+		// 처음 -> 마지막
+		if (currentIndex == -1) {
+			sliderInner.style.left = -(sliderLength * sliderWidth) + "px";
+			currentIndex = sliderLength - 1;
+		}
+
+		let dotActive = document.querySelectorAll(".slider__dot .dot"); 
+		dotActive.forEach(el => el.classList.remove("active")); 
+
+		dotActive[currentIndex].classList.add("active");    
+	}
+
+	// 닷 버튼 클릭했을 때 해당 닷버튼의 이미지로 이동 
+	document.querySelectorAll('.slider__dot .dot').forEach((a, index) => {
+		a.addEventListener('click', e => {
+			document.querySelectorAll('.slider__dot .dot').forEach(b => {
+				b.classList.remove('active');
+			});
+			a.classList.add('active');
+			sliderInner.style.left = `${-((index + 1) * sliderWidth)}px`;
+			sliderInner.classList.add("transition")
+			currentIndex = index;
+		});
+	});
+
+	// prev 버튼 클릭했을 때
+	sliderBtnPrev.addEventListener("click", () => {
+		gotoSlider(-1)
+		setTimeout(() => {
+			sliderBtn.classList.remove("disable")
+		}, 300);
+	});
+
+	// next 버튼 클릭했을 때
+	sliderBtnNext.addEventListener("click", () => {
+		gotoSlider(1);
+		setTimeout(() => {
+			sliderBtn.classList.remove("disable")
+		}, 300);
+	});
+	sliderInner.addEventListener("transitionend", checkIndex);  // transitionend : transition 이 끝났을 때 실행하는 이벤트 
 </code></pre>
 						</div>
 						<div>
-							<pre><code class="language-html">
+<pre><code class="language-html">&lt;section id="sliderType01"&gt;
+	&lt;div class="slider__wrap"&gt;
+		&lt;div class="slider__img"&gt;
+			&lt;div class="slider__inner"&gt;
+				&lt;div class="slider s1" role="group" aria-label="1/9"&gt;
+					&lt;span&gt;이미지1&lt;/span&gt;&lt;img src="../assets/img/effect_img13.jpg" alt="이미지1" /&gt;
+				&lt;/div&gt;
+				&lt;div class="slider s2" role="group" aria-label="2/9"&gt;
+					&lt;span&gt;이미지2&lt;/span&gt;&lt;img src="../assets/img/effect_img19.jpg" alt="이미지2" /&gt;
+				&lt;/div&gt;
+				&lt;div class="slider s3" role="group" aria-label="3/9"&gt;
+					&lt;span&gt;이미지3&lt;/span&gt;&lt;img src="../assets/img/effect_img15.jpg" alt="이미지3" /&gt;
+				&lt;/div&gt;
+				&lt;div class="slider s4" role="group" aria-label="4/9"&gt;
+					&lt;span&gt;이미지4&lt;/span&gt;&lt;img src="../assets/img/effect_img16.jpg" alt="이미지4" /&gt;
+				&lt;/div&gt;
+				&lt;div class="slider s5" role="group" aria-label="5/9"&gt;
+					&lt;span&gt;이미지5&lt;/span&gt;&lt;img src="../assets/img/effect_img17.jpg" alt="이미지5" /&gt;
+				&lt;/div&gt;
+				&lt;div class="slider s6" role="group" aria-label="6/9"&gt;
+					&lt;span&gt;이미지6&lt;/span&gt;&lt;img src="../assets/img/effect_img20.jpg" alt="이미지6" /&gt;
+				&lt;/div&gt;
+				&lt;div class="slider s7" role="group" aria-label="7/9"&gt;
+					&lt;span&gt;이미지7&lt;/span&gt;&lt;img src="../assets/img/effect_img21.jpg" alt="이미지7" /&gt;
+				&lt;/div&gt;
+				&lt;div class="slider s8" role="group" aria-label="8/9"&gt;
+					&lt;span&gt;이미지8&lt;/span&gt;&lt;img src="../assets/img/effect_img18.jpg" alt="이미지8" /&gt;
+				&lt;/div&gt;
+				&lt;div class="slider s9" role="group" aria-label="9/9"&gt;
+					&lt;span&gt;이미지9&lt;/span&gt;&lt;img src="../assets/img/effect_img14.jpg" alt="이미지9" /&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="slider__btn"&gt;
+			&lt;button href="#" class="prev" role="button" aria-label="왼쪽 이미지"&gt;prev&lt;/button&gt;
+			&lt;button href="#" class="next" role="button" aria-label="오른쪽 이미지"&gt;next&lt;/button&gt;
+		&lt;/div&gt;
+		&lt;div class="slider__dot"&gt;
+			&lt;!-- &lt;a href="#" class="dot active"&gt;이미지1&lt;/a&gt;
+			&lt;a href="#" class="dot"&gt;이미지2&lt;/a&gt;
+			&lt;a href="#" class="dot"&gt;이미지3&lt;/a&gt;
+			&lt;a href="#" class="dot"&gt;이미지4&lt;/a&gt;
+			&lt;a href="#" class="dot"&gt;이미지5&lt;/a&gt; --&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
 </code></pre>
 						</div>
 						<div>
-							<pre><code class="language-css">
+<pre><code class="language-css">@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+
+	/* slider */
+	.slider__wrap {
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.slider__img {
+		/* 이미지 보이는 영역 */
+		position: relative;
+		width: 800px;
+		height: 450px;
+		overflow: hidden;
+	}
+
+	.slider__inner {
+		/* 이미지를 감싸고 있는 부모 : 움직이는 부분 */
+		display: flex;
+		flex-wrap: wrap;
+		/* width: 8800px; --> js로 이미지 추가되도 전체넓이 가변되게끔! */
+		/* 4000px --> 4800px  : 총이미지가 6개로 변경*/
+		height: 450px;
+		position: relative;
+		position: relative;
+		left: -800px;
+	}
+
+	.slider__inner.transition {
+		transition: all 0.6s;
+	}
+
+
+	.slider {
+		/* 개별적인 이미지 */
+		position: relative;
+		width: 800px;
+		height: 450px;
+	}
+
+	/* .slider::before {
+		position: absolute;
+		left: 5px;
+		top: 5px;
+		background: rgba(0, 0, 0, 0.4);
+		color: white;
+		padding: 5px 10px;
+	} */
+	.slider span {
+		position: absolute;
+		left: 5px;
+		top: 5px;
+		background: rgba(0, 0, 0, 0.4);
+		color: #000;
+		opacity: 0.7;
+		text-shadow: -1px 0 #FE8D1C, 0 1px #f87d02, 1px 0 #dd7f20, 0 -1px #faa249;
+		padding: 5px 10px;
+	}
+
+	/* .slider:nth-child(1)::before {
+		content: "이미지1";
+	}
+
+	.slider:nth-child(2)::before {
+		content: "이미지2";
+	}
+
+	.slider:nth-child(3)::before {
+		content: "이미지3";
+	}
+
+	.slider:nth-child(4)::before {
+		content: "이미지4";
+	}
+
+	.slider:nth-child(5)::before {
+		content: "이미지5";
+	}
+
+	.slider:nth-child(6)::before {
+		content: "이미지6";
+	}
+
+	.slider:nth-child(7)::before {
+		content: "이미지7";
+	}
+
+	.slider:nth-child(8)::before {
+		content: "이미지8";
+	}
+
+	.slider:nth-child(9)::before {
+		content: "이미지9";
+	} */
+
+	@media (max-width: 800px) {
+		.slider__img {
+			width: 400px;
+			height: 225px;
+		}
+	}
+
+	.slider__btn button {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 50px;
+		height: 50px;
+		background: rgba(0, 0, 0, 0.4);
+		border-radius: 10px;
+		text-align: center;
+		transition: all 0.2s;
+		line-height: 48px;
+		display: block;
+		font-size: 0.9rem;
+		color: rgba(255, 255, 255, 1);
+		opacity: 0.7;
+		pointer-events: auto;
+		border: 0;
+		cursor: pointer;
+	}
+
+	.slider__btn button.disable {
+		pointer-events: none;
+	}
+
+	.slider__btn button.prev {
+		left: 0;
+	}
+
+	.slider__btn button.next {
+		right: 0;
+	}
+
+	.slider__btn button:hover {
+		/* text-shadow: -1px 0 #8545f3, 0 1px #9359f7, 1px 0 #8545f3, 0 -1px #413be1; */
+		border: 1px solid rgba(187, 127, 255, 0.6);
+		box-shadow: inset 0px 0px 5px aquamarine;
+		opacity: 1;
+		transition: opacity 0.5s ease;
+	}
+
+	.slider__dot {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 20px;
+		margin: 2px;
+	}
+
+	.slider__dot .dot {
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		background: rgba(20, 20, 20, 0.7);
+		border-radius: 50%;
+		text-indent: -9999px;
+		transition: all 0.3s;
+		margin: 5px;
+	}
+
+	.slider__dot .dot.active {
+		/* background: #000; */
+		color: rgb(187, 127, 255);
+		border-color: rgba(187, 127, 255, 0.6);
+		box-shadow: -1px 1px 2px aquamarine;
+		background: rgba(0, 0, 0, 0.4);
+		/* position: relative; */
+		transition: all 2s ease;
+	}
+
+	.slider__dot .dot.active {
+		/* background: #000; */
+		color: rgb(187, 127, 255);
+		border-color: rgba(187, 127, 255, 0.6);
+		box-shadow: -1px 1px 2px aquamarine;
+		position: relative;
+	}
+
+	.slider__dot .dot.active::after {
+		position: absolute;
+		top: 0%;
+		left: 00%;
+		/* transform: translate(-50%, -50%); */
+		content: '';
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background: rgba(0, 0, 0, 0);
+		z-index: -1;
+		border: 1px solid rgba(187, 127, 255, 0.6);
+		box-shadow: -1px 1px 10px aquamarine;
+		animation: rotate 3s linear infinite;
+		pointer-events: none;
+
+	}
+
+	.slider__dot .dot.active::before {
+		position: absolute;
+		top: 0%;
+		left: 00%;
+		/* transform: translate(-50%, -50%); */
+		content: '';
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background: rgba(0, 0, 0, 0);
+		z-index: -1;
+		border: 1px solid rgba(0, 162, 255, 0.534);
+		box-shadow: -1px 1px 10px rgba(0, 162, 255, 0.534);
+		animation: rotate2 7s linear infinite;
+		pointer-events: none;
+
+	}
+
+	@keyframes rotate {
+		0% {
+			transform: rotate(0deg);
+		}
+
+		100% {
+			transform: rotate(359deg);
+		}
+	}
+
+	@keyframes rotate2 {
+		0% {
+			transform: rotate(359deg);
+		}
+
+		100% {
+			transform: rotate(0deg);
+		}
+	}
+
+	/* 할로윈에디션 ^_^ */
+	#header {
+		color: black;
+	}
+
+	#header h1 {
+		font-family: 'Creepster', cursive;
+		font-size: 50px;
+		border-bottom: 1px dashed #FE8D1C;
+		text-shadow: -1px 0 2px #FE8D1C, 0 1px 2px #f87d02, 1px 0 3px #dd7f20, 0 -1px 4px #faa249;
+	}
+
+	#header p {
+		color: #ff962ce7;
+	}
+
+	#header li a {
+		border: 1px solid #633303;
+		font-family: 'Creepster', cursive;
+		opacity: 0.7;
+	}
+
+	#header li.active a {
+		background: #000;
+		color: #FE8D1C;
+		border-color: #faa249;
+		box-shadow: -1px 1px 1px #F3F3F4;
+		opacity: 1;
+	}
+
+	.slider__btn button {
+		background: rgba(0, 0, 0, 0.4);
+		border-radius: 50%;
+		transition: all 0.4s;
+		color: #fe8d1c9d;
+		/* text-shadow: -1px 0 #FE8D1C, 0 1px #f87d02, 1px 0 #dd7f20, 0 -1px #faa249; */
+		opacity: 0.7;
+	}
+
+	.slider__btn button:hover {
+		text-shadow: -1px 0 2px #FE8D1C, 0 1px 2px #f87d02, 1px 0 3px #dd7f20, 0 -1px 4px #faa249;
+		border: none;
+		box-shadow: inset 0px 0px 10px #FE8D1C;
+		opacity: 1;
+		color: black;
+		transition: all 0.5s ease;
+	}
+
+	.slider__dot .dot.active {
+		/* background: #000; */
+		border-color: #000;
+		box-shadow: -1px 1px 2px #fff;
+		background: rgba(0, 0, 0, 0.4);
+		/* position: relative; */
+		transition: all 2s ease;
+	}
+
+	.slider__dot .dot.active::after {
+		position: absolute;
+		top: 0%;
+		left: 00%;
+		/* transform: translate(-50%, -50%); */
+		content: '';
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background: rgba(0, 0, 0, 0);
+		z-index: -1;
+		border: 1px solid #FE8D1C;
+		box-shadow: -1px 1px 10px #FE8D1C;
+		animation: rotate 3s linear infinite;
+		pointer-events: none;
+
+	}
+
+	.slider__dot .dot.active::before {
+		position: absolute;
+		top: 0%;
+		left: 00%;
+		/* transform: translate(-50%, -50%); */
+		content: '';
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background: rgba(0, 0, 0, 0);
+		z-index: -1;
+		border: 1px solid rgb(243, 219, 6);
+		box-shadow: -1px 1px 10px rgb(255, 94, 0);
+		animation: rotate2 7s linear infinite;
+		pointer-events: none;
+
+	}
 </code></pre>
 						</div>
 					</div>
@@ -563,68 +1039,81 @@
 		sliderInner.insertBefore(cloneLast, sliderFirst);
 
 		function init() {
-			// 이미지 갯수만큼 닷 메뉴 생기게
-			for (i = 1; i <= sliderLength; i++) {
-				sliderDot.innerHTML += `<a href='#' class='dot'>이미지${i}</a>`;
+			// 이미지 수만큼 dot 추가
+			for (let i = 0; i < sliderLength; i++) {                
+				dotIndex += "<a href='#' class='dot'>이미지1</a>";
 			}
-			sliderDot.firstElementChild.classList.add("active");
+			sliderDot.innerHTML = dotIndex;
+			sliderDot.firstChild.classList.add("active");       // 첫 번째만 + active
 		}
 		init();
 
 		function gotoSlider(direction) {
-
-			sliderInner.classList.add("transition");
-			posInitial = sliderInner.offsetLeft;
-			console.log(posInitial)
-			console.log(currentIndex)
-
-
+			sliderInner.classList.add("transition");    
+			sliderBtn.classList.add("disable");
+			posInitial = sliderInner.offsetLeft;    
+			
 
 			if (direction == -1) {
-				sliderInner.style.left = (posInitial + sliderWidth) + "px";
+				sliderInner.style.left = (posInitial + sliderWidth) + "px"; // 초기화
 				currentIndex--;
-
 			} else if (direction == 1) {
-
-				sliderInner.style.left = (posInitial - sliderWidth) + "px";
+				sliderInner.style.left = (posInitial - sliderWidth) + "px"; // 초기화
 				currentIndex++;
-			} 
-			if(currentIndex == 9){currentIndex = 0;}
-			console.log(currentIndex)
-			const sliderDotAs = sliderDot.querySelectorAll('a');
-			sliderDotAs.forEach((a) => a.classList.remove('active'));
-			sliderDotAs[currentIndex].classList.add('active');
-
+			}
 		}
 
 		function checkIndex() {
 			sliderInner.classList.remove("transition");
-			sliderBtn.classList.add("disable");
+			console.log(currentIndex);
 
-			if (currentIndex == sliderLength-1) {
+			// 마지막 - >처음
+			if (currentIndex == sliderLength) {
 				sliderInner.style.left = -(1 * sliderWidth) + "px";
 				currentIndex = 0;
 			}
 
+			// 처음 -> 마지막
 			if (currentIndex == -1) {
 				sliderInner.style.left = -(sliderLength * sliderWidth) + "px";
 				currentIndex = sliderLength - 1;
 			}
+
+			let dotActive = document.querySelectorAll(".slider__dot .dot"); 
+			dotActive.forEach(el => el.classList.remove("active")); 
+
+			dotActive[currentIndex].classList.add("active");    
 		}
 
+		// 닷 버튼 클릭했을 때 해당 닷버튼의 이미지로 이동 
+		document.querySelectorAll('.slider__dot .dot').forEach((a, index) => {
+			a.addEventListener('click', e => {
+				document.querySelectorAll('.slider__dot .dot').forEach(b => {
+					b.classList.remove('active');
+				});
+				a.classList.add('active');
+				sliderInner.style.left = `${-((index + 1) * sliderWidth)}px`;
+				sliderInner.classList.add("transition")
+				currentIndex = index;
+			});
+		});
+
+		// prev 버튼 클릭했을 때
 		sliderBtnPrev.addEventListener("click", () => {
-			gotoSlider(-1);
+			gotoSlider(-1)
 			setTimeout(() => {
-				sliderBtn.classList.remove("disable");
+				sliderBtn.classList.remove("disable")
 			}, 300);
-		})
+		});
+
+		// next 버튼 클릭했을 때
 		sliderBtnNext.addEventListener("click", () => {
 			gotoSlider(1);
 			setTimeout(() => {
-				sliderBtn.classList.remove("disable");
+				sliderBtn.classList.remove("disable")
 			}, 300);
-		})
-		sliderInner.addEventListener("transitionend", checkIndex);
+		});
+		sliderInner.addEventListener("transitionend", checkIndex);  // transitionend : transition 이 끝났을 때 실행하는 이벤트 
 
 	</script>
 </body>

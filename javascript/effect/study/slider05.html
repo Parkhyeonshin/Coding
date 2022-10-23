@@ -52,70 +52,71 @@
                 </p>
                 <h3 class="t_tit2">JS 소스</h3>
                 <div class="t_code">
-                    <pre><code class="language-js">const sliderWrap = document.querySelector('.slider__wrap');
-const sliderImg = document.querySelector('.slider__img');
-const sliderInner = document.querySelector('.slider__inner');
-const slider = document.querySelectorAll('.slider');
-const sliderBtn = document.querySelector('.slider__btn');
-const sliderBtnPrev = sliderBtn.querySelector('.prev');
-const sliderBtnNext = sliderBtn.querySelector('.next');
-const sliderDot = document.querySelector('.slider__dot');
+<pre><code class="language-js">const sliderWrap = document.querySelector('.slider__wrap');
+    const sliderImg = document.querySelector('.slider__img');
+    const sliderInner = document.querySelector('.slider__inner');
+    const slider = document.querySelectorAll('.slider');
+    const sliderBtn = document.querySelector('.slider__btn');
+    const sliderBtnPrev = sliderBtn.querySelector('.prev');
+    const sliderBtnNext = sliderBtn.querySelector('.next');
+    const sliderDot = document.querySelector('.slider__dot');
 
-let currentIndex = 0;
-let sliderCount = slider.length;
-let sliderWidth = sliderImg.offsetWidth; // 이미지 가로 값
+    let currentIndex = 0;
+    let sliderCount = slider.length;
+    let sliderWidth = sliderImg.offsetWidth; // 이미지 가로 값
 
-// 이미지 총 길이 넣기
-sliderInner.style.width = (sliderWidth * sliderCount) + "px";
+    // 이미지 총 길이 넣기
+    sliderInner.style.width = (sliderWidth * sliderCount) + "px";
 
-let dotIndex = "";
-function init() {
-    slider.forEach((el, index) => dotIndex += `&lt;a href="#" class="dot"&gt;이미지${index + 1}&lt;/a&gt;`);
-    sliderDot.innerHTML = dotIndex;
+    let dotIndex = "";
+    function init() {
+        slider.forEach((el, index) => dotIndex += `&lt;a href="#" class="dot"&gt;이미지${index + 1}&lt;/a&gt;`);
+        sliderDot.innerHTML = dotIndex;
 
-    // 첫 번째 닷 버튼한테 활성화 표시
-    sliderDot.firstElementChild.classList.add('active');
-}
-init();
+        // 첫 번째 닷 버튼한테 활성화 표시
+        sliderDot.firstElementChild.classList.add('active');
+    }
+    init();
 
-// 이미지이동
-function gotoSlider(num) {
-    sliderInner.style.transition = "all 400ms";
-    sliderInner.style.transform = "translateX(" + -sliderWidth * num + "px)";
-    currentIndex = num;
-    console.log(-sliderWidth * num)
-
-
-    // 두번째 이미지 --> 두번째 닷 클래스 추가
-    // 1. 닷메뉴 클래스 모두 삭제
-    // 2. 해당 이미지 해당 닷 메뉴 클래스 추가
-    const sliderDotAs = sliderDot.querySelectorAll('a');
-    sliderDotAs.forEach((a) => a.classList.remove('active'));
-    sliderDotAs[num].classList.add('active');
+    // 이미지이동
+    function gotoSlider(num) {
+        sliderInner.style.transition = "all 400ms";
+        sliderInner.style.transform = "translateX(" + -sliderWidth * num + "px)";
+        currentIndex = num;
+        console.log(-sliderWidth * num)
 
 
-}
-// 버튼 클릭시
-document.querySelectorAll(".slider__btn a").forEach((btn, index) => {
-    btn.addEventListener("click", () => {
-        let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
-        let nextIndex = (currentIndex + 1) % sliderCount;
+        // 두번째 이미지 --> 두번째 닷 클래스 추가
+        // 1. 닷메뉴 클래스 모두 삭제
+        // 2. 해당 이미지 해당 닷 메뉴 클래스 추가
+        const sliderDotAs = sliderDot.querySelectorAll('a');    
+        sliderDotAs.forEach((a) => a.classList.remove('active'));
+        sliderDotAs[num].classList.add('active');
 
-        if (btn.classList.contains("prev")) {
-            gotoSlider(prevIndex);
-        } else {
-            gotoSlider(nextIndex);
-        }
+
+    }
+    // 버튼 클릭시
+    document.querySelectorAll(".slider__btn a").forEach((btn, index) => {
+        btn.addEventListener("click", () => {
+            let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
+            let nextIndex = (currentIndex + 1) % sliderCount;
+
+            if (btn.classList.contains("prev")) {
+                gotoSlider(prevIndex);
+            } else {
+                gotoSlider(nextIndex);
+            }
+        });
     });
-});
 
 
-// 닷 버튼 클릭했을 때
-document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-        gotoSlider(index);
-    });
-})
+    // 닷 버튼 클릭했을 때
+    document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            gotoSlider(index);
+        });
+    })
+                
 </code></pre>
                 </div>
                 <p class="t_tit2">■ 핵심 찍먹하기🪓</p>
